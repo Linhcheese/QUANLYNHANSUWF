@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="DANTOC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TONGIAO.cs" />
     <Compile Include="TRINHDO.cs" />
   </ItemGroup>
   <ItemGroup>
