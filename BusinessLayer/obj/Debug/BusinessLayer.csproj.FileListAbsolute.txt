@@ -1,0 +1,15 @@
+D:\Project_01\QLNS_DCH093\BusinessLayer\bin\Debug\BusinessLayer.dll.config
+D:\Project_01\QLNS_DCH093\BusinessLayer\bin\Debug\BusinessLayer.dll
+D:\Project_01\QLNS_DCH093\BusinessLayer\bin\Debug\BusinessLayer.pdb
+D:\Project_01\QLNS_DCH093\BusinessLayer\bin\Debug\DataLayer.dll
+D:\Project_01\QLNS_DCH093\BusinessLayer\bin\Debug\EntityFramework.dll
+D:\Project_01\QLNS_DCH093\BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project_01\QLNS_DCH093\BusinessLayer\bin\Debug\DataLayer.pdb
+D:\Project_01\QLNS_DCH093\BusinessLayer\bin\Debug\DataLayer.dll.config
+D:\Project_01\QLNS_DCH093\BusinessLayer\bin\Debug\EntityFramework.xml
+D:\Project_01\QLNS_DCH093\BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project_01\QLNS_DCH093\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
+D:\Project_01\QLNS_DCH093\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+D:\Project_01\QLNS_DCH093\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
+D:\Project_01\QLNS_DCH093\BusinessLayer\obj\Debug\BusinessLayer.dll
+D:\Project_01\QLNS_DCH093\BusinessLayer\obj\Debug\BusinessLayer.pdb
