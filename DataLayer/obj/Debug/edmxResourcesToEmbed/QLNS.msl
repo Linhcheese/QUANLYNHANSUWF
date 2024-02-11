@@ -45,6 +45,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="TB_CONGTY">
+      <EntityTypeMapping TypeName="QLNHANSUModel.TB_CONGTY">
+        <MappingFragment StoreEntitySet="TB_CONGTY">
+          <ScalarProperty Name="TENCT" ColumnName="TENCT" />
+          <ScalarProperty Name="IDCT" ColumnName="IDCT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="TB_DANTOC">
       <EntityTypeMapping TypeName="QLNHANSUModel.TB_DANTOC">
         <MappingFragment StoreEntitySet="TB_DANTOC">
@@ -101,6 +109,7 @@
     <EntitySetMapping Name="TB_NHANVIEN">
       <EntityTypeMapping TypeName="QLNHANSUModel.TB_NHANVIEN">
         <MappingFragment StoreEntitySet="TB_NHANVIEN">
+          <ScalarProperty Name="IDCT" ColumnName="IDCT" />
           <ScalarProperty Name="IDTG" ColumnName="IDTG" />
           <ScalarProperty Name="IDDT" ColumnName="IDDT" />
           <ScalarProperty Name="IDTD" ColumnName="IDTD" />

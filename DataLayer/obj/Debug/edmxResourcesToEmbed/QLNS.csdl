@@ -5,6 +5,7 @@
     <EntitySet Name="TB_BAOHIEM" EntityType="QLNHANSUModel.TB_BAOHIEM" />
     <EntitySet Name="TB_BOPHAN" EntityType="QLNHANSUModel.TB_BOPHAN" />
     <EntitySet Name="TB_CHUCVU" EntityType="QLNHANSUModel.TB_CHUCVU" />
+    <EntitySet Name="TB_CONGTY" EntityType="QLNHANSUModel.TB_CONGTY" />
     <EntitySet Name="TB_DANTOC" EntityType="QLNHANSUModel.TB_DANTOC" />
     <EntitySet Name="TB_HOPDONG" EntityType="QLNHANSUModel.TB_HOPDONG" />
     <EntitySet Name="TB_KHENTHUONG_KYLUAT" EntityType="QLNHANSUModel.TB_KHENTHUONG_KYLUAT" />
@@ -36,6 +37,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_TB_NHANVIEN_TB_CHUCVU" Association="QLNHANSUModel.FK_TB_NHANVIEN_TB_CHUCVU">
       <End Role="TB_CHUCVU" EntitySet="TB_CHUCVU" />
+      <End Role="TB_NHANVIEN" EntitySet="TB_NHANVIEN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_NHANVIEN_TB_CONGTY" Association="QLNHANSUModel.FK_TB_NHANVIEN_TB_CONGTY">
+      <End Role="TB_CONGTY" EntitySet="TB_CONGTY" />
       <End Role="TB_NHANVIEN" EntitySet="TB_NHANVIEN" />
     </AssociationSet>
     <AssociationSet Name="FK_TB_HOPDONG_TB_NHANVIEN" Association="QLNHANSUModel.FK_TB_HOPDONG_TB_NHANVIEN">
@@ -120,6 +125,14 @@
     <Property Name="TENCV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="TB_NHANVIEN" Relationship="QLNHANSUModel.FK_TB_NHANVIEN_TB_CHUCVU" FromRole="TB_CHUCVU" ToRole="TB_NHANVIEN" />
   </EntityType>
+  <EntityType Name="TB_CONGTY">
+    <Key>
+      <PropertyRef Name="IDCT" />
+    </Key>
+    <Property Name="IDCT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TENCT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TB_NHANVIEN" Relationship="QLNHANSUModel.FK_TB_NHANVIEN_TB_CONGTY" FromRole="TB_CONGTY" ToRole="TB_NHANVIEN" />
+  </EntityType>
   <EntityType Name="TB_DANTOC">
     <Key>
       <PropertyRef Name="ID" />
@@ -190,10 +203,12 @@
     <Property Name="IDTD" Type="Int32" />
     <Property Name="IDDT" Type="Int32" />
     <Property Name="IDTG" Type="Int32" />
+    <Property Name="IDCT" Type="Int32" />
     <NavigationProperty Name="TB_BANGCONG" Relationship="QLNHANSUModel.FK_TB_BANGCONG_TB_NHANVIEN" FromRole="TB_NHANVIEN" ToRole="TB_BANGCONG" />
     <NavigationProperty Name="TB_BAOHIEM" Relationship="QLNHANSUModel.FK_TB_BAOHIEM_TB_NHANVIEN" FromRole="TB_NHANVIEN" ToRole="TB_BAOHIEM" />
     <NavigationProperty Name="TB_BOPHAN" Relationship="QLNHANSUModel.FK_TB_NHANVIEN_TB_BOPHAN" FromRole="TB_NHANVIEN" ToRole="TB_BOPHAN" />
     <NavigationProperty Name="TB_CHUCVU" Relationship="QLNHANSUModel.FK_TB_NHANVIEN_TB_CHUCVU" FromRole="TB_NHANVIEN" ToRole="TB_CHUCVU" />
+    <NavigationProperty Name="TB_CONGTY" Relationship="QLNHANSUModel.FK_TB_NHANVIEN_TB_CONGTY" FromRole="TB_NHANVIEN" ToRole="TB_CONGTY" />
     <NavigationProperty Name="TB_HOPDONG" Relationship="QLNHANSUModel.FK_TB_HOPDONG_TB_NHANVIEN" FromRole="TB_NHANVIEN" ToRole="TB_HOPDONG" />
     <NavigationProperty Name="TB_KHENTHUONG_KYLUAT" Relationship="QLNHANSUModel.FK_TB_KHENTHUONG_KYLUAT_TB_NHANVIEN" FromRole="TB_NHANVIEN" ToRole="TB_KHENTHUONG_KYLUAT" />
     <NavigationProperty Name="TB_NHANVIEN_PHUCAP" Relationship="QLNHANSUModel.FK_TB_NHANVIEN_PHUCAP_TB_NHANVIEN" FromRole="TB_NHANVIEN" ToRole="TB_NHANVIEN_PHUCAP" />
@@ -331,6 +346,18 @@
       </Principal>
       <Dependent Role="TB_NHANVIEN">
         <PropertyRef Name="IDCV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_NHANVIEN_TB_CONGTY">
+    <End Type="QLNHANSUModel.TB_CONGTY" Role="TB_CONGTY" Multiplicity="0..1" />
+    <End Type="QLNHANSUModel.TB_NHANVIEN" Role="TB_NHANVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_CONGTY">
+        <PropertyRef Name="IDCT" />
+      </Principal>
+      <Dependent Role="TB_NHANVIEN">
+        <PropertyRef Name="IDCT" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

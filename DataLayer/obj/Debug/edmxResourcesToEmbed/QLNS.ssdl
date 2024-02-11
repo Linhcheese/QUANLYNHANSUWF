@@ -40,6 +40,13 @@
     <Property Name="IDCV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TENCV" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="TB_CONGTY">
+    <Key>
+      <PropertyRef Name="IDCT" />
+    </Key>
+    <Property Name="IDCT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TENCT" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="TB_DANTOC">
     <Key>
       <PropertyRef Name="ID" />
@@ -106,6 +113,7 @@
     <Property Name="IDTD" Type="int" />
     <Property Name="IDDT" Type="int" />
     <Property Name="IDTG" Type="int" />
+    <Property Name="IDCT" Type="int" />
   </EntityType>
   <EntityType Name="TB_NHANVIEN_PHUCAP">
     <Key>
@@ -279,6 +287,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_TB_NHANVIEN_TB_CONGTY">
+    <End Role="TB_CONGTY" Type="Self.TB_CONGTY" Multiplicity="0..1" />
+    <End Role="TB_NHANVIEN" Type="Self.TB_NHANVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_CONGTY">
+        <PropertyRef Name="IDCT" />
+      </Principal>
+      <Dependent Role="TB_NHANVIEN">
+        <PropertyRef Name="IDCT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_TB_NHANVIEN_TB_PHONGBAN">
     <End Role="TB_PHONGBAN" Type="Self.TB_PHONGBAN" Multiplicity="0..1" />
     <End Role="TB_NHANVIEN" Type="Self.TB_NHANVIEN" Multiplicity="*" />
@@ -344,6 +364,7 @@
     <EntitySet Name="TB_BAOHIEM" EntityType="Self.TB_BAOHIEM" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_BOPHAN" EntityType="Self.TB_BOPHAN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_CHUCVU" EntityType="Self.TB_CHUCVU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_CONGTY" EntityType="Self.TB_CONGTY" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_DANTOC" EntityType="Self.TB_DANTOC" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_HOPDONG" EntityType="Self.TB_HOPDONG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_KHENTHUONG_KYLUAT" EntityType="Self.TB_KHENTHUONG_KYLUAT" Schema="dbo" store:Type="Tables" />
@@ -391,6 +412,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_TB_NHANVIEN_TB_CHUCVU" Association="Self.FK_TB_NHANVIEN_TB_CHUCVU">
       <End Role="TB_CHUCVU" EntitySet="TB_CHUCVU" />
+      <End Role="TB_NHANVIEN" EntitySet="TB_NHANVIEN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_NHANVIEN_TB_CONGTY" Association="Self.FK_TB_NHANVIEN_TB_CONGTY">
+      <End Role="TB_CONGTY" EntitySet="TB_CONGTY" />
       <End Role="TB_NHANVIEN" EntitySet="TB_NHANVIEN" />
     </AssociationSet>
     <AssociationSet Name="FK_TB_NHANVIEN_TB_PHONGBAN" Association="Self.FK_TB_NHANVIEN_TB_PHONGBAN">

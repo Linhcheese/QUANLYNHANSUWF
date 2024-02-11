@@ -45,6 +45,13 @@
           <Property Name="IDCV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TENCV" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="TB_CONGTY">
+          <Key>
+            <PropertyRef Name="IDCT" />
+          </Key>
+          <Property Name="IDCT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENCT" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="TB_DANTOC">
           <Key>
             <PropertyRef Name="ID" />
@@ -111,6 +118,7 @@
           <Property Name="IDTD" Type="int" />
           <Property Name="IDDT" Type="int" />
           <Property Name="IDTG" Type="int" />
+          <Property Name="IDCT" Type="int" />
         </EntityType>
         <EntityType Name="TB_NHANVIEN_PHUCAP">
           <Key>
@@ -284,6 +292,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TB_NHANVIEN_TB_CONGTY">
+          <End Role="TB_CONGTY" Type="Self.TB_CONGTY" Multiplicity="0..1" />
+          <End Role="TB_NHANVIEN" Type="Self.TB_NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_CONGTY">
+              <PropertyRef Name="IDCT" />
+            </Principal>
+            <Dependent Role="TB_NHANVIEN">
+              <PropertyRef Name="IDCT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TB_NHANVIEN_TB_PHONGBAN">
           <End Role="TB_PHONGBAN" Type="Self.TB_PHONGBAN" Multiplicity="0..1" />
           <End Role="TB_NHANVIEN" Type="Self.TB_NHANVIEN" Multiplicity="*" />
@@ -349,6 +369,7 @@
           <EntitySet Name="TB_BAOHIEM" EntityType="Self.TB_BAOHIEM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_BOPHAN" EntityType="Self.TB_BOPHAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_CHUCVU" EntityType="Self.TB_CHUCVU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_CONGTY" EntityType="Self.TB_CONGTY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_DANTOC" EntityType="Self.TB_DANTOC" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_HOPDONG" EntityType="Self.TB_HOPDONG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_KHENTHUONG_KYLUAT" EntityType="Self.TB_KHENTHUONG_KYLUAT" Schema="dbo" store:Type="Tables" />
@@ -398,6 +419,10 @@
             <End Role="TB_CHUCVU" EntitySet="TB_CHUCVU" />
             <End Role="TB_NHANVIEN" EntitySet="TB_NHANVIEN" />
           </AssociationSet>
+          <AssociationSet Name="FK_TB_NHANVIEN_TB_CONGTY" Association="Self.FK_TB_NHANVIEN_TB_CONGTY">
+            <End Role="TB_CONGTY" EntitySet="TB_CONGTY" />
+            <End Role="TB_NHANVIEN" EntitySet="TB_NHANVIEN" />
+          </AssociationSet>
           <AssociationSet Name="FK_TB_NHANVIEN_TB_PHONGBAN" Association="Self.FK_TB_NHANVIEN_TB_PHONGBAN">
             <End Role="TB_PHONGBAN" EntitySet="TB_PHONGBAN" />
             <End Role="TB_NHANVIEN" EntitySet="TB_NHANVIEN" />
@@ -428,6 +453,7 @@
           <EntitySet Name="TB_BAOHIEM" EntityType="QLNHANSUModel.TB_BAOHIEM" />
           <EntitySet Name="TB_BOPHAN" EntityType="QLNHANSUModel.TB_BOPHAN" />
           <EntitySet Name="TB_CHUCVU" EntityType="QLNHANSUModel.TB_CHUCVU" />
+          <EntitySet Name="TB_CONGTY" EntityType="QLNHANSUModel.TB_CONGTY" />
           <EntitySet Name="TB_DANTOC" EntityType="QLNHANSUModel.TB_DANTOC" />
           <EntitySet Name="TB_HOPDONG" EntityType="QLNHANSUModel.TB_HOPDONG" />
           <EntitySet Name="TB_KHENTHUONG_KYLUAT" EntityType="QLNHANSUModel.TB_KHENTHUONG_KYLUAT" />
@@ -459,6 +485,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_TB_NHANVIEN_TB_CHUCVU" Association="QLNHANSUModel.FK_TB_NHANVIEN_TB_CHUCVU">
             <End Role="TB_CHUCVU" EntitySet="TB_CHUCVU" />
+            <End Role="TB_NHANVIEN" EntitySet="TB_NHANVIEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_NHANVIEN_TB_CONGTY" Association="QLNHANSUModel.FK_TB_NHANVIEN_TB_CONGTY">
+            <End Role="TB_CONGTY" EntitySet="TB_CONGTY" />
             <End Role="TB_NHANVIEN" EntitySet="TB_NHANVIEN" />
           </AssociationSet>
           <AssociationSet Name="FK_TB_HOPDONG_TB_NHANVIEN" Association="QLNHANSUModel.FK_TB_HOPDONG_TB_NHANVIEN">
@@ -543,6 +573,14 @@
           <Property Name="TENCV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="TB_NHANVIEN" Relationship="QLNHANSUModel.FK_TB_NHANVIEN_TB_CHUCVU" FromRole="TB_CHUCVU" ToRole="TB_NHANVIEN" />
         </EntityType>
+        <EntityType Name="TB_CONGTY">
+          <Key>
+            <PropertyRef Name="IDCT" />
+          </Key>
+          <Property Name="IDCT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENCT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TB_NHANVIEN" Relationship="QLNHANSUModel.FK_TB_NHANVIEN_TB_CONGTY" FromRole="TB_CONGTY" ToRole="TB_NHANVIEN" />
+        </EntityType>
         <EntityType Name="TB_DANTOC">
           <Key>
             <PropertyRef Name="ID" />
@@ -613,10 +651,12 @@
           <Property Name="IDTD" Type="Int32" />
           <Property Name="IDDT" Type="Int32" />
           <Property Name="IDTG" Type="Int32" />
+          <Property Name="IDCT" Type="Int32" />
           <NavigationProperty Name="TB_BANGCONG" Relationship="QLNHANSUModel.FK_TB_BANGCONG_TB_NHANVIEN" FromRole="TB_NHANVIEN" ToRole="TB_BANGCONG" />
           <NavigationProperty Name="TB_BAOHIEM" Relationship="QLNHANSUModel.FK_TB_BAOHIEM_TB_NHANVIEN" FromRole="TB_NHANVIEN" ToRole="TB_BAOHIEM" />
           <NavigationProperty Name="TB_BOPHAN" Relationship="QLNHANSUModel.FK_TB_NHANVIEN_TB_BOPHAN" FromRole="TB_NHANVIEN" ToRole="TB_BOPHAN" />
           <NavigationProperty Name="TB_CHUCVU" Relationship="QLNHANSUModel.FK_TB_NHANVIEN_TB_CHUCVU" FromRole="TB_NHANVIEN" ToRole="TB_CHUCVU" />
+          <NavigationProperty Name="TB_CONGTY" Relationship="QLNHANSUModel.FK_TB_NHANVIEN_TB_CONGTY" FromRole="TB_NHANVIEN" ToRole="TB_CONGTY" />
           <NavigationProperty Name="TB_HOPDONG" Relationship="QLNHANSUModel.FK_TB_HOPDONG_TB_NHANVIEN" FromRole="TB_NHANVIEN" ToRole="TB_HOPDONG" />
           <NavigationProperty Name="TB_KHENTHUONG_KYLUAT" Relationship="QLNHANSUModel.FK_TB_KHENTHUONG_KYLUAT_TB_NHANVIEN" FromRole="TB_NHANVIEN" ToRole="TB_KHENTHUONG_KYLUAT" />
           <NavigationProperty Name="TB_NHANVIEN_PHUCAP" Relationship="QLNHANSUModel.FK_TB_NHANVIEN_PHUCAP_TB_NHANVIEN" FromRole="TB_NHANVIEN" ToRole="TB_NHANVIEN_PHUCAP" />
@@ -757,6 +797,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TB_NHANVIEN_TB_CONGTY">
+          <End Type="QLNHANSUModel.TB_CONGTY" Role="TB_CONGTY" Multiplicity="0..1" />
+          <End Type="QLNHANSUModel.TB_NHANVIEN" Role="TB_NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_CONGTY">
+              <PropertyRef Name="IDCT" />
+            </Principal>
+            <Dependent Role="TB_NHANVIEN">
+              <PropertyRef Name="IDCT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TB_HOPDONG_TB_NHANVIEN">
           <End Type="QLNHANSUModel.TB_NHANVIEN" Role="TB_NHANVIEN" Multiplicity="0..1" />
           <End Type="QLNHANSUModel.TB_HOPDONG" Role="TB_HOPDONG" Multiplicity="*" />
@@ -865,7 +917,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -912,6 +964,14 @@
               <MappingFragment StoreEntitySet="TB_CHUCVU">
                 <ScalarProperty Name="TENCV" ColumnName="TENCV" />
                 <ScalarProperty Name="IDCV" ColumnName="IDCV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_CONGTY">
+            <EntityTypeMapping TypeName="QLNHANSUModel.TB_CONGTY">
+              <MappingFragment StoreEntitySet="TB_CONGTY">
+                <ScalarProperty Name="TENCT" ColumnName="TENCT" />
+                <ScalarProperty Name="IDCT" ColumnName="IDCT" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -971,6 +1031,7 @@
           <EntitySetMapping Name="TB_NHANVIEN">
             <EntityTypeMapping TypeName="QLNHANSUModel.TB_NHANVIEN">
               <MappingFragment StoreEntitySet="TB_NHANVIEN">
+                <ScalarProperty Name="IDCT" ColumnName="IDCT" />
                 <ScalarProperty Name="IDTG" ColumnName="IDTG" />
                 <ScalarProperty Name="IDDT" ColumnName="IDDT" />
                 <ScalarProperty Name="IDTD" ColumnName="IDTD" />

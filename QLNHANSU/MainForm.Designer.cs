@@ -63,6 +63,7 @@ namespace QLNHANSU
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+            this.btnCongTy = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -93,10 +94,11 @@ namespace QLNHANSU
             this.btnDoiMatKhau,
             this.btnBackup,
             this.btnPhucHoiDB,
-            this.btnThoat});
+            this.btnThoat,
+            this.btnCongTy});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ribbonControl1.MaxItemId = 21;
+            this.ribbonControl1.MaxItemId = 22;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -133,6 +135,7 @@ namespace QLNHANSU
             this.btnTrinhDo.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTrinhDo.ImageOptions.LargeImage")));
             this.btnTrinhDo.Name = "btnTrinhDo";
             this.btnTrinhDo.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnTrinhDo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTrinhDo_ItemClick);
             // 
             // btnNhanVien
             // 
@@ -151,6 +154,7 @@ namespace QLNHANSU
             this.btnPhongBan.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPhongBan.ImageOptions.LargeImage")));
             this.btnPhongBan.Name = "btnPhongBan";
             this.btnPhongBan.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnPhongBan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhongBan_ItemClick);
             // 
             // btnHopDong
             // 
@@ -317,6 +321,7 @@ namespace QLNHANSU
             this.ribbonPageGroup2.ItemLinks.Add(this.btnTrinhDo);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnPhongBan);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnNhanVien);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnCongTy);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Danh mục trình độ";
             // 
@@ -367,6 +372,15 @@ namespace QLNHANSU
             this.documentManager1.View = this.tabbedView1;
             this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView1});
+            // 
+            // btnCongTy
+            // 
+            this.btnCongTy.Caption = "Công ty";
+            this.btnCongTy.Id = 21;
+            this.btnCongTy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCongTy.ImageOptions.Image")));
+            this.btnCongTy.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCongTy.ImageOptions.LargeImage")));
+            this.btnCongTy.Name = "btnCongTy";
+            this.btnCongTy.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
             // MainForm
             // 
@@ -422,6 +436,7 @@ namespace QLNHANSU
         private DevExpress.XtraBars.BarButtonItem btnThoat;
         private DevExpress.XtraBars.Docking2010.DocumentManager documentManager1;
         private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
+        private DevExpress.XtraBars.BarButtonItem btnCongTy;
     }
 }
 

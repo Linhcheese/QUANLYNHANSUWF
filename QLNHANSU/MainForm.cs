@@ -49,5 +49,15 @@ namespace QLNHANSU
         {
             ribbonControl1.SelectedPage = ribbonPage2;
         }
+
+        private void btnTrinhDo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(typeof(frmTrinhDo));
+        }
+
+        private void btnPhongBan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(typeof(frmPhongBan));
+        }
     }
 }

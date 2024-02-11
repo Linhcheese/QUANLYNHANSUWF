@@ -40,6 +40,7 @@ namespace DataLayer
         public Nullable<int> IDTD { get; set; }
         public Nullable<int> IDDT { get; set; }
         public Nullable<int> IDTG { get; set; }
+        public Nullable<int> IDCT { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_BANGCONG> TB_BANGCONG { get; set; }
@@ -47,6 +48,7 @@ namespace DataLayer
         public virtual ICollection<TB_BAOHIEM> TB_BAOHIEM { get; set; }
         public virtual TB_BOPHAN TB_BOPHAN { get; set; }
         public virtual TB_CHUCVU TB_CHUCVU { get; set; }
+        public virtual TB_CONGTY TB_CONGTY { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_HOPDONG> TB_HOPDONG { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

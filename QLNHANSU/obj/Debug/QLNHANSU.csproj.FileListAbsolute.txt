@@ -109,3 +109,5 @@ D:\Project_01\QLNS_DCH093\QLNHANSU\bin\Debug\de\DevExpress.XtraNavBar.v19.2.reso
 D:\Project_01\QLNS_DCH093\QLNHANSU\bin\Debug\es\DevExpress.XtraNavBar.v19.2.resources.dll
 D:\Project_01\QLNS_DCH093\QLNHANSU\bin\Debug\ja\DevExpress.XtraNavBar.v19.2.resources.dll
 D:\Project_01\QLNS_DCH093\QLNHANSU\bin\Debug\ru\DevExpress.XtraNavBar.v19.2.resources.dll
+D:\Project_01\QLNS_DCH093\QLNHANSU\obj\Debug\QLNHANSU.frmTrinhDo.resources
+D:\Project_01\QLNS_DCH093\QLNHANSU\obj\Debug\QLNHANSU.frmPhongBan.resources

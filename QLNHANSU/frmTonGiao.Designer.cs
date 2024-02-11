@@ -299,7 +299,7 @@ namespace QLNHANSU
             this.gcDanhSachTG.MainView = this.gvDanhSachTG;
             this.gcDanhSachTG.MenuManager = this.barManager1;
             this.gcDanhSachTG.Name = "gcDanhSachTG";
-            this.gcDanhSachTG.Size = new System.Drawing.Size(1087, 363);
+            this.gcDanhSachTG.Size = new System.Drawing.Size(1087, 426);
             this.gcDanhSachTG.TabIndex = 0;
             this.gcDanhSachTG.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSachTG});
@@ -485,7 +485,7 @@ namespace QLNHANSU
             // 
             this.splitContainer1.Panel2.Controls.Add(this.gcDanhSachTG);
             this.splitContainer1.Size = new System.Drawing.Size(1087, 485);
-            this.splitContainer1.SplitterDistance = 118;
+            this.splitContainer1.SplitterDistance = 55;
             this.splitContainer1.TabIndex = 13;
             // 
             // frmTonGiao
