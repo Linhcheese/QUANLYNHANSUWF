@@ -104,7 +104,7 @@ namespace QLNHANSU
             this.gcDanhSachCV.MainView = this.gvDanhSachCV;
             this.gcDanhSachCV.MenuManager = this.barManager1;
             this.gcDanhSachCV.Name = "gcDanhSachCV";
-            this.gcDanhSachCV.Size = new System.Drawing.Size(906, 446);
+            this.gcDanhSachCV.Size = new System.Drawing.Size(788, 380);
             this.gcDanhSachCV.TabIndex = 0;
             this.gcDanhSachCV.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSachCV});
@@ -230,15 +230,15 @@ namespace QLNHANSU
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(906, 30);
+            this.barDockControlTop.Size = new System.Drawing.Size(788, 30);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 623);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 535);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(906, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(788, 20);
             // 
             // barDockControlLeft
             // 
@@ -246,15 +246,15 @@ namespace QLNHANSU
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 593);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 505);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(906, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(788, 30);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 593);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 505);
             // 
             // txtTenCV
             // 
@@ -289,15 +289,15 @@ namespace QLNHANSU
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.gcDanhSachCV);
-            this.splitContainer1.Size = new System.Drawing.Size(906, 593);
-            this.splitContainer1.SplitterDistance = 143;
+            this.splitContainer1.Size = new System.Drawing.Size(788, 505);
+            this.splitContainer1.SplitterDistance = 121;
             this.splitContainer1.TabIndex = 5;
             // 
             // frmChucVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(906, 643);
+            this.ClientSize = new System.Drawing.Size(788, 555);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);

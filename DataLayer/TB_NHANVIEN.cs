@@ -41,6 +41,7 @@ namespace DataLayer
         public Nullable<int> IDDT { get; set; }
         public Nullable<int> IDTG { get; set; }
         public Nullable<int> IDCT { get; set; }
+        public string EMAIL { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_BANGCONG> TB_BANGCONG { get; set; }

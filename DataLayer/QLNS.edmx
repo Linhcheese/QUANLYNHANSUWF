@@ -122,6 +122,7 @@
           <Property Name="IDDT" Type="int" />
           <Property Name="IDTG" Type="int" />
           <Property Name="IDCT" Type="int" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="TB_NHANVIEN_PHUCAP">
           <Key>
@@ -658,6 +659,7 @@
           <Property Name="IDDT" Type="Int32" />
           <Property Name="IDTG" Type="Int32" />
           <Property Name="IDCT" Type="Int32" />
+          <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="TB_BANGCONG" Relationship="QLNHANSUModel.FK_TB_BANGCONG_TB_NHANVIEN" FromRole="TB_NHANVIEN" ToRole="TB_BANGCONG" />
           <NavigationProperty Name="TB_BAOHIEM" Relationship="QLNHANSUModel.FK_TB_BAOHIEM_TB_NHANVIEN" FromRole="TB_NHANVIEN" ToRole="TB_BAOHIEM" />
           <NavigationProperty Name="TB_BOPHAN" Relationship="QLNHANSUModel.FK_TB_NHANVIEN_TB_BOPHAN" FromRole="TB_NHANVIEN" ToRole="TB_BOPHAN" />
@@ -1040,6 +1042,7 @@
           <EntitySetMapping Name="TB_NHANVIEN">
             <EntityTypeMapping TypeName="QLNHANSUModel.TB_NHANVIEN">
               <MappingFragment StoreEntitySet="TB_NHANVIEN">
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
                 <ScalarProperty Name="IDCT" ColumnName="IDCT" />
                 <ScalarProperty Name="IDTG" ColumnName="IDTG" />
                 <ScalarProperty Name="IDDT" ColumnName="IDDT" />

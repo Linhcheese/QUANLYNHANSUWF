@@ -112,6 +112,7 @@
     <EntitySetMapping Name="TB_NHANVIEN">
       <EntityTypeMapping TypeName="QLNHANSUModel.TB_NHANVIEN">
         <MappingFragment StoreEntitySet="TB_NHANVIEN">
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
           <ScalarProperty Name="IDCT" ColumnName="IDCT" />
           <ScalarProperty Name="IDTG" ColumnName="IDTG" />
           <ScalarProperty Name="IDDT" ColumnName="IDDT" />
