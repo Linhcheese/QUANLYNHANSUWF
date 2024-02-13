@@ -73,6 +73,12 @@
     <Compile Include="fmDanToc.Designer.cs">
       <DependentUpon>fmDanToc.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmbophan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmbophan.Designer.cs">
+      <DependentUpon>frmbophan.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCongTy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </Compile>
     <EmbeddedResource Include="fmDanToc.resx">
       <DependentUpon>fmDanToc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmbophan.resx">
+      <DependentUpon>frmbophan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCongTy.resx">
       <DependentUpon>frmCongTy.cs</DependentUpon>

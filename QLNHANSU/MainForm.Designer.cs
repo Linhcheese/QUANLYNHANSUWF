@@ -53,6 +53,8 @@ namespace QLNHANSU
             this.btnPhucHoiDB = new DevExpress.XtraBars.BarButtonItem();
             this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.btnCongTy = new DevExpress.XtraBars.BarButtonItem();
+            this.btnChucVu = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBoPhan = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -64,8 +66,6 @@ namespace QLNHANSU
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
-            this.btnChucVu = new DevExpress.XtraBars.BarButtonItem();
-            this.btnBoPhan = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -304,6 +304,24 @@ namespace QLNHANSU
             this.btnCongTy.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnCongTy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCongTy_ItemClick);
             // 
+            // btnChucVu
+            // 
+            this.btnChucVu.Caption = "Chức vụ";
+            this.btnChucVu.Id = 22;
+            this.btnChucVu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnChucVu.ImageOptions.Image")));
+            this.btnChucVu.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnChucVu.ImageOptions.LargeImage")));
+            this.btnChucVu.Name = "btnChucVu";
+            this.btnChucVu.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // btnBoPhan
+            // 
+            this.btnBoPhan.Caption = "Bộ phận";
+            this.btnBoPhan.Id = 23;
+            this.btnBoPhan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBoPhan.ImageOptions.Image")));
+            this.btnBoPhan.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBoPhan.ImageOptions.LargeImage")));
+            this.btnBoPhan.Name = "btnBoPhan";
+            this.btnBoPhan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBoPhan_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -388,23 +406,6 @@ namespace QLNHANSU
             this.documentManager1.View = this.tabbedView1;
             this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView1});
-            // 
-            // btnChucVu
-            // 
-            this.btnChucVu.Caption = "Chức vụ";
-            this.btnChucVu.Id = 22;
-            this.btnChucVu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnChucVu.ImageOptions.Image")));
-            this.btnChucVu.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnChucVu.ImageOptions.LargeImage")));
-            this.btnChucVu.Name = "btnChucVu";
-            this.btnChucVu.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            // 
-            // btnBoPhan
-            // 
-            this.btnBoPhan.Caption = "Bộ phận";
-            this.btnBoPhan.Id = 23;
-            this.btnBoPhan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBoPhan.ImageOptions.Image")));
-            this.btnBoPhan.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBoPhan.ImageOptions.LargeImage")));
-            this.btnBoPhan.Name = "btnBoPhan";
             // 
             // MainForm
             // 
