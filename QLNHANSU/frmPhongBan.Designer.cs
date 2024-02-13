@@ -378,8 +378,9 @@ namespace QLNHANSU
             // 
             this.barDockControl1.CausesValidation = false;
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl1.Location = new System.Drawing.Point(1206, 0);
-            this.barDockControl1.Size = new System.Drawing.Size(0, 576);
+            this.barDockControl1.Location = new System.Drawing.Point(1206, 30);
+            this.barDockControl1.Manager = null;
+            this.barDockControl1.Size = new System.Drawing.Size(0, 526);
             // 
             // barButtonItem1
             // 
@@ -613,8 +614,9 @@ namespace QLNHANSU
             // 
             this.barDockControl9.CausesValidation = false;
             this.barDockControl9.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl9.Location = new System.Drawing.Point(1206, 0);
-            this.barDockControl9.Size = new System.Drawing.Size(0, 576);
+            this.barDockControl9.Location = new System.Drawing.Point(1206, 30);
+            this.barDockControl9.Manager = null;
+            this.barDockControl9.Size = new System.Drawing.Size(0, 526);
             // 
             // barButtonItem27
             // 
@@ -628,9 +630,9 @@ namespace QLNHANSU
             // 
             this.barDockControl2.CausesValidation = false;
             this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl2.Location = new System.Drawing.Point(1206, 0);
+            this.barDockControl2.Location = new System.Drawing.Point(1206, 30);
             this.barDockControl2.Manager = null;
-            this.barDockControl2.Size = new System.Drawing.Size(0, 576);
+            this.barDockControl2.Size = new System.Drawing.Size(0, 526);
             // 
             // barButtonItem28
             // 
@@ -684,9 +686,9 @@ namespace QLNHANSU
             // 
             this.barDockControl6.CausesValidation = false;
             this.barDockControl6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl6.Location = new System.Drawing.Point(1206, 0);
+            this.barDockControl6.Location = new System.Drawing.Point(1206, 30);
             this.barDockControl6.Manager = null;
-            this.barDockControl6.Size = new System.Drawing.Size(0, 576);
+            this.barDockControl6.Size = new System.Drawing.Size(0, 526);
             // 
             // barButtonItem34
             // 
@@ -833,8 +835,8 @@ namespace QLNHANSU
             // 
             this.btnThemPB.Caption = "Thêm";
             this.btnThemPB.Id = 0;
-            this.btnThemPB.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem40.ImageOptions.Image")));
-            this.btnThemPB.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem40.ImageOptions.LargeImage")));
+            this.btnThemPB.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThemPB.ImageOptions.Image")));
+            this.btnThemPB.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThemPB.ImageOptions.LargeImage")));
             this.btnThemPB.Name = "btnThemPB";
             this.btnThemPB.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThemPB_ItemClick);
             // 
@@ -842,8 +844,8 @@ namespace QLNHANSU
             // 
             this.btnSuaPB.Caption = "Sửa";
             this.btnSuaPB.Id = 1;
-            this.btnSuaPB.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem41.ImageOptions.Image")));
-            this.btnSuaPB.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem41.ImageOptions.LargeImage")));
+            this.btnSuaPB.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaPB.ImageOptions.Image")));
+            this.btnSuaPB.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSuaPB.ImageOptions.LargeImage")));
             this.btnSuaPB.Name = "btnSuaPB";
             this.btnSuaPB.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSuaPB_ItemClick);
             // 
@@ -851,8 +853,8 @@ namespace QLNHANSU
             // 
             this.btnXoaPB.Caption = "Xóa";
             this.btnXoaPB.Id = 2;
-            this.btnXoaPB.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem42.ImageOptions.Image")));
-            this.btnXoaPB.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem42.ImageOptions.LargeImage")));
+            this.btnXoaPB.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaPB.ImageOptions.Image")));
+            this.btnXoaPB.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXoaPB.ImageOptions.LargeImage")));
             this.btnXoaPB.Name = "btnXoaPB";
             this.btnXoaPB.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoaPB_ItemClick);
             // 
@@ -860,8 +862,8 @@ namespace QLNHANSU
             // 
             this.btnLuuPB.Caption = "Lưu";
             this.btnLuuPB.Id = 3;
-            this.btnLuuPB.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem43.ImageOptions.Image")));
-            this.btnLuuPB.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem43.ImageOptions.LargeImage")));
+            this.btnLuuPB.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLuuPB.ImageOptions.Image")));
+            this.btnLuuPB.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLuuPB.ImageOptions.LargeImage")));
             this.btnLuuPB.Name = "btnLuuPB";
             this.btnLuuPB.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLuuPB_ItemClick);
             // 
@@ -869,8 +871,8 @@ namespace QLNHANSU
             // 
             this.btnHuyPB.Caption = "Hủy";
             this.btnHuyPB.Id = 4;
-            this.btnHuyPB.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem44.ImageOptions.Image")));
-            this.btnHuyPB.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem44.ImageOptions.LargeImage")));
+            this.btnHuyPB.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHuyPB.ImageOptions.Image")));
+            this.btnHuyPB.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHuyPB.ImageOptions.LargeImage")));
             this.btnHuyPB.Name = "btnHuyPB";
             this.btnHuyPB.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHuyPB_ItemClick);
             // 
@@ -878,8 +880,8 @@ namespace QLNHANSU
             // 
             this.btnPrintPB.Caption = "In";
             this.btnPrintPB.Id = 6;
-            this.btnPrintPB.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem45.ImageOptions.Image")));
-            this.btnPrintPB.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem45.ImageOptions.LargeImage")));
+            this.btnPrintPB.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintPB.ImageOptions.Image")));
+            this.btnPrintPB.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPrintPB.ImageOptions.LargeImage")));
             this.btnPrintPB.Name = "btnPrintPB";
             this.btnPrintPB.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPrintPB_ItemClick);
             // 
@@ -887,8 +889,8 @@ namespace QLNHANSU
             // 
             this.btnDongPB.Caption = "Đóng";
             this.btnDongPB.Id = 5;
-            this.btnDongPB.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem46.ImageOptions.Image")));
-            this.btnDongPB.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem46.ImageOptions.LargeImage")));
+            this.btnDongPB.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDongPB.ImageOptions.Image")));
+            this.btnDongPB.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDongPB.ImageOptions.LargeImage")));
             this.btnDongPB.Name = "btnDongPB";
             this.btnDongPB.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDongPB_ItemClick);
             // 
@@ -1027,14 +1029,14 @@ namespace QLNHANSU
             this.ClientSize = new System.Drawing.Size(1206, 576);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.gridControl2);
-            this.Controls.Add(this.barDockControlLeft);
-            this.Controls.Add(this.barDockControl7);
-            this.Controls.Add(this.barDockControlBottom);
-            this.Controls.Add(this.barDockControlTop);
             this.Controls.Add(this.barDockControl1);
             this.Controls.Add(this.barDockControl9);
             this.Controls.Add(this.barDockControl2);
             this.Controls.Add(this.barDockControl6);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControl7);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
             this.Name = "frmPhongBan";
             this.Text = "Phòng ban";
             this.Load += new System.EventHandler(this.frmPhongBan_Load);

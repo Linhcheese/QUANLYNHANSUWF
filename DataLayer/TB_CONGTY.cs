@@ -22,6 +22,9 @@ namespace DataLayer
     
         public int IDCT { get; set; }
         public string TENCT { get; set; }
+        public string DIENTHOAI { get; set; }
+        public string EMAIL { get; set; }
+        public string DIACHI { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_NHANVIEN> TB_NHANVIEN { get; set; }

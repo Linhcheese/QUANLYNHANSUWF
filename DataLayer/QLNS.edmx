@@ -51,6 +51,9 @@
           </Key>
           <Property Name="IDCT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TENCT" Type="nvarchar" MaxLength="50" />
+          <Property Name="DIENTHOAI" Type="nvarchar" MaxLength="50" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="100" />
+          <Property Name="DIACHI" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="TB_DANTOC">
           <Key>
@@ -579,6 +582,9 @@
           </Key>
           <Property Name="IDCT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TENCT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DIENTHOAI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DIACHI" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="TB_NHANVIEN" Relationship="QLNHANSUModel.FK_TB_NHANVIEN_TB_CONGTY" FromRole="TB_CONGTY" ToRole="TB_NHANVIEN" />
         </EntityType>
         <EntityType Name="TB_DANTOC">
@@ -970,6 +976,9 @@
           <EntitySetMapping Name="TB_CONGTY">
             <EntityTypeMapping TypeName="QLNHANSUModel.TB_CONGTY">
               <MappingFragment StoreEntitySet="TB_CONGTY">
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="DIENTHOAI" ColumnName="DIENTHOAI" />
                 <ScalarProperty Name="TENCT" ColumnName="TENCT" />
                 <ScalarProperty Name="IDCT" ColumnName="IDCT" />
               </MappingFragment>

@@ -48,6 +48,9 @@
     <EntitySetMapping Name="TB_CONGTY">
       <EntityTypeMapping TypeName="QLNHANSUModel.TB_CONGTY">
         <MappingFragment StoreEntitySet="TB_CONGTY">
+          <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="DIENTHOAI" ColumnName="DIENTHOAI" />
           <ScalarProperty Name="TENCT" ColumnName="TENCT" />
           <ScalarProperty Name="IDCT" ColumnName="IDCT" />
         </MappingFragment>
