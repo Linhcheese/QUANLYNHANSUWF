@@ -304,7 +304,7 @@ namespace QLNHANSU
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmbophan";
-            this.Text = "frmbophan";
+            this.Text = "Bộ phận";
             this.Load += new System.EventHandler(this.frmbophan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSachBP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSachBP)).EndInit();
