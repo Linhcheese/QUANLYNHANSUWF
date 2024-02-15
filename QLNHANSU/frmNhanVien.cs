@@ -11,7 +11,9 @@ using System.Windows.Forms;
 using BusinessLayer;
 using DataLayer;
 using System.IO;
-
+using QLNHANSU.Reports;
+using BusinessLayer.DTO;
+using DevExpress.XtraReports.UI;
 namespace QLNHANSU
 {
     public partial class frmNhanVien : DevExpress.XtraEditors.XtraForm
@@ -26,6 +28,7 @@ namespace QLNHANSU
         CHUCVU _chucvu; 
         bool _them;
         int _id;
+        List<NHANVIEN_DTO> _lstDTOs;
         public frmNhanVien()
         {
             InitializeComponent();
@@ -93,7 +96,8 @@ namespace QLNHANSU
 
         private void btnPrintCV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            rptDanhSachNhanVien rpt= new rptDanhSachNhanVien(_lstDTOs);
+            rpt.ShowRibbonPreview();
         }
 
         private void btnDongCV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -133,6 +137,7 @@ namespace QLNHANSU
             // Load dữ liệu từ BusinessLayer.CHUCVU và hiển thị lên gridControl hoặc gridView
             gcDanhSachNV.DataSource = _nhanvien.getListFull();
             gvDanhSachNV.OptionsBehavior.Editable = false;
+            _lstDTOs= _nhanvien.getListFull(); 
         }
 
         private void _showHide(bool kt)
