@@ -32,6 +32,7 @@ namespace QLNHANSU
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhanVien));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btnTaiAnh = new DevExpress.XtraEditors.SimpleButton();
             this.cboCongTy = new System.Windows.Forms.ComboBox();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.txtDiaChi = new DevExpress.XtraEditors.TextEdit();
@@ -100,7 +101,6 @@ namespace QLNHANSU
             this.TENTG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IDCT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TENCT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnTaiAnh = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -159,9 +159,19 @@ namespace QLNHANSU
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.gcDanhSachNV);
-            this.splitContainer1.Size = new System.Drawing.Size(982, 591);
-            this.splitContainer1.SplitterDistance = 223;
+            this.splitContainer1.Size = new System.Drawing.Size(987, 591);
+            this.splitContainer1.SplitterDistance = 242;
             this.splitContainer1.TabIndex = 6;
+            // 
+            // btnTaiAnh
+            // 
+            this.btnTaiAnh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTaiAnh.ImageOptions.Image")));
+            this.btnTaiAnh.Location = new System.Drawing.Point(41, 183);
+            this.btnTaiAnh.Name = "btnTaiAnh";
+            this.btnTaiAnh.Size = new System.Drawing.Size(126, 35);
+            this.btnTaiAnh.TabIndex = 29;
+            this.btnTaiAnh.Text = "Tải ảnh";
+            this.btnTaiAnh.Click += new System.EventHandler(this.btnTaiAnh_Click);
             // 
             // cboCongTy
             // 
@@ -310,7 +320,7 @@ namespace QLNHANSU
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(982, 30);
+            this.barDockControlTop.Size = new System.Drawing.Size(987, 30);
             // 
             // barDockControlBottom
             // 
@@ -318,7 +328,7 @@ namespace QLNHANSU
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 621);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(982, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(987, 20);
             // 
             // barDockControlLeft
             // 
@@ -332,7 +342,7 @@ namespace QLNHANSU
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(982, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(987, 30);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 591);
             // 
@@ -583,7 +593,7 @@ namespace QLNHANSU
             this.gcDanhSachNV.MainView = this.gvDanhSachNV;
             this.gcDanhSachNV.MenuManager = this.barManager1;
             this.gcDanhSachNV.Name = "gcDanhSachNV";
-            this.gcDanhSachNV.Size = new System.Drawing.Size(982, 364);
+            this.gcDanhSachNV.Size = new System.Drawing.Size(987, 345);
             this.gcDanhSachNV.TabIndex = 0;
             this.gcDanhSachNV.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSachNV});
@@ -742,8 +752,6 @@ namespace QLNHANSU
             this.IDCV.FieldName = "IDCV";
             this.IDCV.MinWidth = 25;
             this.IDCV.Name = "IDCV";
-            this.IDCV.Visible = true;
-            this.IDCV.VisibleIndex = 9;
             this.IDCV.Width = 55;
             // 
             // TENCV
@@ -756,16 +764,14 @@ namespace QLNHANSU
             this.TENCV.MinWidth = 120;
             this.TENCV.Name = "TENCV";
             this.TENCV.Visible = true;
-            this.TENCV.VisibleIndex = 10;
+            this.TENCV.VisibleIndex = 9;
             this.TENCV.Width = 120;
             // 
             // IDTD
             // 
-            this.IDTD.FieldName = "IDTD";
+            this.IDTD.FieldName = "ID";
             this.IDTD.MinWidth = 25;
             this.IDTD.Name = "IDTD";
-            this.IDTD.Visible = true;
-            this.IDTD.VisibleIndex = 11;
             this.IDTD.Width = 33;
             // 
             // TENTD
@@ -778,7 +784,7 @@ namespace QLNHANSU
             this.TENTD.MinWidth = 120;
             this.TENTD.Name = "TENTD";
             this.TENTD.Visible = true;
-            this.TENTD.VisibleIndex = 12;
+            this.TENTD.VisibleIndex = 10;
             this.TENTD.Width = 120;
             // 
             // IDPB
@@ -786,8 +792,6 @@ namespace QLNHANSU
             this.IDPB.FieldName = "IDPB";
             this.IDPB.MinWidth = 25;
             this.IDPB.Name = "IDPB";
-            this.IDPB.Visible = true;
-            this.IDPB.VisibleIndex = 13;
             this.IDPB.Width = 33;
             // 
             // TENPB
@@ -800,7 +804,7 @@ namespace QLNHANSU
             this.TENPB.MinWidth = 120;
             this.TENPB.Name = "TENPB";
             this.TENPB.Visible = true;
-            this.TENPB.VisibleIndex = 14;
+            this.TENPB.VisibleIndex = 11;
             this.TENPB.Width = 120;
             // 
             // IDBP
@@ -808,8 +812,6 @@ namespace QLNHANSU
             this.IDBP.FieldName = "IDBP";
             this.IDBP.MinWidth = 25;
             this.IDBP.Name = "IDBP";
-            this.IDBP.Visible = true;
-            this.IDBP.VisibleIndex = 15;
             this.IDBP.Width = 33;
             // 
             // TENBP
@@ -822,7 +824,7 @@ namespace QLNHANSU
             this.TENBP.MinWidth = 120;
             this.TENBP.Name = "TENBP";
             this.TENBP.Visible = true;
-            this.TENBP.VisibleIndex = 16;
+            this.TENBP.VisibleIndex = 12;
             this.TENBP.Width = 120;
             // 
             // IDDT
@@ -830,8 +832,6 @@ namespace QLNHANSU
             this.IDDT.FieldName = "IDDT";
             this.IDDT.MinWidth = 25;
             this.IDDT.Name = "IDDT";
-            this.IDDT.Visible = true;
-            this.IDDT.VisibleIndex = 20;
             this.IDDT.Width = 44;
             // 
             // TENDT
@@ -844,16 +844,14 @@ namespace QLNHANSU
             this.TENDT.MinWidth = 120;
             this.TENDT.Name = "TENDT";
             this.TENDT.Visible = true;
-            this.TENDT.VisibleIndex = 17;
+            this.TENDT.VisibleIndex = 13;
             this.TENDT.Width = 120;
             // 
             // IDTG
             // 
-            this.IDTG.FieldName = "IDTG";
+            this.IDTG.FieldName = "ID";
             this.IDTG.MinWidth = 25;
             this.IDTG.Name = "IDTG";
-            this.IDTG.Visible = true;
-            this.IDTG.VisibleIndex = 18;
             this.IDTG.Width = 33;
             // 
             // TENTG
@@ -866,7 +864,7 @@ namespace QLNHANSU
             this.TENTG.MinWidth = 120;
             this.TENTG.Name = "TENTG";
             this.TENTG.Visible = true;
-            this.TENTG.VisibleIndex = 19;
+            this.TENTG.VisibleIndex = 14;
             this.TENTG.Width = 120;
             // 
             // IDCT
@@ -874,8 +872,6 @@ namespace QLNHANSU
             this.IDCT.FieldName = "IDCT";
             this.IDCT.MinWidth = 25;
             this.IDCT.Name = "IDCT";
-            this.IDCT.Visible = true;
-            this.IDCT.VisibleIndex = 21;
             this.IDCT.Width = 94;
             // 
             // TENCT
@@ -888,22 +884,14 @@ namespace QLNHANSU
             this.TENCT.MinWidth = 80;
             this.TENCT.Name = "TENCT";
             this.TENCT.Visible = true;
-            this.TENCT.VisibleIndex = 22;
+            this.TENCT.VisibleIndex = 15;
             this.TENCT.Width = 80;
-            // 
-            // btnTaiAnh
-            // 
-            this.btnTaiAnh.Location = new System.Drawing.Point(41, 183);
-            this.btnTaiAnh.Name = "btnTaiAnh";
-            this.btnTaiAnh.Size = new System.Drawing.Size(126, 29);
-            this.btnTaiAnh.TabIndex = 29;
-            this.btnTaiAnh.Text = "Tải ảnh";
             // 
             // frmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(982, 641);
+            this.ClientSize = new System.Drawing.Size(987, 641);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);

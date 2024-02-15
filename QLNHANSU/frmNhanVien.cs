@@ -42,6 +42,7 @@ namespace QLNHANSU
             _them = false;
             _showHide(true);
             loadData();
+            loadCombo();
             splitContainer1.Panel1Collapsed = true;
         }
 
@@ -52,6 +53,7 @@ namespace QLNHANSU
             _showHide(false);
             splitContainer1.Panel1Collapsed = false;
         }
+
 
         private void btnSuaCV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -129,7 +131,7 @@ namespace QLNHANSU
         private void loadData()
         {
             // Load dữ liệu từ BusinessLayer.CHUCVU và hiển thị lên gridControl hoặc gridView
-            gcDanhSachNV.DataSource = _nhanvien.getList();
+            gcDanhSachNV.DataSource = _nhanvien.getListFull();
             gvDanhSachNV.OptionsBehavior.Editable = false;
         }
 
@@ -188,7 +190,7 @@ namespace QLNHANSU
                 nv.IDDT = int.Parse(cboDanToc.SelectedValue.ToString());
                 nv.IDTG = int.Parse(cboTonGiao.SelectedValue.ToString());
                 nv.IDTD = int.Parse(cboTrinhDo.SelectedValue.ToString());
-                nv.IDCT = 1;
+                nv.IDCT = 3;
                 _nhanvien.Add(nv);
             }
             else
@@ -208,10 +210,48 @@ namespace QLNHANSU
                 nv.IDDT = int.Parse(cboDanToc.SelectedValue.ToString());
                 nv.IDTG = int.Parse(cboTonGiao.SelectedValue.ToString());
                 nv.IDTD = int.Parse(cboTrinhDo.SelectedValue.ToString());
-                nv.IDCT = 1;
+                nv.IDCT = 3;
                 _nhanvien.Update(nv);
             }
         }
+
+        //load Combo
+        void loadCombo()
+        {
+            // Load danh sách bộ phận vào ComboBox cboBoPhan
+            cboBoPhan.DataSource = _bophan.getList();
+            cboBoPhan.DisplayMember = "TENBP";
+            cboBoPhan.ValueMember = "IDBP";
+
+            // Load danh sách dân tộc vào ComboBox cboDanToc
+            cboDanToc.DataSource = _dantoc.getList();
+            cboDanToc.DisplayMember = "TenDT";
+            cboDanToc.ValueMember = "ID";
+
+            // Load danh sách tôn giáo vào ComboBox cboTonGiao
+            cboTonGiao.DataSource = _tongiao.getList();
+            cboTonGiao.DisplayMember = "TenTG";
+            cboTonGiao.ValueMember = "ID";
+
+            // Load danh sách trình độ vào ComboBox cboTrinhDo
+            cboTrinhDo.DataSource = _trinhdo.getList();
+            cboTrinhDo.DisplayMember = "TenTD";
+            cboTrinhDo.ValueMember = "IDTD";
+
+            // Load danh sách phòng ban vào ComboBox cboPhongBan
+            cboPhongBan.DataSource = _phongban.getList();
+            cboPhongBan.DisplayMember = "TenPB";
+            cboPhongBan.ValueMember = "IDPB";
+
+            // Load danh sách chức vụ vào ComboBox cboChucVu
+            cboChucVu.DataSource = _chucvu.getList();
+            cboChucVu.DisplayMember = "TenCV";
+            cboChucVu.ValueMember = "IDCV";
+
+
+        }
+
+
 
         public byte[] ImageToBase64(Image image,System.Drawing.Imaging.ImageFormat format)
         {
@@ -228,6 +268,18 @@ namespace QLNHANSU
             ms.Write(imageBytes, 0, imageBytes.Length);
             Image image = Image.FromStream(ms, true);
             return image;
+        }
+
+        private void btnTaiAnh_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Picture file(.png, .jpg)|*.png;*.jpg";
+            openFileDialog.Title = " Chọn hình ảnh";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                picHinhAnh.Image = Image.FromFile(openFileDialog.FileName);
+                picHinhAnh.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
         }
     }
 }
