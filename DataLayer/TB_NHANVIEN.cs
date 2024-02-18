@@ -50,6 +50,7 @@ namespace DataLayer
         public virtual TB_BOPHAN TB_BOPHAN { get; set; }
         public virtual TB_CHUCVU TB_CHUCVU { get; set; }
         public virtual TB_CONGTY TB_CONGTY { get; set; }
+        public virtual TB_DANTOC TB_DANTOC { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_HOPDONG> TB_HOPDONG { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -57,6 +58,7 @@ namespace DataLayer
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_NHANVIEN_PHUCAP> TB_NHANVIEN_PHUCAP { get; set; }
         public virtual TB_PHONGBAN TB_PHONGBAN { get; set; }
+        public virtual TB_TONGIAO TB_TONGIAO { get; set; }
         public virtual TB_TRINHDO TB_TRINHDO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_TANGCA> TB_TANGCA { get; set; }

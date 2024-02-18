@@ -14,7 +14,16 @@ namespace DataLayer
     
     public partial class TB_DANTOC
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TB_DANTOC()
+        {
+            this.TB_NHANVIEN = new HashSet<TB_NHANVIEN>();
+        }
+    
         public int ID { get; set; }
         public string TENDT { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TB_NHANVIEN> TB_NHANVIEN { get; set; }
     }
 }

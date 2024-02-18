@@ -102,6 +102,12 @@
     <Compile Include="frmCongTy.Designer.cs">
       <DependentUpon>frmCongTy.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHopDongLaoDong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHopDongLaoDong.Designer.cs">
+      <DependentUpon>frmHopDongLaoDong.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,12 +146,6 @@
     <Compile Include="Reports\rptDanhSachNhanVien.Designer.cs">
       <DependentUpon>rptDanhSachNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraForm1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="XtraForm1.Designer.cs">
-      <DependentUpon>XtraForm1.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="fmDanToc.resx">
       <DependentUpon>fmDanToc.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCongTy.resx">
       <DependentUpon>frmCongTy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHopDongLaoDong.resx">
+      <DependentUpon>frmHopDongLaoDong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
@@ -186,9 +189,6 @@
     </Compile>
     <EmbeddedResource Include="Reports\rptDanhSachNhanVien.resx">
       <DependentUpon>rptDanhSachNhanVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="XtraForm1.resx">
-      <DependentUpon>XtraForm1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />

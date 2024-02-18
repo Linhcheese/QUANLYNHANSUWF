@@ -169,6 +169,7 @@ namespace QLNHANSU
             this.btnHopDong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHopDong.ImageOptions.LargeImage")));
             this.btnHopDong.Name = "btnHopDong";
             this.btnHopDong.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnHopDong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHopDong_ItemClick);
             // 
             // btnKhenThuong
             // 

@@ -30,9 +30,6 @@ namespace QLNHANSU.Reports
         private void InitializeComponent()
         {
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
-            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
-            this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
-            this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.xrTable1 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -42,12 +39,17 @@ namespace QLNHANSU.Reports
             this.xrTableCell5 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell6 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell7 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell15 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell8 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell14 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell9 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell10 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell11 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell12 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell13 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
+            this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.xrTable2 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow2 = new DevExpress.XtraReports.UI.XRTableRow();
             this.lbMaNV = new DevExpress.XtraReports.UI.XRTableCell();
@@ -57,16 +59,14 @@ namespace QLNHANSU.Reports
             this.lbCCCD = new DevExpress.XtraReports.UI.XRTableCell();
             this.lbDienThoai = new DevExpress.XtraReports.UI.XRTableCell();
             this.lbEmail = new DevExpress.XtraReports.UI.XRTableCell();
+            this.lbDiaChi = new DevExpress.XtraReports.UI.XRTableCell();
             this.lbPhongBan = new DevExpress.XtraReports.UI.XRTableCell();
+            this.lbBoPhan = new DevExpress.XtraReports.UI.XRTableCell();
             this.lbChucVu = new DevExpress.XtraReports.UI.XRTableCell();
             this.lbTrinhDo = new DevExpress.XtraReports.UI.XRTableCell();
             this.lbDanToc = new DevExpress.XtraReports.UI.XRTableCell();
             this.lbTonGiao = new DevExpress.XtraReports.UI.XRTableCell();
             this.lbCongTy = new DevExpress.XtraReports.UI.XRTableCell();
-            this.lbDiaChi = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell15 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell14 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.lbBoPhan = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
@@ -80,32 +80,9 @@ namespace QLNHANSU.Reports
             this.xrLabel1});
             this.TopMargin.Name = "TopMargin";
             // 
-            // xrLabel1
-            // 
-            this.xrLabel1.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 10F);
-            this.xrLabel1.Multiline = true;
-            this.xrLabel1.Name = "xrLabel1";
-            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(987.9999F, 23F);
-            this.xrLabel1.StylePriority.UseFont = false;
-            this.xrLabel1.StylePriority.UseTextAlignment = false;
-            this.xrLabel1.Text = "DANH SÁCH NHÂN VIÊN";
-            this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
-            // 
-            // BottomMargin
-            // 
-            this.BottomMargin.Name = "BottomMargin";
-            // 
-            // Detail
-            // 
-            this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrTable2});
-            this.Detail.HeightF = 21.66666F;
-            this.Detail.Name = "Detail";
-            // 
             // xrTable1
             // 
+            this.xrTable1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.xrTable1.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
@@ -116,6 +93,7 @@ namespace QLNHANSU.Reports
             this.xrTable1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow1});
             this.xrTable1.SizeF = new System.Drawing.SizeF(988F, 21.66666F);
+            this.xrTable1.StylePriority.UseBackColor = false;
             this.xrTable1.StylePriority.UseBorders = false;
             this.xrTable1.StylePriority.UseFont = false;
             this.xrTable1.StylePriority.UseTextAlignment = false;
@@ -191,12 +169,26 @@ namespace QLNHANSU.Reports
             this.xrTableCell7.Text = "EMAIL";
             this.xrTableCell7.Weight = 1D;
             // 
+            // xrTableCell15
+            // 
+            this.xrTableCell15.Multiline = true;
+            this.xrTableCell15.Name = "xrTableCell15";
+            this.xrTableCell15.Text = "ĐỊA CHỈ";
+            this.xrTableCell15.Weight = 1D;
+            // 
             // xrTableCell8
             // 
             this.xrTableCell8.Multiline = true;
             this.xrTableCell8.Name = "xrTableCell8";
             this.xrTableCell8.Text = "PHÒNG BAN";
             this.xrTableCell8.Weight = 1D;
+            // 
+            // xrTableCell14
+            // 
+            this.xrTableCell14.Multiline = true;
+            this.xrTableCell14.Name = "xrTableCell14";
+            this.xrTableCell14.Text = "BỘ PHẬN";
+            this.xrTableCell14.Weight = 1D;
             // 
             // xrTableCell9
             // 
@@ -232,6 +224,30 @@ namespace QLNHANSU.Reports
             this.xrTableCell13.Name = "xrTableCell13";
             this.xrTableCell13.Text = "CÔNG TY";
             this.xrTableCell13.Weight = 1D;
+            // 
+            // xrLabel1
+            // 
+            this.xrLabel1.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 10F);
+            this.xrLabel1.Multiline = true;
+            this.xrLabel1.Name = "xrLabel1";
+            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(987.9999F, 23F);
+            this.xrLabel1.StylePriority.UseFont = false;
+            this.xrLabel1.StylePriority.UseTextAlignment = false;
+            this.xrLabel1.Text = "DANH SÁCH NHÂN VIÊN";
+            this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            // 
+            // BottomMargin
+            // 
+            this.BottomMargin.Name = "BottomMargin";
+            // 
+            // Detail
+            // 
+            this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrTable2});
+            this.Detail.HeightF = 21.66666F;
+            this.Detail.Name = "Detail";
             // 
             // xrTable2
             // 
@@ -326,12 +342,26 @@ namespace QLNHANSU.Reports
             this.lbEmail.Text = "EMAIL";
             this.lbEmail.Weight = 1D;
             // 
+            // lbDiaChi
+            // 
+            this.lbDiaChi.Multiline = true;
+            this.lbDiaChi.Name = "lbDiaChi";
+            this.lbDiaChi.Text = "ĐỊA CHỈ";
+            this.lbDiaChi.Weight = 1D;
+            // 
             // lbPhongBan
             // 
             this.lbPhongBan.Multiline = true;
             this.lbPhongBan.Name = "lbPhongBan";
             this.lbPhongBan.Text = "PHÒNG BAN";
             this.lbPhongBan.Weight = 1D;
+            // 
+            // lbBoPhan
+            // 
+            this.lbBoPhan.Multiline = true;
+            this.lbBoPhan.Name = "lbBoPhan";
+            this.lbBoPhan.Text = "BỘ PHẬN";
+            this.lbBoPhan.Weight = 1D;
             // 
             // lbChucVu
             // 
@@ -367,34 +397,6 @@ namespace QLNHANSU.Reports
             this.lbCongTy.Name = "lbCongTy";
             this.lbCongTy.Text = "CÔNG TY";
             this.lbCongTy.Weight = 1D;
-            // 
-            // lbDiaChi
-            // 
-            this.lbDiaChi.Multiline = true;
-            this.lbDiaChi.Name = "lbDiaChi";
-            this.lbDiaChi.Text = "ĐỊA CHỈ";
-            this.lbDiaChi.Weight = 1D;
-            // 
-            // xrTableCell15
-            // 
-            this.xrTableCell15.Multiline = true;
-            this.xrTableCell15.Name = "xrTableCell15";
-            this.xrTableCell15.Text = "ĐỊA CHỈ";
-            this.xrTableCell15.Weight = 1D;
-            // 
-            // xrTableCell14
-            // 
-            this.xrTableCell14.Multiline = true;
-            this.xrTableCell14.Name = "xrTableCell14";
-            this.xrTableCell14.Text = "BỘ PHẬN";
-            this.xrTableCell14.Weight = 1D;
-            // 
-            // lbBoPhan
-            // 
-            this.lbBoPhan.Multiline = true;
-            this.lbBoPhan.Name = "lbBoPhan";
-            this.lbBoPhan.Text = "BỘ PHẬN";
-            this.lbBoPhan.Weight = 1D;
             // 
             // xrLabel2
             // 
