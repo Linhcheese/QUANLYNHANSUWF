@@ -56,21 +56,25 @@ namespace QLNHANSU
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.txtSDT = new DevExpress.XtraEditors.TextEdit();
+            this.slkNhanVien = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.spHeSoLuong = new DevExpress.XtraEditors.SpinEdit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.spLanKy = new DevExpress.XtraEditors.SpinEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.dtNgayKY = new System.Windows.Forms.DateTimePicker();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.dtNgayKetThuc = new System.Windows.Forms.DateTimePicker();
+            this.txtHD = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.dtNgayBatDau = new System.Windows.Forms.DateTimePicker();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.dtNgayKetThuc = new System.Windows.Forms.DateTimePicker();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.dtNgayKY = new System.Windows.Forms.DateTimePicker();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.spLanKy = new DevExpress.XtraEditors.SpinEdit();
-            this.spHeSoLuong = new DevExpress.XtraEditors.SpinEdit();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.searchLookUpEdit1 = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.txtNoiDung = new DevExpress.XtraRichEdit.RichEditControl();
+            this.coMANV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coHOTEN = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSachHD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSachHD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -78,11 +82,11 @@ namespace QLNHANSU
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSDT.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spLanKy.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spHeSoLuong.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slkNhanVien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spHeSoLuong.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spLanKy.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHD.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gvDanhSachHD
@@ -98,6 +102,7 @@ namespace QLNHANSU
             this.HOTEN});
             this.gvDanhSachHD.GridControl = this.gcDanhSachHD;
             this.gvDanhSachHD.Name = "gvDanhSachHD";
+            this.gvDanhSachHD.Click += new System.EventHandler(this.gvDanhSachHD_Click);
             // 
             // SOHD
             // 
@@ -208,7 +213,7 @@ namespace QLNHANSU
             this.gcDanhSachHD.MainView = this.gvDanhSachHD;
             this.gcDanhSachHD.MenuManager = this.barManager1;
             this.gcDanhSachHD.Name = "gcDanhSachHD";
-            this.gcDanhSachHD.Size = new System.Drawing.Size(1181, 430);
+            this.gcDanhSachHD.Size = new System.Drawing.Size(1181, 306);
             this.gcDanhSachHD.TabIndex = 0;
             this.gcDanhSachHD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSachHD});
@@ -232,7 +237,7 @@ namespace QLNHANSU
             this.btnDongNV,
             this.btnPrintNV});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 7;
+            this.barManager1.MaxItemId = 11;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar2
@@ -369,7 +374,9 @@ namespace QLNHANSU
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.searchLookUpEdit1);
+            this.splitContainer1.Panel1.Controls.Add(this.txtNoiDung);
+            this.splitContainer1.Panel1.Controls.Add(this.labelControl8);
+            this.splitContainer1.Panel1.Controls.Add(this.slkNhanVien);
             this.splitContainer1.Panel1.Controls.Add(this.labelControl7);
             this.splitContainer1.Panel1.Controls.Add(this.spHeSoLuong);
             this.splitContainer1.Panel1.Controls.Add(this.labelControl6);
@@ -379,7 +386,7 @@ namespace QLNHANSU
             this.splitContainer1.Panel1.Controls.Add(this.dtNgayKY);
             this.splitContainer1.Panel1.Controls.Add(this.labelControl1);
             this.splitContainer1.Panel1.Controls.Add(this.dtNgayKetThuc);
-            this.splitContainer1.Panel1.Controls.Add(this.txtSDT);
+            this.splitContainer1.Panel1.Controls.Add(this.txtHD);
             this.splitContainer1.Panel1.Controls.Add(this.labelControl4);
             this.splitContainer1.Panel1.Controls.Add(this.labelControl2);
             this.splitContainer1.Panel1.Controls.Add(this.dtNgayBatDau);
@@ -388,110 +395,39 @@ namespace QLNHANSU
             // 
             this.splitContainer1.Panel2.Controls.Add(this.gcDanhSachHD);
             this.splitContainer1.Size = new System.Drawing.Size(1181, 732);
-            this.splitContainer1.SplitterDistance = 298;
+            this.splitContainer1.SplitterDistance = 422;
             this.splitContainer1.TabIndex = 7;
             // 
-            // txtSDT
+            // slkNhanVien
             // 
-            this.txtSDT.Location = new System.Drawing.Point(137, 32);
-            this.txtSDT.MenuManager = this.barManager1;
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(204, 22);
-            this.txtSDT.TabIndex = 7;
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(27, 36);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(41, 18);
-            this.labelControl4.TabIndex = 6;
-            this.labelControl4.Text = "Số HĐ";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(27, 71);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(90, 18);
-            this.labelControl2.TabIndex = 4;
-            this.labelControl2.Text = "Ngày bắt đầu";
-            // 
-            // dtNgayBatDau
-            // 
-            this.dtNgayBatDau.CustomFormat = "dd/MM/yyyy";
-            this.dtNgayBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtNgayBatDau.Location = new System.Drawing.Point(137, 71);
-            this.dtNgayBatDau.Name = "dtNgayBatDau";
-            this.dtNgayBatDau.Size = new System.Drawing.Size(204, 23);
-            this.dtNgayBatDau.TabIndex = 3;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(27, 116);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(92, 18);
-            this.labelControl1.TabIndex = 9;
-            this.labelControl1.Text = "Ngày kết thúc";
-            // 
-            // dtNgayKetThuc
-            // 
-            this.dtNgayKetThuc.CustomFormat = "dd/MM/yyyy";
-            this.dtNgayKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtNgayKetThuc.Location = new System.Drawing.Point(137, 116);
-            this.dtNgayKetThuc.Name = "dtNgayKetThuc";
-            this.dtNgayKetThuc.Size = new System.Drawing.Size(204, 23);
-            this.dtNgayKetThuc.TabIndex = 8;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(27, 163);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(54, 18);
-            this.labelControl3.TabIndex = 11;
-            this.labelControl3.Text = "Ngày ký";
-            // 
-            // dtNgayKY
-            // 
-            this.dtNgayKY.CustomFormat = "dd/MM/yyyy";
-            this.dtNgayKY.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtNgayKY.Location = new System.Drawing.Point(137, 163);
-            this.dtNgayKY.Name = "dtNgayKY";
-            this.dtNgayKY.Size = new System.Drawing.Size(204, 23);
-            this.dtNgayKY.TabIndex = 10;
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(434, 33);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(59, 18);
-            this.labelControl5.TabIndex = 12;
-            this.labelControl5.Text = "Số lần ký";
-            // 
-            // spLanKy
-            // 
-            this.spLanKy.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.spLanKy.Location = new System.Drawing.Point(521, 30);
-            this.spLanKy.MenuManager = this.barManager1;
-            this.spLanKy.Name = "spLanKy";
-            this.spLanKy.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.slkNhanVien.Location = new System.Drawing.Point(521, 94);
+            this.slkNhanVien.MenuManager = this.barManager1;
+            this.slkNhanVien.Name = "slkNhanVien";
+            this.slkNhanVien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spLanKy.Properties.IsFloatValue = false;
-            this.spLanKy.Properties.Mask.EditMask = "N00";
-            this.spLanKy.Size = new System.Drawing.Size(108, 24);
-            this.spLanKy.TabIndex = 13;
+            this.slkNhanVien.Properties.PopupView = this.searchLookUpEdit1View;
+            this.slkNhanVien.Size = new System.Drawing.Size(249, 22);
+            this.slkNhanVien.TabIndex = 17;
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.coMANV,
+            this.coHOTEN});
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Location = new System.Drawing.Point(434, 92);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(73, 18);
+            this.labelControl7.TabIndex = 16;
+            this.labelControl7.Text = "Nhân nhiên";
             // 
             // spHeSoLuong
             // 
@@ -500,7 +436,7 @@ namespace QLNHANSU
             0,
             0,
             0});
-            this.spHeSoLuong.Location = new System.Drawing.Point(521, 72);
+            this.spHeSoLuong.Location = new System.Drawing.Point(521, 48);
             this.spHeSoLuong.MenuManager = this.barManager1;
             this.spHeSoLuong.Name = "spHeSoLuong";
             this.spHeSoLuong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -512,39 +448,150 @@ namespace QLNHANSU
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(434, 75);
+            this.labelControl6.Location = new System.Drawing.Point(434, 51);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(78, 18);
             this.labelControl6.TabIndex = 14;
             this.labelControl6.Text = "Hệ số lương";
             // 
-            // labelControl7
+            // spLanKy
             // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(434, 116);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(73, 18);
-            this.labelControl7.TabIndex = 16;
-            this.labelControl7.Text = "Nhân nhiên";
-            // 
-            // searchLookUpEdit1
-            // 
-            this.searchLookUpEdit1.Location = new System.Drawing.Point(521, 118);
-            this.searchLookUpEdit1.MenuManager = this.barManager1;
-            this.searchLookUpEdit1.Name = "searchLookUpEdit1";
-            this.searchLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.spLanKy.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spLanKy.Location = new System.Drawing.Point(521, 6);
+            this.spLanKy.MenuManager = this.barManager1;
+            this.spLanKy.Name = "spLanKy";
+            this.spLanKy.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.searchLookUpEdit1.Properties.PopupView = this.searchLookUpEdit1View;
-            this.searchLookUpEdit1.Size = new System.Drawing.Size(249, 22);
-            this.searchLookUpEdit1.TabIndex = 17;
+            this.spLanKy.Properties.IsFloatValue = false;
+            this.spLanKy.Properties.Mask.EditMask = "N00";
+            this.spLanKy.Size = new System.Drawing.Size(108, 24);
+            this.spLanKy.TabIndex = 13;
             // 
-            // searchLookUpEdit1View
+            // labelControl5
             // 
-            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
-            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Location = new System.Drawing.Point(434, 9);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(59, 18);
+            this.labelControl5.TabIndex = 12;
+            this.labelControl5.Text = "Số lần ký";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Location = new System.Drawing.Point(27, 139);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(54, 18);
+            this.labelControl3.TabIndex = 11;
+            this.labelControl3.Text = "Ngày ký";
+            // 
+            // dtNgayKY
+            // 
+            this.dtNgayKY.CustomFormat = "dd/MM/yyyy";
+            this.dtNgayKY.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtNgayKY.Location = new System.Drawing.Point(137, 139);
+            this.dtNgayKY.Name = "dtNgayKY";
+            this.dtNgayKY.Size = new System.Drawing.Size(204, 23);
+            this.dtNgayKY.TabIndex = 10;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(27, 92);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(92, 18);
+            this.labelControl1.TabIndex = 9;
+            this.labelControl1.Text = "Ngày kết thúc";
+            // 
+            // dtNgayKetThuc
+            // 
+            this.dtNgayKetThuc.CustomFormat = "dd/MM/yyyy";
+            this.dtNgayKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtNgayKetThuc.Location = new System.Drawing.Point(137, 92);
+            this.dtNgayKetThuc.Name = "dtNgayKetThuc";
+            this.dtNgayKetThuc.Size = new System.Drawing.Size(204, 23);
+            this.dtNgayKetThuc.TabIndex = 8;
+            // 
+            // txtHD
+            // 
+            this.txtHD.Location = new System.Drawing.Point(137, 8);
+            this.txtHD.MenuManager = this.barManager1;
+            this.txtHD.Name = "txtHD";
+            this.txtHD.Size = new System.Drawing.Size(204, 22);
+            this.txtHD.TabIndex = 7;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(27, 12);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(41, 18);
+            this.labelControl4.TabIndex = 6;
+            this.labelControl4.Text = "Số HĐ";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(27, 47);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(90, 18);
+            this.labelControl2.TabIndex = 4;
+            this.labelControl2.Text = "Ngày bắt đầu";
+            // 
+            // dtNgayBatDau
+            // 
+            this.dtNgayBatDau.CustomFormat = "dd/MM/yyyy";
+            this.dtNgayBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtNgayBatDau.Location = new System.Drawing.Point(137, 47);
+            this.dtNgayBatDau.Name = "dtNgayBatDau";
+            this.dtNgayBatDau.Size = new System.Drawing.Size(204, 23);
+            this.dtNgayBatDau.TabIndex = 3;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Location = new System.Drawing.Point(27, 179);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(57, 18);
+            this.labelControl8.TabIndex = 18;
+            this.labelControl8.Text = "Nội dung";
+            // 
+            // txtNoiDung
+            // 
+            this.txtNoiDung.Location = new System.Drawing.Point(137, 179);
+            this.txtNoiDung.MenuManager = this.barManager1;
+            this.txtNoiDung.Name = "txtNoiDung";
+            this.txtNoiDung.Options.Printing.PrintPreviewFormKind = DevExpress.XtraRichEdit.PrintPreviewFormKind.Bars;
+            this.txtNoiDung.Size = new System.Drawing.Size(919, 240);
+            this.txtNoiDung.TabIndex = 19;
+            // 
+            // coMANV
+            // 
+            this.coMANV.Caption = "Mã nv";
+            this.coMANV.FieldName = "MANV";
+            this.coMANV.MaxWidth = 100;
+            this.coMANV.Name = "coMANV";
+            this.coMANV.Visible = true;
+            this.coMANV.VisibleIndex = 0;
+            // 
+            // coHOTEN
+            // 
+            this.coHOTEN.Caption = "Họ tên";
+            this.coHOTEN.FieldName = "HOTEN";
+            this.coHOTEN.MaxWidth = 150;
+            this.coHOTEN.Name = "coHOTEN";
+            this.coHOTEN.Visible = true;
+            this.coHOTEN.VisibleIndex = 1;
             // 
             // frmHopDongLaoDong
             // 
@@ -567,11 +614,11 @@ namespace QLNHANSU
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtSDT.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spLanKy.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spHeSoLuong.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slkNhanVien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spHeSoLuong.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spLanKy.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHD.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -604,7 +651,7 @@ namespace QLNHANSU
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private DevExpress.XtraEditors.TextEdit txtSDT;
+        private DevExpress.XtraEditors.TextEdit txtHD;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private System.Windows.Forms.DateTimePicker dtNgayBatDau;
@@ -616,8 +663,12 @@ namespace QLNHANSU
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private System.Windows.Forms.DateTimePicker dtNgayKY;
-        private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit1;
+        private DevExpress.XtraEditors.SearchLookUpEdit slkNhanVien;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
         private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraRichEdit.RichEditControl txtNoiDung;
+        private DevExpress.XtraGrid.Columns.GridColumn coMANV;
+        private DevExpress.XtraGrid.Columns.GridColumn coHOTEN;
     }
 }

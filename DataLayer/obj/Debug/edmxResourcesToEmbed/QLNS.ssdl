@@ -61,7 +61,6 @@
     <Key>
       <PropertyRef Name="SOHD" />
     </Key>
-    <Property Name="SOHD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NGAYBATDAU" Type="datetime" />
     <Property Name="NGAYKETTHUC" Type="datetime" />
     <Property Name="NGAYKY" Type="datetime" />
@@ -70,6 +69,14 @@
     <Property Name="THOIHAN" Type="nvarchar" MaxLength="50" />
     <Property Name="HESOLUONG" Type="float" />
     <Property Name="MANV" Type="int" />
+    <Property Name="SOHD" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MACT" Type="int" />
+    <Property Name="DELETED_BY" Type="int" />
+    <Property Name="DELETED_DATE" Type="datetime" />
+    <Property Name="UPDATED_BY" Type="int" />
+    <Property Name="UPDATED_DATE" Type="datetime" />
+    <Property Name="CREATED_BY" Type="int" />
+    <Property Name="CREATED_DATE" Type="datetime" />
   </EntityType>
   <EntityType Name="TB_KHENTHUONG_KYLUAT">
     <Key>
@@ -219,6 +226,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_TB_HOPDONG_TB_CONGTY">
+    <End Role="TB_CONGTY" Type="Self.TB_CONGTY" Multiplicity="0..1" />
+    <End Role="TB_HOPDONG" Type="Self.TB_HOPDONG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_CONGTY">
+        <PropertyRef Name="IDCT" />
+      </Principal>
+      <Dependent Role="TB_HOPDONG">
+        <PropertyRef Name="MACT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_TB_HOPDONG_TB_NHANVIEN">
     <End Role="TB_NHANVIEN" Type="Self.TB_NHANVIEN" Multiplicity="0..1" />
     <End Role="TB_HOPDONG" Type="Self.TB_HOPDONG" Multiplicity="*" />
@@ -303,6 +322,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_TB_NHANVIEN_TB_DANTOC">
+    <End Role="TB_DANTOC" Type="Self.TB_DANTOC" Multiplicity="0..1" />
+    <End Role="TB_NHANVIEN" Type="Self.TB_NHANVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_DANTOC">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_NHANVIEN">
+        <PropertyRef Name="IDDT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_TB_NHANVIEN_TB_PHONGBAN">
     <End Role="TB_PHONGBAN" Type="Self.TB_PHONGBAN" Multiplicity="0..1" />
     <End Role="TB_NHANVIEN" Type="Self.TB_NHANVIEN" Multiplicity="*" />
@@ -312,6 +343,18 @@
       </Principal>
       <Dependent Role="TB_NHANVIEN">
         <PropertyRef Name="IDPB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_NHANVIEN_TB_TONGIAO">
+    <End Role="TB_TONGIAO" Type="Self.TB_TONGIAO" Multiplicity="0..1" />
+    <End Role="TB_NHANVIEN" Type="Self.TB_NHANVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_TONGIAO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TB_NHANVIEN">
+        <PropertyRef Name="IDTG" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -394,6 +437,10 @@
       <End Role="TB_NHANVIEN" EntitySet="TB_NHANVIEN" />
       <End Role="TB_BAOHIEM" EntitySet="TB_BAOHIEM" />
     </AssociationSet>
+    <AssociationSet Name="FK_TB_HOPDONG_TB_CONGTY" Association="Self.FK_TB_HOPDONG_TB_CONGTY">
+      <End Role="TB_CONGTY" EntitySet="TB_CONGTY" />
+      <End Role="TB_HOPDONG" EntitySet="TB_HOPDONG" />
+    </AssociationSet>
     <AssociationSet Name="FK_TB_HOPDONG_TB_NHANVIEN" Association="Self.FK_TB_HOPDONG_TB_NHANVIEN">
       <End Role="TB_NHANVIEN" EntitySet="TB_NHANVIEN" />
       <End Role="TB_HOPDONG" EntitySet="TB_HOPDONG" />
@@ -422,8 +469,16 @@
       <End Role="TB_CONGTY" EntitySet="TB_CONGTY" />
       <End Role="TB_NHANVIEN" EntitySet="TB_NHANVIEN" />
     </AssociationSet>
+    <AssociationSet Name="FK_TB_NHANVIEN_TB_DANTOC" Association="Self.FK_TB_NHANVIEN_TB_DANTOC">
+      <End Role="TB_DANTOC" EntitySet="TB_DANTOC" />
+      <End Role="TB_NHANVIEN" EntitySet="TB_NHANVIEN" />
+    </AssociationSet>
     <AssociationSet Name="FK_TB_NHANVIEN_TB_PHONGBAN" Association="Self.FK_TB_NHANVIEN_TB_PHONGBAN">
       <End Role="TB_PHONGBAN" EntitySet="TB_PHONGBAN" />
+      <End Role="TB_NHANVIEN" EntitySet="TB_NHANVIEN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_NHANVIEN_TB_TONGIAO" Association="Self.FK_TB_NHANVIEN_TB_TONGIAO">
+      <End Role="TB_TONGIAO" EntitySet="TB_TONGIAO" />
       <End Role="TB_NHANVIEN" EntitySet="TB_NHANVIEN" />
     </AssociationSet>
     <AssociationSet Name="FK_TB_NHANVIEN_TB_TRINHDO" Association="Self.FK_TB_NHANVIEN_TB_TRINHDO">
