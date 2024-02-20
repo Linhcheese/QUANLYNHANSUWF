@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BusinessLayer.DTO;
 using DataLayer;
 namespace BusinessLayer
 {
@@ -18,6 +19,37 @@ namespace BusinessLayer
         public List<TB_HOPDONG> getList()
         {
             return db.TB_HOPDONG.ToList();
+        }
+        public List<HOPDONG_DTO> getListFull()
+        {
+            List<TB_HOPDONG> lstHD = db.TB_HOPDONG.ToList();
+            List<HOPDONG_DTO> lstDTO = new List<HOPDONG_DTO>();
+            HOPDONG_DTO hd;
+            foreach( var item in lstHD)
+            {
+                hd = new HOPDONG_DTO();
+                hd.SOHD = item.SOHD;
+                hd.NGAYBATDAU = item.NGAYBATDAU;
+                hd.NGAYKETTHUC = item.NGAYKETTHUC;
+                hd.NGAYKY = item.NGAYKY;
+                hd.LANKY = item.LANKY;
+                hd.HESOLUONG = item.HESOLUONG;
+                hd.NOIDUNG = item.NOIDUNG;
+                hd.MANV = item.MANV;
+                hd.THOIHAN = item.THOIHAN;
+                var nv= db.TB_NHANVIEN.FirstOrDefault(x => x.MANV == item.MANV);
+                hd.HOTEN = nv.HOTEN;
+                hd.CREATED_BY = item.CREATED_BY;
+                hd.CREATED_DATE = item.CREATED_DATE;
+                hd.DELETED_BY = item.DELETED_BY;
+                hd.DELETED_DATE = item.DELETED_DATE;
+                hd.UPDATED_BY = item.UPDATED_BY;
+                hd.UPDATED_DATE = item.UPDATED_DATE;
+                hd.MACT = item.MACT;
+                lstDTO.Add(hd);
+
+            }
+            return lstDTO;
         }
 
         public TB_HOPDONG Add(TB_HOPDONG hopdong)
@@ -77,7 +109,7 @@ namespace BusinessLayer
                 {
                     hd.DELETED_BY = manv;
                     hd.DELETED_DATE = DateTime.Now;
-                 //   db.TB_HOPDONG.Remove(hd);
+                    db.TB_HOPDONG.Remove(hd);
                     db.SaveChanges();
                 }
             }
@@ -85,6 +117,16 @@ namespace BusinessLayer
             {
                 throw new Exception("Lỗi: " + ex.Message);
             }
+        }
+        public string MaxSoHopDong()
+        {
+            var _hd = db.TB_HOPDONG.OrderByDescending(x => x.CREATED_DATE).FirstOrDefault();
+            if (_hd != null)
+            {
+                return _hd.SOHD;
+            }
+            else
+                return "00000";
         }
     }
 }

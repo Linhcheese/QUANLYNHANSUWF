@@ -37,6 +37,7 @@ namespace QLNHANSU
             this.NGAYKETTHUC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.THOIHAN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HESOLUONG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NGAYKY = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LANKY = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MANV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HOTEN = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -56,8 +57,14 @@ namespace QLNHANSU
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.cboThoiHan = new System.Windows.Forms.ComboBox();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.txtNoiDung = new DevExpress.XtraRichEdit.RichEditControl();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.slkNhanVien = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.coMANV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coHOTEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.spHeSoLuong = new DevExpress.XtraEditors.SpinEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
@@ -71,10 +78,6 @@ namespace QLNHANSU
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.dtNgayBatDau = new System.Windows.Forms.DateTimePicker();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.txtNoiDung = new DevExpress.XtraRichEdit.RichEditControl();
-            this.coMANV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coHOTEN = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSachHD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSachHD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -97,6 +100,7 @@ namespace QLNHANSU
             this.NGAYKETTHUC,
             this.THOIHAN,
             this.HESOLUONG,
+            this.NGAYKY,
             this.LANKY,
             this.MANV,
             this.HOTEN});
@@ -169,6 +173,19 @@ namespace QLNHANSU
             this.HESOLUONG.VisibleIndex = 4;
             this.HESOLUONG.Width = 120;
             // 
+            // NGAYKY
+            // 
+            this.NGAYKY.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.NGAYKY.AppearanceHeader.Options.UseFont = true;
+            this.NGAYKY.Caption = "Ngày ký";
+            this.NGAYKY.FieldName = "NGAYKY";
+            this.NGAYKY.MaxWidth = 200;
+            this.NGAYKY.MinWidth = 200;
+            this.NGAYKY.Name = "NGAYKY";
+            this.NGAYKY.Visible = true;
+            this.NGAYKY.VisibleIndex = 5;
+            this.NGAYKY.Width = 200;
+            // 
             // LANKY
             // 
             this.LANKY.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
@@ -179,7 +196,7 @@ namespace QLNHANSU
             this.LANKY.MinWidth = 120;
             this.LANKY.Name = "LANKY";
             this.LANKY.Visible = true;
-            this.LANKY.VisibleIndex = 5;
+            this.LANKY.VisibleIndex = 6;
             this.LANKY.Width = 120;
             // 
             // MANV
@@ -203,7 +220,7 @@ namespace QLNHANSU
             this.HOTEN.MinWidth = 150;
             this.HOTEN.Name = "HOTEN";
             this.HOTEN.Visible = true;
-            this.HOTEN.VisibleIndex = 6;
+            this.HOTEN.VisibleIndex = 7;
             this.HOTEN.Width = 150;
             // 
             // gcDanhSachHD
@@ -213,7 +230,7 @@ namespace QLNHANSU
             this.gcDanhSachHD.MainView = this.gvDanhSachHD;
             this.gcDanhSachHD.MenuManager = this.barManager1;
             this.gcDanhSachHD.Name = "gcDanhSachHD";
-            this.gcDanhSachHD.Size = new System.Drawing.Size(1181, 306);
+            this.gcDanhSachHD.Size = new System.Drawing.Size(1181, 291);
             this.gcDanhSachHD.TabIndex = 0;
             this.gcDanhSachHD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSachHD});
@@ -374,6 +391,8 @@ namespace QLNHANSU
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.cboThoiHan);
+            this.splitContainer1.Panel1.Controls.Add(this.labelControl9);
             this.splitContainer1.Panel1.Controls.Add(this.txtNoiDung);
             this.splitContainer1.Panel1.Controls.Add(this.labelControl8);
             this.splitContainer1.Panel1.Controls.Add(this.slkNhanVien);
@@ -395,8 +414,50 @@ namespace QLNHANSU
             // 
             this.splitContainer1.Panel2.Controls.Add(this.gcDanhSachHD);
             this.splitContainer1.Size = new System.Drawing.Size(1181, 732);
-            this.splitContainer1.SplitterDistance = 422;
+            this.splitContainer1.SplitterDistance = 437;
             this.splitContainer1.TabIndex = 7;
+            // 
+            // cboThoiHan
+            // 
+            this.cboThoiHan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboThoiHan.FormattingEnabled = true;
+            this.cboThoiHan.Items.AddRange(new object[] {
+            "3 tháng",
+            "6 tháng",
+            "12 tháng"});
+            this.cboThoiHan.Location = new System.Drawing.Point(521, 138);
+            this.cboThoiHan.Name = "cboThoiHan";
+            this.cboThoiHan.Size = new System.Drawing.Size(121, 24);
+            this.cboThoiHan.TabIndex = 21;
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Location = new System.Drawing.Point(434, 139);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(57, 18);
+            this.labelControl9.TabIndex = 20;
+            this.labelControl9.Text = "Thời hạn";
+            // 
+            // txtNoiDung
+            // 
+            this.txtNoiDung.Location = new System.Drawing.Point(137, 179);
+            this.txtNoiDung.MenuManager = this.barManager1;
+            this.txtNoiDung.Name = "txtNoiDung";
+            this.txtNoiDung.Options.Printing.PrintPreviewFormKind = DevExpress.XtraRichEdit.PrintPreviewFormKind.Bars;
+            this.txtNoiDung.Size = new System.Drawing.Size(919, 240);
+            this.txtNoiDung.TabIndex = 19;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Location = new System.Drawing.Point(27, 179);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(57, 18);
+            this.labelControl8.TabIndex = 18;
+            this.labelControl8.Text = "Nội dung";
             // 
             // slkNhanVien
             // 
@@ -418,6 +479,24 @@ namespace QLNHANSU
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // coMANV
+            // 
+            this.coMANV.Caption = "Mã nv";
+            this.coMANV.FieldName = "MANV";
+            this.coMANV.MaxWidth = 100;
+            this.coMANV.Name = "coMANV";
+            this.coMANV.Visible = true;
+            this.coMANV.VisibleIndex = 0;
+            // 
+            // coHOTEN
+            // 
+            this.coHOTEN.Caption = "Họ tên";
+            this.coHOTEN.FieldName = "HOTEN";
+            this.coHOTEN.MaxWidth = 150;
+            this.coHOTEN.Name = "coHOTEN";
+            this.coHOTEN.Visible = true;
+            this.coHOTEN.VisibleIndex = 1;
             // 
             // labelControl7
             // 
@@ -524,6 +603,7 @@ namespace QLNHANSU
             this.txtHD.Location = new System.Drawing.Point(137, 8);
             this.txtHD.MenuManager = this.barManager1;
             this.txtHD.Name = "txtHD";
+            this.txtHD.Properties.ReadOnly = true;
             this.txtHD.Size = new System.Drawing.Size(204, 22);
             this.txtHD.TabIndex = 7;
             // 
@@ -555,43 +635,6 @@ namespace QLNHANSU
             this.dtNgayBatDau.Name = "dtNgayBatDau";
             this.dtNgayBatDau.Size = new System.Drawing.Size(204, 23);
             this.dtNgayBatDau.TabIndex = 3;
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(27, 179);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(57, 18);
-            this.labelControl8.TabIndex = 18;
-            this.labelControl8.Text = "Nội dung";
-            // 
-            // txtNoiDung
-            // 
-            this.txtNoiDung.Location = new System.Drawing.Point(137, 179);
-            this.txtNoiDung.MenuManager = this.barManager1;
-            this.txtNoiDung.Name = "txtNoiDung";
-            this.txtNoiDung.Options.Printing.PrintPreviewFormKind = DevExpress.XtraRichEdit.PrintPreviewFormKind.Bars;
-            this.txtNoiDung.Size = new System.Drawing.Size(919, 240);
-            this.txtNoiDung.TabIndex = 19;
-            // 
-            // coMANV
-            // 
-            this.coMANV.Caption = "Mã nv";
-            this.coMANV.FieldName = "MANV";
-            this.coMANV.MaxWidth = 100;
-            this.coMANV.Name = "coMANV";
-            this.coMANV.Visible = true;
-            this.coMANV.VisibleIndex = 0;
-            // 
-            // coHOTEN
-            // 
-            this.coHOTEN.Caption = "Họ tên";
-            this.coHOTEN.FieldName = "HOTEN";
-            this.coHOTEN.MaxWidth = 150;
-            this.coHOTEN.Name = "coHOTEN";
-            this.coHOTEN.Visible = true;
-            this.coHOTEN.VisibleIndex = 1;
             // 
             // frmHopDongLaoDong
             // 
@@ -670,5 +713,8 @@ namespace QLNHANSU
         private DevExpress.XtraRichEdit.RichEditControl txtNoiDung;
         private DevExpress.XtraGrid.Columns.GridColumn coMANV;
         private DevExpress.XtraGrid.Columns.GridColumn coHOTEN;
+        private System.Windows.Forms.ComboBox cboThoiHan;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraGrid.Columns.GridColumn NGAYKY;
     }
 }
