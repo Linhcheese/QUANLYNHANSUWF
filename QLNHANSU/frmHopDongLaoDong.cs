@@ -10,7 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLayer;
 using DataLayer;
-
+using QLNHANSU.Reports;
+using DevExpress.XtraReports.UI;
+using BusinessLayer.DTO;
 
 namespace QLNHANSU
 {
@@ -23,7 +25,8 @@ namespace QLNHANSU
         bool _them;
         string _sohd;
         string _maxsohd;
-        
+        List<HOPDONG_DTO> _lst_hd_dto;
+
         public frmHopDongLaoDong()
         {
             InitializeComponent();
@@ -96,8 +99,10 @@ namespace QLNHANSU
 
         private void btnPrintNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-          
-           // rpt.ShowRibbonPreview();
+            _lst_hd_dto = _hdld.getItemFull(_sohd);
+            rptHopDongLaoDong rpt = new rptHopDongLaoDong(_lst_hd_dto);
+            rpt.ShowPreviewDialog();
+
         }
 
         private void btnDongNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -179,8 +184,8 @@ namespace QLNHANSU
                 hd.MANV = int.Parse(slkNhanVien.EditValue.ToString());
                 hd.NOIDUNG = txtNoiDung.RtfText;
                 hd.MACT = 3;
-                hd.CREATED_BY = 1;
-                hd.CREATED_DATE = DateTime.Now;
+                hd.UPDATED_BY = 1;
+                hd.UPDATED_DATE = DateTime.Now;
                 _hdld.Update(hd);
             }
         }
@@ -202,6 +207,7 @@ namespace QLNHANSU
                spLanKy.Text=hd.LANKY.ToString();
               slkNhanVien.EditValue=hd.MANV;
                 txtNoiDung.RtfText=hd.NOIDUNG;
+                _lst_hd_dto = _hdld.getItemFull(_sohd);
 
             }
         }

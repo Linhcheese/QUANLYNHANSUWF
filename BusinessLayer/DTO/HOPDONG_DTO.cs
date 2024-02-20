@@ -9,11 +9,16 @@ namespace BusinessLayer.DTO
 {
     public class HOPDONG_DTO
     {
-        public Nullable<System.DateTime> NGAYBATDAU { get; set; }
-        public Nullable<System.DateTime> NGAYKETTHUC { get; set; }
-        public Nullable<System.DateTime> NGAYKY { get; set; }
+        public string NGAYBATDAU { get; set; }
+        public string NGAYKETTHUC { get; set; }
+        public string NGAYKY { get; set; }
         public string NOIDUNG { get; set; }
         public string HOTEN { get; set; }
+        public string DIENTHOAI { get; set; }
+        public string CCCD { get; set; }
+        public string DIACHI { get; set; }
+        public string EMAIL { get; set; }
+        public string NGAYSINH { get; set; }
         public Nullable<int> LANKY { get; set; }
         public string THOIHAN { get; set; }
         public Nullable<double> HESOLUONG { get; set; }

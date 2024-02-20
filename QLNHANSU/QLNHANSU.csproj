@@ -163,6 +163,12 @@
     <Compile Include="Reports\rptDanhSachNhanVien.Designer.cs">
       <DependentUpon>rptDanhSachNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\rptHopDongLaoDong.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptHopDongLaoDong.Designer.cs">
+      <DependentUpon>rptHopDongLaoDong.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="fmDanToc.resx">
       <DependentUpon>fmDanToc.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,6 +212,9 @@
     </Compile>
     <EmbeddedResource Include="Reports\rptDanhSachNhanVien.resx">
       <DependentUpon>rptDanhSachNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptHopDongLaoDong.resx">
+      <DependentUpon>rptHopDongLaoDong.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />

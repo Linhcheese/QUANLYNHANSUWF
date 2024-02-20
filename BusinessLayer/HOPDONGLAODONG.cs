@@ -16,6 +16,43 @@ namespace BusinessLayer
         {
             return db.TB_HOPDONG.FirstOrDefault(x => x.SOHD == sohd);
         }
+        public List<HOPDONG_DTO> getItemFull(string sohd)
+        {
+            List<TB_HOPDONG> lstHD = db.TB_HOPDONG.Where(x=>x.SOHD==sohd).ToList();
+            List<HOPDONG_DTO> lstDTO = new List<HOPDONG_DTO>();
+            HOPDONG_DTO hd;
+            foreach (var item in lstHD)
+            {
+                hd = new HOPDONG_DTO();
+                hd.SOHD = item.SOHD;
+                hd.NGAYBATDAU = item.NGAYBATDAU.Value.ToString("dd/MM/yyyy");
+                hd.NGAYKETTHUC = item.NGAYKETTHUC.Value.ToString("dd/MM/yyyy");
+                hd.NGAYKY = "Hà nội, ngày " + item.NGAYKY.Value.ToString("dd/MM/yyyy").Substring(0, 2) + " tháng "
+                    + item.NGAYKY.Value.ToString("dd/MM/yyyy").Substring(3,2) + " năm 2024";
+                hd.LANKY = item.LANKY;
+                hd.HESOLUONG = item.HESOLUONG;
+                hd.NOIDUNG = item.NOIDUNG;
+                hd.MANV = item.MANV;
+                hd.THOIHAN = item.THOIHAN;
+                var nv = db.TB_NHANVIEN.FirstOrDefault(x => x.MANV == item.MANV);
+                hd.HOTEN = nv.HOTEN;
+                hd.CCCD = nv.CCCD;
+                hd.DIACHI = nv.DIACHI;
+                hd.NGAYSINH = nv.NGAYSINH.Value.ToString("dd/MM/yyyy");
+                hd.DIENTHOAI = nv.DIENTHOAI;
+                hd.EMAIL = nv.EMAIL;
+                hd.CREATED_BY = item.CREATED_BY;
+                hd.CREATED_DATE = item.CREATED_DATE;
+                hd.DELETED_BY = item.DELETED_BY;
+                hd.DELETED_DATE = item.DELETED_DATE;
+                hd.UPDATED_BY = item.UPDATED_BY;
+                hd.UPDATED_DATE = item.UPDATED_DATE;
+                hd.MACT = item.MACT;
+                lstDTO.Add(hd);
+
+            }
+            return lstDTO;
+        }
         public List<TB_HOPDONG> getList()
         {
             return db.TB_HOPDONG.ToList();
@@ -29,9 +66,9 @@ namespace BusinessLayer
             {
                 hd = new HOPDONG_DTO();
                 hd.SOHD = item.SOHD;
-                hd.NGAYBATDAU = item.NGAYBATDAU;
-                hd.NGAYKETTHUC = item.NGAYKETTHUC;
-                hd.NGAYKY = item.NGAYKY;
+                hd.NGAYBATDAU = item.NGAYBATDAU.Value.ToString("dd/MM/yyyy");
+                hd.NGAYKETTHUC = item.NGAYKETTHUC.Value.ToString("dd/MM/yyyy");
+                hd.NGAYKY = item.NGAYKY.Value.ToString("dd/MM/yyyy");
                 hd.LANKY = item.LANKY;
                 hd.HESOLUONG = item.HESOLUONG;
                 hd.NOIDUNG = item.NOIDUNG;
@@ -39,6 +76,11 @@ namespace BusinessLayer
                 hd.THOIHAN = item.THOIHAN;
                 var nv= db.TB_NHANVIEN.FirstOrDefault(x => x.MANV == item.MANV);
                 hd.HOTEN = nv.HOTEN;
+                hd.CCCD = nv.CCCD;
+                hd.NGAYSINH = nv.NGAYSINH.Value.ToString("dd/MM/yyyy");
+                hd.DIACHI = nv.DIACHI;
+                hd.DIENTHOAI = nv.DIENTHOAI;
+                hd.EMAIL = nv.EMAIL;
                 hd.CREATED_BY = item.CREATED_BY;
                 hd.CREATED_DATE = item.CREATED_DATE;
                 hd.DELETED_BY = item.DELETED_BY;
@@ -81,12 +123,10 @@ namespace BusinessLayer
                     hd.THOIHAN = hopdong.THOIHAN;
                     hd.SOHD = hopdong.SOHD;
 
-                  
+                    hd.MANV = hopdong.MANV;
                     hd.UPDATED_BY = hopdong.UPDATED_BY;
                     hd.UPDATED_DATE = hopdong.UPDATED_DATE;
-                    hd.CREATED_BY = hopdong.CREATED_BY;
-                    hd.CREATED_DATE = hopdong.CREATED_DATE;
-
+                   
 
                     hd.MACT = hopdong.MACT;
                     db.SaveChanges();
