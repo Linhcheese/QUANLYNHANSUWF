@@ -163,12 +163,12 @@ namespace QLNHANSU
         {
             if (_them)
             {
-                var maxSoQD = _khenthuong.MaxSoQuyetDinh(1);
+                var maxSoQD = _khenthuong.MaxSoQuyetDinh(2);
                 int so = int.Parse(maxSoQD.Substring(0, 5)) + 1;
                 TB_KHENTHUONG_KYLUAT kt = new TB_KHENTHUONG_KYLUAT();
 
 
-                kt.SOQUYETDINH = so.ToString("00000") + @"/2024/QĐKT";
+                kt.SOQUYETDINH = so.ToString("00000") + @"/2024/QĐKL";
                 kt.TUNGAY = dtTuNgay.Value;
                 kt.DENNGAY = dtDenNgay.Value;
                 kt.LYDO = txtLyDo.Text;
