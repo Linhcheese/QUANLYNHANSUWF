@@ -24,7 +24,7 @@ namespace QLNHANSU
         NHANVIEN _nhanvien;
         bool _them;
         string _sohd;
-        string _maxsohd;
+      
         List<HOPDONG_DTO> _lst_hd_dto;
 
         public frmHopDongLaoDong()
@@ -173,7 +173,7 @@ namespace QLNHANSU
             }
             else
             {
-                TB_HOPDONG hd = new TB_HOPDONG();
+                var hd = _hdld.getItem(_sohd);
               
                 hd.NGAYBATDAU = dtNgayBatDau.Value;
                 hd.NGAYKETTHUC = dtNgayKetThuc.Value;

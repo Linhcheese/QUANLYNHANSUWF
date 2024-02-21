@@ -80,14 +80,22 @@
   </EntityType>
   <EntityType Name="TB_KHENTHUONG_KYLUAT">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="SOQUYETDINH" />
     </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="SOKTKL" Type="int" />
+    <Property Name="SOQUYETDINH" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LYDO" Type="nvarchar" MaxLength="500" />
     <Property Name="NGAY" Type="datetime" />
-    <Property Name="NOIDUNG" Type="nvarchar" MaxLength="50" />
+    <Property Name="NOIDUNG" Type="nvarchar" MaxLength="500" />
     <Property Name="MANV" Type="int" />
     <Property Name="LOAI" Type="int" />
+    <Property Name="TUNGAY" Type="datetime" />
+    <Property Name="DENNGAY" Type="datetime" />
+    <Property Name="CREATED_BY" Type="int" />
+    <Property Name="CREATED_DATE" Type="datetime" />
+    <Property Name="UPDATED_BY" Type="int" />
+    <Property Name="UPDATED_DATE" Type="datetime" />
+    <Property Name="DELETED_BY" Type="int" />
+    <Property Name="DELETED_DATE" Type="datetime" />
   </EntityType>
   <EntityType Name="TB_LOAICA">
     <Key>

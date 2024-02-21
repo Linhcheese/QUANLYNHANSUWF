@@ -207,3 +207,5 @@ D:\Project_01\QLNS_DCH093\QLNHANSU\bin\Debug\ru\DevExpress.Diagram.v19.2.Core.re
 D:\Project_01\QLNS_DCH093\QLNHANSU\obj\Debug\QLNHANSU.Reports.rptDanhSachNhanVien.resources
 D:\Project_01\QLNS_DCH093\QLNHANSU\obj\Debug\QLNHANSU.frmHopDongLaoDong.resources
 D:\Project_01\QLNS_DCH093\QLNHANSU\obj\Debug\QLNHANSU.Reports.rptHopDongLaoDong.resources
+D:\Project_01\QLNS_DCH093\QLNHANSU\obj\Debug\QLNHANSU.frmKhenThuong.resources
+D:\Project_01\QLNS_DCH093\QLNHANSU\obj\Debug\QLNHANSU.frmKyLuat.resources

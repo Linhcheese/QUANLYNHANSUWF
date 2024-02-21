@@ -87,12 +87,12 @@ namespace QLNHANSU
 
         private void btnKhenThuong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            openForm(typeof(frmKhenThuong));
         }
 
         private void btnKyLuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            openForm(typeof(frmKyLuat));
         }
     }
 }

@@ -55,6 +55,7 @@ namespace QLNHANSU
             this.btnCongTy = new DevExpress.XtraBars.BarButtonItem();
             this.btnChucVu = new DevExpress.XtraBars.BarButtonItem();
             this.btnBoPhan = new DevExpress.XtraBars.BarButtonItem();
+            this.btnKyLuat = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -66,7 +67,6 @@ namespace QLNHANSU
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
-            this.btnKyLuat = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -328,6 +328,16 @@ namespace QLNHANSU
             this.btnBoPhan.Name = "btnBoPhan";
             this.btnBoPhan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBoPhan_ItemClick);
             // 
+            // btnKyLuat
+            // 
+            this.btnKyLuat.Caption = "Kỷ luật";
+            this.btnKyLuat.Id = 24;
+            this.btnKyLuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKyLuat.ImageOptions.Image")));
+            this.btnKyLuat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnKyLuat.ImageOptions.LargeImage")));
+            this.btnKyLuat.Name = "btnKyLuat";
+            this.btnKyLuat.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnKyLuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKyLuat_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -413,16 +423,6 @@ namespace QLNHANSU
             this.documentManager1.View = this.tabbedView1;
             this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView1});
-            // 
-            // btnKyLuat
-            // 
-            this.btnKyLuat.Caption = "Kỷ luật";
-            this.btnKyLuat.Id = 24;
-            this.btnKyLuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKyLuat.ImageOptions.Image")));
-            this.btnKyLuat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnKyLuat.ImageOptions.LargeImage")));
-            this.btnKyLuat.Name = "btnKyLuat";
-            this.btnKyLuat.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.btnKyLuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKyLuat_ItemClick);
             // 
             // MainForm
             // 

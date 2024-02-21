@@ -149,7 +149,7 @@ namespace BusinessLayer
                 {
                     hd.DELETED_BY = manv;
                     hd.DELETED_DATE = DateTime.Now;
-                    db.TB_HOPDONG.Remove(hd);
+                 
                     db.SaveChanges();
                 }
             }
