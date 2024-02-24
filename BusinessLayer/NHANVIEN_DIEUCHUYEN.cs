@@ -121,7 +121,7 @@ namespace BusinessLayer
         }
         public string MaxSOQD()
         {
-            var _kt = db.TB_NV_DIEUCHUYEN.OrderByDescending(x => x.CREATED_DATE).FirstOrDefault();
+            var _kt = db.TB_NHANVIEN_THOIVIEC.OrderByDescending(x => x.CREATED_DATE).FirstOrDefault();
             if (_kt != null)
             {
                 return _kt.SOQD;

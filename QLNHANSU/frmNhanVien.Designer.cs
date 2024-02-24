@@ -101,6 +101,7 @@ namespace QLNHANSU
             this.TENTG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IDCT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TENCT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DATHOIVIEC = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -623,7 +624,8 @@ namespace QLNHANSU
             this.IDTG,
             this.TENTG,
             this.IDCT,
-            this.TENCT});
+            this.TENCT,
+            this.DATHOIVIEC});
             this.gvDanhSachNV.GridControl = this.gcDanhSachNV;
             this.gvDanhSachNV.Name = "gvDanhSachNV";
             this.gvDanhSachNV.Click += new System.EventHandler(this.gvDanhSachNV_Click);
@@ -887,6 +889,16 @@ namespace QLNHANSU
             this.TENCT.VisibleIndex = 15;
             this.TENCT.Width = 80;
             // 
+            // DATHOIVIEC
+            // 
+            this.DATHOIVIEC.Caption = "Đã thôi việc";
+            this.DATHOIVIEC.FieldName = "DATHOIVIEC";
+            this.DATHOIVIEC.MinWidth = 25;
+            this.DATHOIVIEC.Name = "DATHOIVIEC";
+            this.DATHOIVIEC.Visible = true;
+            this.DATHOIVIEC.VisibleIndex = 16;
+            this.DATHOIVIEC.Width = 94;
+            // 
             // frmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -991,5 +1003,6 @@ namespace QLNHANSU
         private DevExpress.XtraGrid.Columns.GridColumn IDCT;
         private DevExpress.XtraGrid.Columns.GridColumn TENCT;
         private DevExpress.XtraEditors.SimpleButton btnTaiAnh;
+        private DevExpress.XtraGrid.Columns.GridColumn DATHOIVIEC;
     }
 }

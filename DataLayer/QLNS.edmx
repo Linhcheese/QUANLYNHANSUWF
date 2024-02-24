@@ -138,6 +138,7 @@
           <Property Name="IDTG" Type="int" />
           <Property Name="IDCT" Type="int" />
           <Property Name="EMAIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="DATHOIVIEC" Type="bit" />
         </EntityType>
         <EntityType Name="TB_NHANVIEN_PHUCAP">
           <Key>
@@ -149,6 +150,23 @@
           <Property Name="NOIDUNG" Type="nvarchar" MaxLength="50" />
           <Property Name="IDPC" Type="int" />
           <Property Name="SOTIEN" Type="float" />
+        </EntityType>
+        <EntityType Name="TB_NHANVIEN_THOIVIEC">
+          <Key>
+            <PropertyRef Name="SOQD" />
+          </Key>
+          <Property Name="SOQD" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NGAYNOPDON" Type="datetime" />
+          <Property Name="NGAYNGHI" Type="datetime" />
+          <Property Name="LYDO" Type="nvarchar" MaxLength="500" />
+          <Property Name="GHICHU" Type="nvarchar" MaxLength="500" />
+          <Property Name="CREATED_BY" Type="int" />
+          <Property Name="CREATED_DATE" Type="datetime" />
+          <Property Name="UPDATED_BY" Type="int" />
+          <Property Name="UPDATED_DATE" Type="datetime" />
+          <Property Name="DELETED_BY" Type="int" />
+          <Property Name="DELETED_DATE" Type="datetime" />
+          <Property Name="MANV" Type="int" />
         </EntityType>
         <EntityType Name="TB_NV_DIEUCHUYEN">
           <Key>
@@ -401,6 +419,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TB_NHANVIEN_THOIVIEC_TB_NHANVIEN">
+          <End Role="TB_NHANVIEN" Type="Self.TB_NHANVIEN" Multiplicity="0..1" />
+          <End Role="TB_NHANVIEN_THOIVIEC" Type="Self.TB_NHANVIEN_THOIVIEC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_NHANVIEN">
+              <PropertyRef Name="MANV" />
+            </Principal>
+            <Dependent Role="TB_NHANVIEN_THOIVIEC">
+              <PropertyRef Name="MANV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TB_NV_DIEUCHUYEN_TB_NHANVIEN">
           <End Role="TB_NHANVIEN" Type="Self.TB_NHANVIEN" Multiplicity="0..1" />
           <End Role="TB_NV_DIEUCHUYEN" Type="Self.TB_NV_DIEUCHUYEN" Multiplicity="*" />
@@ -462,6 +492,7 @@
           <EntitySet Name="TB_LOAICONG" EntityType="Self.TB_LOAICONG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_NHANVIEN" EntityType="Self.TB_NHANVIEN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_NHANVIEN_PHUCAP" EntityType="Self.TB_NHANVIEN_PHUCAP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_NHANVIEN_THOIVIEC" EntityType="Self.TB_NHANVIEN_THOIVIEC" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_NV_DIEUCHUYEN" EntityType="Self.TB_NV_DIEUCHUYEN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_PHONGBAN" EntityType="Self.TB_PHONGBAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_PHUCAP" EntityType="Self.TB_PHUCAP" Schema="dbo" store:Type="Tables" />
@@ -528,6 +559,10 @@
           <AssociationSet Name="FK_TB_NHANVIEN_TB_TRINHDO" Association="Self.FK_TB_NHANVIEN_TB_TRINHDO">
             <End Role="TB_TRINHDO" EntitySet="TB_TRINHDO" />
             <End Role="TB_NHANVIEN" EntitySet="TB_NHANVIEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_NHANVIEN_THOIVIEC_TB_NHANVIEN" Association="Self.FK_TB_NHANVIEN_THOIVIEC_TB_NHANVIEN">
+            <End Role="TB_NHANVIEN" EntitySet="TB_NHANVIEN" />
+            <End Role="TB_NHANVIEN_THOIVIEC" EntitySet="TB_NHANVIEN_THOIVIEC" />
           </AssociationSet>
           <AssociationSet Name="FK_TB_NV_DIEUCHUYEN_TB_NHANVIEN" Association="Self.FK_TB_NV_DIEUCHUYEN_TB_NHANVIEN">
             <End Role="TB_NHANVIEN" EntitySet="TB_NHANVIEN" />
@@ -645,6 +680,11 @@
           <AssociationSet Name="FK_TB_NHANVIEN_PHUCAP_TB_PHUCAP" Association="QLNHANSUModel.FK_TB_NHANVIEN_PHUCAP_TB_PHUCAP">
             <End Role="TB_PHUCAP" EntitySet="TB_PHUCAP" />
             <End Role="TB_NHANVIEN_PHUCAP" EntitySet="TB_NHANVIEN_PHUCAP" />
+          </AssociationSet>
+          <EntitySet Name="TB_NHANVIEN_THOIVIEC" EntityType="QLNHANSUModel.TB_NHANVIEN_THOIVIEC" />
+          <AssociationSet Name="FK_TB_NHANVIEN_THOIVIEC_TB_NHANVIEN" Association="QLNHANSUModel.FK_TB_NHANVIEN_THOIVIEC_TB_NHANVIEN">
+            <End Role="TB_NHANVIEN" EntitySet="TB_NHANVIEN" />
+            <End Role="TB_NHANVIEN_THOIVIEC" EntitySet="TB_NHANVIEN_THOIVIEC" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="TB_BANGCONG">
@@ -808,6 +848,8 @@
           <NavigationProperty Name="TB_NV_DIEUCHUYEN" Relationship="QLNHANSUModel.FK_TB_NV_DIEUCHUYEN_TB_NHANVIEN" FromRole="TB_NHANVIEN" ToRole="TB_NV_DIEUCHUYEN" />
           <NavigationProperty Name="TB_TANGCA" Relationship="QLNHANSUModel.FK_TB_TANGCA_TB_NHANVIEN" FromRole="TB_NHANVIEN" ToRole="TB_TANGCA" />
           <NavigationProperty Name="TB_UNGLUONG" Relationship="QLNHANSUModel.FK_TB_UNGLUONG_TB_NHANVIEN" FromRole="TB_NHANVIEN" ToRole="TB_UNGLUONG" />
+          <Property Name="DATHOIVIEC" Type="Boolean" />
+          <NavigationProperty Name="TB_NHANVIEN_THOIVIEC" Relationship="QLNHANSUModel.FK_TB_NHANVIEN_THOIVIEC_TB_NHANVIEN" FromRole="TB_NHANVIEN" ToRole="TB_NHANVIEN_THOIVIEC" />
         </EntityType>
         <EntityType Name="TB_NHANVIEN_PHUCAP">
           <Key>
@@ -1129,6 +1171,36 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="TB_NHANVIEN_THOIVIEC">
+          <Key>
+            <PropertyRef Name="SOQD" />
+          </Key>
+          <Property Name="SOQD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYNOPDON" Type="DateTime" Precision="3" />
+          <Property Name="NGAYNGHI" Type="DateTime" Precision="3" />
+          <Property Name="LYDO" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="GHICHU" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CREATED_BY" Type="Int32" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATED_BY" Type="Int32" />
+          <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int32" />
+          <Property Name="DELETED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="MANV" Type="Int32" />
+          <NavigationProperty Name="TB_NHANVIEN" Relationship="QLNHANSUModel.FK_TB_NHANVIEN_THOIVIEC_TB_NHANVIEN" FromRole="TB_NHANVIEN_THOIVIEC" ToRole="TB_NHANVIEN" />
+        </EntityType>
+        <Association Name="FK_TB_NHANVIEN_THOIVIEC_TB_NHANVIEN">
+          <End Type="QLNHANSUModel.TB_NHANVIEN" Role="TB_NHANVIEN" Multiplicity="0..1" />
+          <End Type="QLNHANSUModel.TB_NHANVIEN_THOIVIEC" Role="TB_NHANVIEN_THOIVIEC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_NHANVIEN">
+              <PropertyRef Name="MANV" />
+            </Principal>
+            <Dependent Role="TB_NHANVIEN_THOIVIEC">
+              <PropertyRef Name="MANV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1261,6 +1333,7 @@
           <EntitySetMapping Name="TB_NHANVIEN">
             <EntityTypeMapping TypeName="QLNHANSUModel.TB_NHANVIEN">
               <MappingFragment StoreEntitySet="TB_NHANVIEN">
+                <ScalarProperty Name="DATHOIVIEC" ColumnName="DATHOIVIEC" />
                 <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
                 <ScalarProperty Name="IDCT" ColumnName="IDCT" />
                 <ScalarProperty Name="IDTG" ColumnName="IDTG" />
@@ -1367,6 +1440,24 @@
                 <ScalarProperty Name="THANG" ColumnName="THANG" />
                 <ScalarProperty Name="NAM" ColumnName="NAM" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_NHANVIEN_THOIVIEC">
+            <EntityTypeMapping TypeName="QLNHANSUModel.TB_NHANVIEN_THOIVIEC">
+              <MappingFragment StoreEntitySet="TB_NHANVIEN_THOIVIEC">
+                <ScalarProperty Name="MANV" ColumnName="MANV" />
+                <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="UPDATED_DATE" ColumnName="UPDATED_DATE" />
+                <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+                <ScalarProperty Name="LYDO" ColumnName="LYDO" />
+                <ScalarProperty Name="NGAYNGHI" ColumnName="NGAYNGHI" />
+                <ScalarProperty Name="NGAYNOPDON" ColumnName="NGAYNOPDON" />
+                <ScalarProperty Name="SOQD" ColumnName="SOQD" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -29,6 +29,7 @@ namespace BusinessLayer
                 nvDTO.HOTEN = item.HOTEN;
                 nvDTO.HINHANH = item.HINHANH;
                 nvDTO.GIOITINH = item.GIOITINH;
+                nvDTO.DATHOIVIEC = item.DATHOIVIEC;
                 nvDTO.NGAYSINH = item.NGAYSINH;
                 nvDTO.CCCD = item.CCCD;
                 nvDTO.DIENTHOAI = item.DIENTHOAI;
@@ -115,6 +116,7 @@ namespace BusinessLayer
                     emp.IDBP = employee.IDBP;
                     emp.IDCV = employee.IDCV;
                     emp.IDPB = employee.IDPB;
+                    emp.DATHOIVIEC = employee.DATHOIVIEC;
                     emp.IDTD = employee.IDTD;
                     emp.IDDT = employee.IDDT;
                     emp.IDTG = employee.IDTG;

@@ -133,6 +133,7 @@
     <Property Name="IDTG" Type="int" />
     <Property Name="IDCT" Type="int" />
     <Property Name="EMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="DATHOIVIEC" Type="bit" />
   </EntityType>
   <EntityType Name="TB_NHANVIEN_PHUCAP">
     <Key>
@@ -144,6 +145,23 @@
     <Property Name="NOIDUNG" Type="nvarchar" MaxLength="50" />
     <Property Name="IDPC" Type="int" />
     <Property Name="SOTIEN" Type="float" />
+  </EntityType>
+  <EntityType Name="TB_NHANVIEN_THOIVIEC">
+    <Key>
+      <PropertyRef Name="SOQD" />
+    </Key>
+    <Property Name="SOQD" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NGAYNOPDON" Type="datetime" />
+    <Property Name="NGAYNGHI" Type="datetime" />
+    <Property Name="LYDO" Type="nvarchar" MaxLength="500" />
+    <Property Name="GHICHU" Type="nvarchar" MaxLength="500" />
+    <Property Name="CREATED_BY" Type="int" />
+    <Property Name="CREATED_DATE" Type="datetime" />
+    <Property Name="UPDATED_BY" Type="int" />
+    <Property Name="UPDATED_DATE" Type="datetime" />
+    <Property Name="DELETED_BY" Type="int" />
+    <Property Name="DELETED_DATE" Type="datetime" />
+    <Property Name="MANV" Type="int" />
   </EntityType>
   <EntityType Name="TB_NV_DIEUCHUYEN">
     <Key>
@@ -396,6 +414,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_TB_NHANVIEN_THOIVIEC_TB_NHANVIEN">
+    <End Role="TB_NHANVIEN" Type="Self.TB_NHANVIEN" Multiplicity="0..1" />
+    <End Role="TB_NHANVIEN_THOIVIEC" Type="Self.TB_NHANVIEN_THOIVIEC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_NHANVIEN">
+        <PropertyRef Name="MANV" />
+      </Principal>
+      <Dependent Role="TB_NHANVIEN_THOIVIEC">
+        <PropertyRef Name="MANV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_TB_NV_DIEUCHUYEN_TB_NHANVIEN">
     <End Role="TB_NHANVIEN" Type="Self.TB_NHANVIEN" Multiplicity="0..1" />
     <End Role="TB_NV_DIEUCHUYEN" Type="Self.TB_NV_DIEUCHUYEN" Multiplicity="*" />
@@ -457,6 +487,7 @@
     <EntitySet Name="TB_LOAICONG" EntityType="Self.TB_LOAICONG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_NHANVIEN" EntityType="Self.TB_NHANVIEN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_NHANVIEN_PHUCAP" EntityType="Self.TB_NHANVIEN_PHUCAP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_NHANVIEN_THOIVIEC" EntityType="Self.TB_NHANVIEN_THOIVIEC" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_NV_DIEUCHUYEN" EntityType="Self.TB_NV_DIEUCHUYEN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_PHONGBAN" EntityType="Self.TB_PHONGBAN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_PHUCAP" EntityType="Self.TB_PHUCAP" Schema="dbo" store:Type="Tables" />
@@ -523,6 +554,10 @@
     <AssociationSet Name="FK_TB_NHANVIEN_TB_TRINHDO" Association="Self.FK_TB_NHANVIEN_TB_TRINHDO">
       <End Role="TB_TRINHDO" EntitySet="TB_TRINHDO" />
       <End Role="TB_NHANVIEN" EntitySet="TB_NHANVIEN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_NHANVIEN_THOIVIEC_TB_NHANVIEN" Association="Self.FK_TB_NHANVIEN_THOIVIEC_TB_NHANVIEN">
+      <End Role="TB_NHANVIEN" EntitySet="TB_NHANVIEN" />
+      <End Role="TB_NHANVIEN_THOIVIEC" EntitySet="TB_NHANVIEN_THOIVIEC" />
     </AssociationSet>
     <AssociationSet Name="FK_TB_NV_DIEUCHUYEN_TB_NHANVIEN" Association="Self.FK_TB_NV_DIEUCHUYEN_TB_NHANVIEN">
       <End Role="TB_NHANVIEN" EntitySet="TB_NHANVIEN" />

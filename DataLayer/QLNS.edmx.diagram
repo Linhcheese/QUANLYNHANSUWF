@@ -43,6 +43,8 @@
         <AssociationConnector Association="QLNHANSUModel.FK_TB_TANGCA_TB_NHANVIEN" />
         <AssociationConnector Association="QLNHANSUModel.FK_TB_UNGLUONG_TB_NHANVIEN" />
         <AssociationConnector Association="QLNHANSUModel.FK_TB_NHANVIEN_PHUCAP_TB_PHUCAP" />
+        <EntityTypeShape EntityType="QLNHANSUModel.TB_NHANVIEN_THOIVIEC" Width="1.5" PointX="5.25" PointY="2.25" />
+        <AssociationConnector Association="QLNHANSUModel.FK_TB_NHANVIEN_THOIVIEC_TB_NHANVIEN" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

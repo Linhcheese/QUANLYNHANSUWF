@@ -15,6 +15,8 @@ namespace BusinessLayer.DTO
         public string DIENTHOAI { get; set; }
         public string CCCD { get; set; }
         public string DIACHI { get; set; }
+
+        public bool?  DATHOIVIEC { get; set; }
         public byte[] HINHANH { get; set; }
         public Nullable<int> IDPB { get; set; }
         public string TENPB { get; set; }

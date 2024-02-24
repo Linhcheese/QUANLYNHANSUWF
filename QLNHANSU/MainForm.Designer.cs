@@ -67,6 +67,7 @@ namespace QLNHANSU
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+            this.btnDong = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -101,10 +102,11 @@ namespace QLNHANSU
             this.btnCongTy,
             this.btnChucVu,
             this.btnBoPhan,
-            this.btnKyLuat});
+            this.btnKyLuat,
+            this.btnDong});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ribbonControl1.MaxItemId = 25;
+            this.ribbonControl1.MaxItemId = 26;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -200,6 +202,7 @@ namespace QLNHANSU
             this.btnThoiViec.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoiViec.ImageOptions.Image")));
             this.btnThoiViec.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThoiViec.ImageOptions.LargeImage")));
             this.btnThoiViec.Name = "btnThoiViec";
+            this.btnThoiViec.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoiViec_ItemClick);
             // 
             // btnLoaiCa
             // 
@@ -383,6 +386,7 @@ namespace QLNHANSU
             this.ribbonPageGroup3.ItemLinks.Add(this.btnKyLuat);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnDieuChuyen);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnThoiViec);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnDong);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Nghiệp vụ";
             // 
@@ -424,6 +428,15 @@ namespace QLNHANSU
             this.documentManager1.View = this.tabbedView1;
             this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView1});
+            // 
+            // btnDong
+            // 
+            this.btnDong.Caption = "Thoát";
+            this.btnDong.Id = 25;
+            this.btnDong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.ImageOptions.Image")));
+            this.btnDong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDong.ImageOptions.LargeImage")));
+            this.btnDong.Name = "btnDong";
+            this.btnDong.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
             // MainForm
             // 
@@ -483,6 +496,7 @@ namespace QLNHANSU
         private DevExpress.XtraBars.BarButtonItem btnChucVu;
         private DevExpress.XtraBars.BarButtonItem btnBoPhan;
         private DevExpress.XtraBars.BarButtonItem btnKyLuat;
+        private DevExpress.XtraBars.BarButtonItem btnDong;
     }
 }
 

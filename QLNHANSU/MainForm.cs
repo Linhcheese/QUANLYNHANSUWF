@@ -99,5 +99,10 @@ namespace QLNHANSU
         {
             openForm(typeof(frmNhanVien_DieuChuyen));
         }
+
+        private void btnThoiViec_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(typeof(frmThoiViec));
+        }
     }
 }

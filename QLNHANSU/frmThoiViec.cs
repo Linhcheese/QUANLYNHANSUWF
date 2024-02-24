@@ -12,42 +12,37 @@ using BusinessLayer;
 using DataLayer;
 namespace QLNHANSU
 {
-    public partial class frmNhanVien_DieuChuyen : DevExpress.XtraEditors.XtraForm
+    public partial class frmThoiViec : DevExpress.XtraEditors.XtraForm
     {
 
-        NHANVIEN_DIEUCHUYEN _dieuchuyen;
+        NHANVIEN_THOIVIEC _thoiviec;
         bool _them;
         string _soqd;
         NHANVIEN _nhanvien;
-        PHONGBAN _phongban;
-        public frmNhanVien_DieuChuyen()
+
+        public frmThoiViec()
         {
             InitializeComponent();
-            _dieuchuyen = new NHANVIEN_DIEUCHUYEN();
+            _thoiviec = new NHANVIEN_THOIVIEC();
             _nhanvien = new NHANVIEN();
-            _phongban = new PHONGBAN();
+        
         }
 
-        private void frmNhanVien_DieuChuyen_Load(object sender, EventArgs e)
+  
+        private void frmThoiViec_Load(object sender, EventArgs e)
         {
             _them = false;
             _showHide(true);
             loadData();
             LoadNhanVien();
-            LoadDonViDen();
+         
             splitContainer1.Panel1Collapsed = true;
         }
         public void LoadNhanVien()
-        {   
+        {
             slkNhanVien.Properties.DataSource = _nhanvien.getList();
             slkNhanVien.Properties.ValueMember = "MANV";
             slkNhanVien.Properties.DisplayMember = "HOTEN";
-        }
-        public void LoadDonViDen()
-        {
-            cboPhongBan.DataSource = _phongban.getList();
-            cboPhongBan.ValueMember = "IDPB";
-            cboPhongBan.DisplayMember = "TENPB";
         }
         private void btnThemKT_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -62,7 +57,7 @@ namespace QLNHANSU
             splitContainer1.Panel1Collapsed = false;
             _them = false;
             _showHide(false);
-            gcDanhSachDC.Enabled = true;
+            gcDanhSachTV.Enabled = true;
         }
 
         private void btnXoaKT_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -70,7 +65,7 @@ namespace QLNHANSU
             if (MessageBox.Show("Bạn có chắc chắn xóa không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
 
-                _dieuchuyen.Delete(_soqd, 1);
+                _thoiviec.Delete(_soqd, 1);
                 loadData();
             }
         }
@@ -96,7 +91,7 @@ namespace QLNHANSU
 
         private void btnPrintKT_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            
         }
 
         private void btnDongKT_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -104,29 +99,12 @@ namespace QLNHANSU
             this.Close();
         }
 
-        private void gvDanhSachDC_Click(object sender, EventArgs e)
-        {
-            if (gvDanhSachDC.RowCount > 0)
-            {
 
-
-                _soqd = gvDanhSachDC.GetFocusedRowCellValue("SOQD").ToString();
-                var kt = _dieuchuyen.getItem(_soqd);
-                txtQD.Text = _soqd;
-                txtLyDo.Text = kt.LYDO;
-                dtNgay.Value = kt.NGAY.Value;
-                slkNhanVien.EditValue = kt.IDNV;
-                txtGhiChu.Text = kt.GHICHU;
-                cboPhongBan.SelectedValue = kt.MAPB2;
-
-
-            }
-        }
         private void loadData()
         {
             // Load dữ liệu từ BusinessLayer.CHUCVU và hiển thị lên gridControl hoặc gridView
-            gcDanhSachDC.DataSource = _dieuchuyen.getItemFull();
-            gvDanhSachDC.OptionsBehavior.Editable = false;
+            gcDanhSachTV.DataSource = _thoiviec.getListFull();
+            gvDanhSachTV.OptionsBehavior.Editable = false;
 
         }
 
@@ -139,8 +117,9 @@ namespace QLNHANSU
             btnThemKT.Enabled = kt;
             btnXoaKT.Enabled = kt;
             btnDongKT.Enabled = kt;
-            gcDanhSachDC.Enabled = kt;
-            dtNgay.Enabled = !kt;
+            gcDanhSachTV.Enabled = kt;
+            dtNgayNghi.Enabled = !kt;
+            dtNgayNopDon.Enabled = !kt;
             // dtNgayKetThuc.Enabled = !kt;
 
             slkNhanVien.Enabled = !kt;
@@ -162,50 +141,68 @@ namespace QLNHANSU
         }
         void SaveData()
         {
-            TB_NV_DIEUCHUYEN dc;
+            TB_NHANVIEN_THOIVIEC dc;
             if (_them)
             {
-                var maxSoQD = _dieuchuyen.MaxSOQD();
+                var maxSoQD = _thoiviec.MaxSOQD();
                 int so = int.Parse(maxSoQD.Substring(0, 5)) + 1;
-                 dc = new TB_NV_DIEUCHUYEN();
+                 dc = new TB_NHANVIEN_THOIVIEC();
 
 
-                dc.SOQD = so.ToString("00000") + @"/2024/QĐDC";
-   
+                dc.SOQD = so.ToString("00000") + @"/2024/QĐTV";
+
                 dc.LYDO = txtLyDo.Text;
-                dc.NGAY = dtNgay.Value;
-
+                dc.NGAYNOPDON = dtNgayNopDon.Value;
+                dc.NGAYNGHI = dtNgayNghi.Value;
                 dc.GHICHU = txtGhiChu.Text;
-                dc.IDNV = int.Parse(slkNhanVien.EditValue.ToString());
-                dc.MAPB = _nhanvien.getItem(int.Parse(slkNhanVien.EditValue.ToString())).IDBP;
-                dc.MAPB2 = int.Parse(cboPhongBan.SelectedValue.ToString());
-
-
-
+                dc.MANV = int.Parse(slkNhanVien.EditValue.ToString());
+              
 
                 dc.CREATED_BY = 1;
                 dc.CREATED_DATE = DateTime.Now;
-                _dieuchuyen.Add(dc);
+                _thoiviec.Add(dc);
                 /*   MessageBox.Show("Dữ liệu đã được thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
             }
             else
             {
-                 dc = _dieuchuyen.getItem(_soqd);
-               
+                 dc = _thoiviec.getItem(_soqd);
 
                 dc.LYDO = txtLyDo.Text;
-                dc.NGAY = dtNgay.Value;
-
+                dc.NGAYNOPDON = dtNgayNopDon.Value;
+                dc.NGAYNGHI = dtNgayNghi.Value;
                 dc.GHICHU = txtGhiChu.Text;
-                dc.IDNV = int.Parse(slkNhanVien.EditValue.ToString());
-                dc.MAPB2 = int.Parse(cboPhongBan.SelectedValue.ToString());
                 dc.UPDATED_BY = 1;
                 dc.UPDATED_DATE = DateTime.Now;
-                _dieuchuyen.Update(dc);
+                _thoiviec.Update(dc);
             }
-            var nv = _nhanvien.getItem(dc.IDNV.Value);
-            nv.IDBP = dc.MAPB2;
+            var nv = _nhanvien.getItem(dc.MANV.Value);
+            nv.DATHOIVIEC = true;
             _nhanvien.Update(nv);
+        }
+
+        private void gcDanhSachTV_Click(object sender, EventArgs e)
+        {
+            if (gvDanhSachTV.RowCount > 0)
+            {
+
+
+                _soqd = gvDanhSachTV.GetFocusedRowCellValue("SOQD").ToString();
+                var kt = _thoiviec.getItem(_soqd);
+                txtQD.Text = _soqd;
+                txtLyDo.Text = kt.LYDO;
+                dtNgayNghi.Value = kt.NGAYNGHI.Value;
+                dtNgayNopDon.Value = kt.NGAYNOPDON.Value;
+                slkNhanVien.EditValue = kt.MANV;
+                txtGhiChu.Text = kt.GHICHU;
+
+
+
+            }
+        }
+
+        private void dtNgayNopDon_ValueChanged(object sender, EventArgs e)
+        {
+            dtNgayNghi.Value = dtNgayNopDon.Value.AddDays(45);
         }
     }
 }
