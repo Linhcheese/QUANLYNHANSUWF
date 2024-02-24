@@ -209,3 +209,4 @@ D:\Project_01\QLNS_DCH093\QLNHANSU\obj\Debug\QLNHANSU.frmHopDongLaoDong.resource
 D:\Project_01\QLNS_DCH093\QLNHANSU\obj\Debug\QLNHANSU.Reports.rptHopDongLaoDong.resources
 D:\Project_01\QLNS_DCH093\QLNHANSU\obj\Debug\QLNHANSU.frmKhenThuong.resources
 D:\Project_01\QLNS_DCH093\QLNHANSU\obj\Debug\QLNHANSU.frmKyLuat.resources
+D:\Project_01\QLNS_DCH093\QLNHANSU\obj\Debug\QLNHANSU.frmNhanVien_DieuChuyen.resources

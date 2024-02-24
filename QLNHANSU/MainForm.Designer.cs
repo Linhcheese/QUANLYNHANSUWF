@@ -191,6 +191,7 @@ namespace QLNHANSU
             this.btnDieuChuyen.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDieuChuyen.ImageOptions.LargeImage")));
             this.btnDieuChuyen.Name = "btnDieuChuyen";
             this.btnDieuChuyen.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnDieuChuyen.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDieuChuyen_ItemClick);
             // 
             // btnThoiViec
             // 
