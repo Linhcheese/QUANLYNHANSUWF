@@ -11,7 +11,7 @@ namespace BusinessLayer.DTO
         public int MANV { get; set; }
         public string HOTEN { get; set; }
         public Nullable<bool> GIOITINH { get; set; }
-        public Nullable<System.DateTime> NGAYSINH { get; set; }
+        public string NGAYSINH { get; set; }
         public string DIENTHOAI { get; set; }
         public string CCCD { get; set; }
         public string DIACHI { get; set; }

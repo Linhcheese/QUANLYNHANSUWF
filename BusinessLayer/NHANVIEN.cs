@@ -30,7 +30,11 @@ namespace BusinessLayer
                 nvDTO.HINHANH = item.HINHANH;
                 nvDTO.GIOITINH = item.GIOITINH;
                 nvDTO.DATHOIVIEC = item.DATHOIVIEC;
-                nvDTO.NGAYSINH = item.NGAYSINH;
+                nvDTO.NGAYSINH = item.NGAYSINH.Value.ToString("dd/MM/yyyy"); ;
+
+
+
+
                 nvDTO.CCCD = item.CCCD;
                 nvDTO.DIENTHOAI = item.DIENTHOAI;
                 nvDTO.DIACHI = item.DIACHI;
@@ -149,5 +153,68 @@ namespace BusinessLayer
                 throw new Exception("Lỗi: " + ex.Message);
             }
         }
+  
+        public List<NHANVIEN_DTO> getSinhNhat()
+        {
+            var lstNV = db.TB_NHANVIEN.Where(x => x.NGAYSINH.Value.Month == DateTime.Now.Month).ToList();
+            List<NHANVIEN_DTO> lstNVDTO = new List<NHANVIEN_DTO>();
+            NHANVIEN_DTO nvDTO;
+            foreach (var item in lstNV)
+            {
+                nvDTO = new NHANVIEN_DTO();
+                nvDTO.MANV = item.MANV;
+                nvDTO.HOTEN = item.HOTEN;
+                nvDTO.HINHANH = item.HINHANH;
+                nvDTO.GIOITINH = item.GIOITINH;
+                nvDTO.DATHOIVIEC = item.DATHOIVIEC;
+                nvDTO.NGAYSINH = item.NGAYSINH.Value.ToString("dd/MM/yyyy"); ;
+
+
+
+
+                nvDTO.CCCD = item.CCCD;
+                nvDTO.DIENTHOAI = item.DIENTHOAI;
+                nvDTO.DIACHI = item.DIACHI;
+                nvDTO.EMAIL = item.EMAIL;
+
+                //bo phan
+                nvDTO.IDBP = item.IDBP;
+                var bp = db.TB_BOPHAN.FirstOrDefault(x => x.IDBP == nvDTO.IDBP);
+                nvDTO.TENBP = bp.TENBP;
+                //chuc vu
+                nvDTO.IDCV = item.IDCV;
+                var cv = db.TB_CHUCVU.FirstOrDefault(x => x.IDCV == nvDTO.IDCV);
+                nvDTO.TENCV = cv.TENCV;
+                //dan toc
+                nvDTO.IDDT = item.IDDT;
+                var dt = db.TB_DANTOC.FirstOrDefault(x => x.ID == nvDTO.IDDT);
+                nvDTO.TENDT = dt.TENDT;
+
+                //ton giao
+                nvDTO.IDTG = item.IDTG;
+                var tg = db.TB_TONGIAO.FirstOrDefault(x => x.ID == nvDTO.IDTG);
+                nvDTO.TENTG = tg.TENTG;
+
+                //phong ban
+                nvDTO.IDPB = item.IDPB;
+                var pb = db.TB_PHONGBAN.FirstOrDefault(x => x.IDPB == nvDTO.IDPB);
+                nvDTO.TENPB = pb.TENPB;
+
+                //trinh do
+                nvDTO.IDTD = item.IDTD;
+                var td = db.TB_TRINHDO.FirstOrDefault(x => x.IDTD == nvDTO.IDTD);
+                nvDTO.TENTD = td.TENTD;
+
+                nvDTO.IDCT = item.IDCT;
+                var ct = db.TB_CONGTY.FirstOrDefault(x => x.IDCT == nvDTO.IDCT);
+                nvDTO.TENCT = ct.TENCT;
+
+                lstNVDTO.Add(nvDTO);
+
+            }
+            return lstNVDTO;
+
+        }
+
     }
 }

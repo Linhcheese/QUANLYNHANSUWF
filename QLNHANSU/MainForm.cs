@@ -6,15 +6,20 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using BusinessLayer;
+using DataLayer;
 namespace QLNHANSU
 {
     public partial class MainForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+
+        NHANVIEN _nv;
+        HOPDONGLAODONG _hdld;
         public MainForm()
         {
             InitializeComponent();
         }
+
         void openForm(Type typeForm)
         {
             foreach (var frm in MdiChildren)
@@ -48,6 +53,22 @@ namespace QLNHANSU
         private void MainForm_Load(object sender, EventArgs e)
         {
             ribbonControl1.SelectedPage = ribbonPage2;
+            _nv = new NHANVIEN();
+            _hdld = new HOPDONGLAODONG();
+            LoadSinhNhat();
+            LoadLenLuong();
+        }
+         void LoadSinhNhat()
+        {
+            lstSinhNhat.DataSource = _nv.getSinhNhat();
+            lstSinhNhat.DisplayMember = "HOTEN";
+            lstSinhNhat.ValueMember = "MANV";
+        }
+        void LoadLenLuong()
+        {
+            lstLenLuong.DataSource = _hdld.getTTlenLuong();
+            lstLenLuong.DisplayMember = "HOTEN";
+            lstLenLuong.ValueMember = "MANV";
         }
 
         private void btnTrinhDo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -148,6 +169,15 @@ namespace QLNHANSU
         private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
+        }
+
+        private void lstSinhNhat_CustomizeItem(object sender, DevExpress.XtraEditors.CustomizeTemplatedItemEventArgs e)
+        {
+            if (e.TemplatedItem.Elements[1].Text.Substring(0, 2) == DateTime.Now.Day.ToString())
+            {
+
+                e.TemplatedItem.AppearanceItem.Normal.ForeColor = Color.Red;
+            }
         }
     }
 }

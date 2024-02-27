@@ -168,5 +168,38 @@ namespace BusinessLayer
             else
                 return "00000";
         }
+        public List<HOPDONG_DTO> getTTlenLuong()
+        {
+            List<TB_HOPDONG> lstHD = db.TB_HOPDONG
+              .Where(x => x.NGAYBATDAU.Value.Year >= DateTime.Now.Year - 2 && x.NGAYBATDAU.Value.Year <= DateTime.Now.Year &&
+                          x.NGAYBATDAU.Value.Month == DateTime.Now.Month)
+              .ToList();
+
+            List<HOPDONG_DTO> lstDTO = new List<HOPDONG_DTO>();
+            HOPDONG_DTO hd;
+            foreach (var item in lstHD)
+            {
+                hd = new HOPDONG_DTO();
+                hd.SOHD = item.SOHD;
+                hd.NGAYBATDAU = item.NGAYBATDAU.Value.ToString("dd/MM/yyyy");
+                hd.NGAYKETTHUC = item.NGAYKETTHUC.Value.ToString("dd/MM/yyyy");
+                hd.NGAYKY = "Hà nội, ngày " + item.NGAYKY.Value.ToString("dd/MM/yyyy").Substring(0, 2) + " tháng "
+                    + item.NGAYKY.Value.ToString("dd/MM/yyyy").Substring(3, 2) + " năm 2024";
+              
+                hd.MANV = item.MANV;
+                hd.THOIHAN = item.THOIHAN;
+                var nv = db.TB_NHANVIEN.FirstOrDefault(x => x.MANV == item.MANV);
+                hd.HOTEN = nv.HOTEN;
+       
+
+                hd.NGAYSINH = nv.NGAYSINH.Value.ToString("dd/MM/yyyy");
+   
+  
+
+                lstDTO.Add(hd);
+
+            }
+            return lstDTO;
+        }
     }
 }
