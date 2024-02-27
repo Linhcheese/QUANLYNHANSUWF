@@ -66,6 +66,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLNS.edmx</DependentUpon>
     </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
     <Compile Include="TB_BANGCONG.cs">
       <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>

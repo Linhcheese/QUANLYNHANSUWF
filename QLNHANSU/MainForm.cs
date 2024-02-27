@@ -139,7 +139,7 @@ namespace QLNHANSU
 
         private void btnLoaiCong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            openForm(typeof(frmLoaiCong));
         }
 
         private void btnPhuCap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

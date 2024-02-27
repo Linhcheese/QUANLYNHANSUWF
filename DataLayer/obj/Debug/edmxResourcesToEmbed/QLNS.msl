@@ -1,6 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="QLNHANSUModelStoreContainer" CdmEntityContainer="QLNHANSUEntities">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="QLNHANSUModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="TB_BANGCONG">
       <EntityTypeMapping TypeName="QLNHANSUModel.TB_BANGCONG">
         <MappingFragment StoreEntitySet="TB_BANGCONG">
@@ -124,6 +135,12 @@
     <EntitySetMapping Name="TB_LOAICONG">
       <EntityTypeMapping TypeName="QLNHANSUModel.TB_LOAICONG">
         <MappingFragment StoreEntitySet="TB_LOAICONG">
+          <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
+          <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+          <ScalarProperty Name="UPDATED_DATE" ColumnName="UPDATED_DATE" />
+          <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
           <ScalarProperty Name="HESO" ColumnName="HESO" />
           <ScalarProperty Name="TENLC" ColumnName="TENLC" />
           <ScalarProperty Name="IDLC" ColumnName="IDLC" />

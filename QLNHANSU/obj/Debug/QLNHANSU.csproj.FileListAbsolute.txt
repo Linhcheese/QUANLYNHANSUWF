@@ -213,3 +213,4 @@ D:\Project_01\QLNS_DCH093\QLNHANSU\obj\Debug\QLNHANSU.frmNhanVien_DieuChuyen.res
 D:\Project_01\QLNS_DCH093\QLNHANSU\obj\Debug\QLNHANSU.frmThoiViec.resources
 D:\Project_01\QLNS_DCH093\QLNHANSU\obj\Debug\QLNHANSU.frmTangLuong.resources
 D:\Project_01\QLNS_DCH093\QLNHANSU\obj\Debug\QLNHANSU.frmLoaiCa.resources
+D:\Project_01\QLNS_DCH093\QLNHANSU\obj\Debug\QLNHANSU.frmLoaiCong.resources

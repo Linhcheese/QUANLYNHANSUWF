@@ -25,6 +25,7 @@ namespace DataLayer
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TB_BANGCONG> TB_BANGCONG { get; set; }
         public virtual DbSet<TB_BAOHIEM> TB_BAOHIEM { get; set; }
         public virtual DbSet<TB_BOPHAN> TB_BOPHAN { get; set; }
