@@ -22,10 +22,11 @@ namespace DataLayer
             this.TB_HOPDONG = new HashSet<TB_HOPDONG>();
             this.TB_KHENTHUONG_KYLUAT = new HashSet<TB_KHENTHUONG_KYLUAT>();
             this.TB_NHANVIEN_PHUCAP = new HashSet<TB_NHANVIEN_PHUCAP>();
+            this.TB_NHANVIEN_TANGLUONG = new HashSet<TB_NHANVIEN_TANGLUONG>();
+            this.TB_NHANVIEN_THOIVIEC = new HashSet<TB_NHANVIEN_THOIVIEC>();
             this.TB_NV_DIEUCHUYEN = new HashSet<TB_NV_DIEUCHUYEN>();
             this.TB_TANGCA = new HashSet<TB_TANGCA>();
             this.TB_UNGLUONG = new HashSet<TB_UNGLUONG>();
-            this.TB_NHANVIEN_THOIVIEC = new HashSet<TB_NHANVIEN_THOIVIEC>();
         }
     
         public int MANV { get; set; }
@@ -60,16 +61,18 @@ namespace DataLayer
         public virtual ICollection<TB_KHENTHUONG_KYLUAT> TB_KHENTHUONG_KYLUAT { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_NHANVIEN_PHUCAP> TB_NHANVIEN_PHUCAP { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TB_NHANVIEN_TANGLUONG> TB_NHANVIEN_TANGLUONG { get; set; }
         public virtual TB_PHONGBAN TB_PHONGBAN { get; set; }
         public virtual TB_TONGIAO TB_TONGIAO { get; set; }
         public virtual TB_TRINHDO TB_TRINHDO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TB_NHANVIEN_THOIVIEC> TB_NHANVIEN_THOIVIEC { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_NV_DIEUCHUYEN> TB_NV_DIEUCHUYEN { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_TANGCA> TB_TANGCA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TB_UNGLUONG> TB_UNGLUONG { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TB_NHANVIEN_THOIVIEC> TB_NHANVIEN_THOIVIEC { get; set; }
     }
 }

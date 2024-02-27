@@ -60,6 +60,16 @@ namespace BusinessLayer
             }
         }
         //Delete
+        public List<TB_CONGTY> Search(string keyword)
+        {
+            // Sử dụng LINQ để lọc các TB_CONGTY theo từ khóa trong các trường TENCT, DIENTHOAI, EMAIL, DIACHI
+            return db.TB_CONGTY
+                     .Where(ct => ct.TENCT.Contains(keyword)
+                                  || ct.DIENTHOAI.Contains(keyword)
+                                  || ct.EMAIL.Contains(keyword)
+                                  || ct.DIACHI.Contains(keyword))
+                     .ToList();
+        }
         public void Delete(int id)
         {
             try

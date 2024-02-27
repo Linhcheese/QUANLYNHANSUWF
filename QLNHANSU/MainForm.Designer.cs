@@ -57,6 +57,7 @@ namespace QLNHANSU
             this.btnBoPhan = new DevExpress.XtraBars.BarButtonItem();
             this.btnKyLuat = new DevExpress.XtraBars.BarButtonItem();
             this.btnDong = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTangLuong = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -68,7 +69,6 @@ namespace QLNHANSU
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
-            this.btnTangLuong = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -214,6 +214,7 @@ namespace QLNHANSU
             this.btnLoaiCa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLoaiCa.ImageOptions.LargeImage")));
             this.btnLoaiCa.Name = "btnLoaiCa";
             this.btnLoaiCa.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnLoaiCa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLoaiCa_ItemClick);
             // 
             // btnLoaiCong
             // 
@@ -223,6 +224,7 @@ namespace QLNHANSU
             this.btnLoaiCong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLoaiCong.ImageOptions.LargeImage")));
             this.btnLoaiCong.Name = "btnLoaiCong";
             this.btnLoaiCong.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnLoaiCong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLoaiCong_ItemClick);
             // 
             // btnPhuCap
             // 
@@ -232,6 +234,7 @@ namespace QLNHANSU
             this.btnPhuCap.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPhuCap.ImageOptions.LargeImage")));
             this.btnPhuCap.Name = "btnPhuCap";
             this.btnPhuCap.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnPhuCap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhuCap_ItemClick);
             // 
             // btnTangCa
             // 
@@ -241,6 +244,7 @@ namespace QLNHANSU
             this.btnTangCa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTangCa.ImageOptions.LargeImage")));
             this.btnTangCa.Name = "btnTangCa";
             this.btnTangCa.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnTangCa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTangCa_ItemClick);
             // 
             // btnUngLuong
             // 
@@ -250,6 +254,7 @@ namespace QLNHANSU
             this.btnUngLuong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnUngLuong.ImageOptions.LargeImage")));
             this.btnUngLuong.Name = "btnUngLuong";
             this.btnUngLuong.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnUngLuong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUngLuong_ItemClick);
             // 
             // btnBangCong
             // 
@@ -259,6 +264,7 @@ namespace QLNHANSU
             this.btnBangCong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBangCong.ImageOptions.LargeImage")));
             this.btnBangCong.Name = "btnBangCong";
             this.btnBangCong.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnBangCong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBangCong_ItemClick);
             // 
             // btnBangLuong
             // 
@@ -268,6 +274,7 @@ namespace QLNHANSU
             this.btnBangLuong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBangLuong.ImageOptions.LargeImage")));
             this.btnBangLuong.Name = "btnBangLuong";
             this.btnBangLuong.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnBangLuong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBangLuong_ItemClick);
             // 
             // btnDoiMatKhau
             // 
@@ -352,6 +359,17 @@ namespace QLNHANSU
             this.btnDong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDong.ImageOptions.LargeImage")));
             this.btnDong.Name = "btnDong";
             this.btnDong.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnDong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDong_ItemClick);
+            // 
+            // btnTangLuong
+            // 
+            this.btnTangLuong.Caption = "Tăng lương";
+            this.btnTangLuong.Id = 26;
+            this.btnTangLuong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTangLuong.ImageOptions.Image")));
+            this.btnTangLuong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTangLuong.ImageOptions.LargeImage")));
+            this.btnTangLuong.Name = "btnTangLuong";
+            this.btnTangLuong.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnTangLuong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTangLuong_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -440,16 +458,6 @@ namespace QLNHANSU
             this.documentManager1.View = this.tabbedView1;
             this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView1});
-            // 
-            // btnTangLuong
-            // 
-            this.btnTangLuong.Caption = "Tăng lương";
-            this.btnTangLuong.Id = 26;
-            this.btnTangLuong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTangLuong.ImageOptions.Image")));
-            this.btnTangLuong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTangLuong.ImageOptions.LargeImage")));
-            this.btnTangLuong.Name = "btnTangLuong";
-            this.btnTangLuong.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.btnTangLuong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTangLuong_ItemClick);
             // 
             // MainForm
             // 
