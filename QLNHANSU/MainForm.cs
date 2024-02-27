@@ -131,9 +131,10 @@ namespace QLNHANSU
             openForm(typeof(frmTangLuong));
         }
 
+        //loai ca
         private void btnLoaiCa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            openForm(typeof(frmLoaiCa));
         }
 
         private void btnLoaiCong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

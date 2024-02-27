@@ -222,6 +222,12 @@
     <Property Name="IDLOAICA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TENLOAICA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="HESO" Type="Double" />
+    <Property Name="CREATED_BY" Type="Int32" />
+    <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="UPDATED_BY" Type="Int32" />
+    <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="DELETED_BY" Type="Int32" />
+    <Property Name="DELETED_DATE" Type="DateTime" Precision="3" />
     <NavigationProperty Name="TB_TANGCA" Relationship="QLNHANSUModel.FK_TB_TANGCA_TB_LOAICA" FromRole="TB_LOAICA" ToRole="TB_TANGCA" />
   </EntityType>
   <EntityType Name="TB_LOAICONG">
