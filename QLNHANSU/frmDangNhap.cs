@@ -65,5 +65,17 @@ namespace QLNHANSU
 
             Application.Exit();
         }
+
+        private void hyperlinkLabelControl1_Click(object sender, EventArgs e)
+        {
+            frmDangKy frmDangKy = new frmDangKy();
+            frmDangKy.ShowDialog();
+        }
+
+        private void hyperlinkLabelControl2_Click(object sender, EventArgs e)
+        {
+            frmQuenMatKhau frmQuenMatKhau = new frmQuenMatKhau();
+            frmQuenMatKhau.ShowDialog();
+        }
     }
 }

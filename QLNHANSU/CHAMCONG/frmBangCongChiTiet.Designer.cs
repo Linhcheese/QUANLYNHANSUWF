@@ -53,7 +53,6 @@ namespace QLNHANSU.CHAMCONG
             this.btnHuyCV = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar5 = new DevExpress.XtraBars.Bar();
             this.btnPhatSinhKyCong = new DevExpress.XtraBars.BarButtonItem();
@@ -118,6 +117,7 @@ namespace QLNHANSU.CHAMCONG
             this.CONGCHUNHAT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TONGNGAYCONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barDockControl9 = new DevExpress.XtraBars.BarDockControl();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSachCV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSachCV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
@@ -376,27 +376,6 @@ namespace QLNHANSU.CHAMCONG
             this.checkBox1.Text = "Khóa";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12"});
-            this.comboBox1.Location = new System.Drawing.Point(244, 82);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 6;
-            // 
             // barManager2
             // 
             this.barManager2.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
@@ -439,7 +418,7 @@ namespace QLNHANSU.CHAMCONG
             // 
             this.btnPhatSinhKyCong.Caption = "Phát Sinh Kỳ Công";
             this.btnPhatSinhKyCong.Id = 0;
-            this.btnPhatSinhKyCong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
+            this.btnPhatSinhKyCong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnPhatSinhKyCong.ImageOptions.SvgImage")));
             this.btnPhatSinhKyCong.Name = "btnPhatSinhKyCong";
             this.btnPhatSinhKyCong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhatSinhKyCong_ItemClick);
             // 
@@ -601,9 +580,9 @@ namespace QLNHANSU.CHAMCONG
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
             this.splitContainer1.Panel1.Controls.Add(this.checkBox1);
             this.splitContainer1.Panel1.Controls.Add(this.chkTrangThai);
-            this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
             this.splitContainer1.Panel1.Controls.Add(this.cboNam);
             this.splitContainer1.Panel1.Controls.Add(this.labelControl2);
             this.splitContainer1.Panel1.Controls.Add(this.nam);
@@ -1299,6 +1278,27 @@ namespace QLNHANSU.CHAMCONG
             this.barDockControl9.Manager = this.barManager2;
             this.barDockControl9.Size = new System.Drawing.Size(1121, 0);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.comboBox1.Location = new System.Drawing.Point(244, 79);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 10;
+            // 
             // frmBangCongChiTiet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -1359,7 +1359,6 @@ namespace QLNHANSU.CHAMCONG
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox chkTrangThai;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox cboNam;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl nam;
@@ -1422,5 +1421,6 @@ namespace QLNHANSU.CHAMCONG
         private DevExpress.XtraGrid.Columns.GridColumn CONGNGAYLE;
         private DevExpress.XtraGrid.Columns.GridColumn CONGCHUNHAT;
         private DevExpress.XtraGrid.Columns.GridColumn TONGNGAYCONG;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

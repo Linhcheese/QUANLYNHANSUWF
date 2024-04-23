@@ -126,7 +126,7 @@ namespace QLNHANSU.CHAMCONG
                 kc.THANG = int.Parse(cboThang.Text); // Corrected to parse cboThang.Text
                 kc.KHOA = chkKhoa.Checked;
                 kc.TRANGTHAI = chkTrangThai.Checked;
-                kc.MACTY = 1;
+                kc.IDCT = 1;
                 kc.NGAYCONGTRONGTHANG = Functions.Demngaylamviectrongthang(int.Parse(cboThang.Text), int.Parse(cboNam.Text));
                 kc.NGAYTINHCONG = DateTime.Now;
                 kc.CREATED_BY = 1; // User ID here

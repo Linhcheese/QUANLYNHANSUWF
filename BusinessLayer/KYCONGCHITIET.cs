@@ -61,7 +61,7 @@ namespace BusinessLayer
 				kycongchitiet.MAKYCONG = nam * 100 + thang;
 				kycongchitiet.MANV = item.MANV;
 				kycongchitiet.HOTEN = item.HOTEN;
-				kycongchitiet.IDCTY = item.IDCT;
+                kycongchitiet.IDCT = item.IDCT;
 				kycongchitiet.D1 = listDay[0];
 				kycongchitiet.D2 = listDay[1];
 				kycongchitiet.D3 = listDay[2];

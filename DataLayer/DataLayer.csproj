@@ -148,9 +148,6 @@
     <Compile Include="TB_UNGLUONG.cs">
       <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>
-    <Compile Include="TB_USER.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />

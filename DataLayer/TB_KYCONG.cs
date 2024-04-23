@@ -20,7 +20,7 @@ namespace DataLayer
         public Nullable<bool> KHOA { get; set; }
         public Nullable<System.DateTime> NGAYTINHCONG { get; set; }
         public Nullable<double> NGAYCONGTRONGTHANG { get; set; }
-        public Nullable<int> MACTY { get; set; }
+        public Nullable<int> IDCT { get; set; }
         public Nullable<bool> TRANGTHAI { get; set; }
         public Nullable<int> CREATED_BY { get; set; }
         public Nullable<System.DateTime> CREATED_DATE { get; set; }

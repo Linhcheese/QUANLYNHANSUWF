@@ -129,7 +129,7 @@
     <Property Name="KHOA" Type="bit" />
     <Property Name="NGAYTINHCONG" Type="datetime" />
     <Property Name="NGAYCONGTRONGTHANG" Type="float" />
-    <Property Name="MACTY" Type="int" />
+    <Property Name="IDCT" Type="int" />
     <Property Name="TRANGTHAI" Type="bit" />
     <Property Name="CREATED_BY" Type="int" />
     <Property Name="CREATED_DATE" Type="datetime" />
@@ -141,12 +141,13 @@
   <EntityType Name="TB_KYCONGCHITIET">
     <Key>
       <PropertyRef Name="MAKYCONG" />
+      <PropertyRef Name="MANV" />
     </Key>
     <Property Name="MAKYCONG" Type="int" Nullable="false" />
     <Property Name="MANV" Type="int" Nullable="false" />
     <Property Name="HOTEN" Type="nvarchar" MaxLength="50" />
-    <Property Name="IDCTY" Type="int" />
-    <Property Name="D1" Type="nvarchar" MaxLength="4" />
+    <Property Name="IDCT" Type="int" />
+    <Property Name="D1" Type="nvarchar" MaxLength="10" />
     <Property Name="D2" Type="nvarchar" MaxLength="10" />
     <Property Name="D3" Type="nvarchar" MaxLength="10" />
     <Property Name="D4" Type="nvarchar" MaxLength="10" />
@@ -394,17 +395,14 @@
     <Property Name="THANG" Type="int" />
     <Property Name="NGAY" Type="int" />
     <Property Name="SOTIEN" Type="float" />
-    <Property Name="TRANGTHAI" Type="bit" />
     <Property Name="MANV" Type="int" />
-  </EntityType>
-  <EntityType Name="TB_USER">
-    <Key>
-      <PropertyRef Name="UID" />
-    </Key>
-    <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="USERNAME" Type="nvarchar" MaxLength="50" />
-    <Property Name="FULLNAME" Type="nvarchar" MaxLength="50" />
-    <Property Name="PASS" Type="nvarchar" MaxLength="50" />
+    <Property Name="GHICHU" Type="nvarchar" MaxLength="250" />
+    <Property Name="CREATED_BY" Type="int" />
+    <Property Name="CREATED_DATE" Type="datetime" />
+    <Property Name="UPDATED_BY" Type="int" />
+    <Property Name="UPDATED_DATE" Type="datetime" />
+    <Property Name="DELETED_BY" Type="int" />
+    <Property Name="DELETED_DATE" Type="datetime" />
   </EntityType>
   <Association Name="FK_TB_BANGCONG_TB_LOAICONG">
     <End Role="TB_LOAICONG" Type="Self.TB_LOAICONG" Multiplicity="0..1" />
@@ -686,7 +684,6 @@
     <EntitySet Name="TB_TONGIAO" EntityType="Self.TB_TONGIAO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_TRINHDO" EntityType="Self.TB_TRINHDO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_UNGLUONG" EntityType="Self.TB_UNGLUONG" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TB_USER" EntityType="Self.TB_USER" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_TB_BANGCONG_TB_LOAICONG" Association="Self.FK_TB_BANGCONG_TB_LOAICONG">
       <End Role="TB_LOAICONG" EntitySet="TB_LOAICONG" />
       <End Role="TB_BANGCONG" EntitySet="TB_BANGCONG" />

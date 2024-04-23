@@ -394,6 +394,8 @@ namespace QLNHANSU.CHAMCONG
             // 
             // THANG
             // 
+            this.THANG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.THANG.AppearanceHeader.Options.UseFont = true;
             this.THANG.Caption = "THÁNG";
             this.THANG.FieldName = "THANG";
             this.THANG.MaxWidth = 80;
@@ -405,6 +407,8 @@ namespace QLNHANSU.CHAMCONG
             // 
             // NAMM
             // 
+            this.NAMM.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.NAMM.AppearanceHeader.Options.UseFont = true;
             this.NAMM.Caption = "Năm";
             this.NAMM.FieldName = "NAM";
             this.NAMM.MaxWidth = 100;
@@ -456,7 +460,7 @@ namespace QLNHANSU.CHAMCONG
             // MACTY
             // 
             this.MACTY.Caption = "MÃ CTY";
-            this.MACTY.FieldName = "MACTY";
+            this.MACTY.FieldName = "IDCT";
             this.MACTY.MinWidth = 25;
             this.MACTY.Name = "MACTY";
             this.MACTY.Width = 94;

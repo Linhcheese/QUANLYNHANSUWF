@@ -41,6 +41,9 @@ namespace QLNHANSU
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.btnHuyBo = new System.Windows.Forms.Button();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.hyperlinkLabelControl1 = new DevExpress.XtraEditors.HyperlinkLabelControl();
+            this.hyperlinkLabelControl2 = new DevExpress.XtraEditors.HyperlinkLabelControl();
             this.SuspendLayout();
             // 
             // lblTenDangNhap
@@ -78,7 +81,7 @@ namespace QLNHANSU
             // 
             // btnDangNhap
             // 
-            this.btnDangNhap.Location = new System.Drawing.Point(130, 150);
+            this.btnDangNhap.Location = new System.Drawing.Point(114, 196);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(100, 30);
             this.btnDangNhap.TabIndex = 4;
@@ -88,7 +91,7 @@ namespace QLNHANSU
             // 
             // btnHuyBo
             // 
-            this.btnHuyBo.Location = new System.Drawing.Point(270, 150);
+            this.btnHuyBo.Location = new System.Drawing.Point(289, 196);
             this.btnHuyBo.Name = "btnHuyBo";
             this.btnHuyBo.Size = new System.Drawing.Size(100, 30);
             this.btnHuyBo.TabIndex = 5;
@@ -96,17 +99,47 @@ namespace QLNHANSU
             this.btnHuyBo.UseVisualStyleBackColor = true;
             this.btnHuyBo.Click += new System.EventHandler(this.btnHuyBo_Click);
             // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(77, 149);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(137, 17);
+            this.labelControl1.TabIndex = 6;
+            this.labelControl1.Text = "Bạn chưa có tài khoản";
+            // 
+            // hyperlinkLabelControl1
+            // 
+            this.hyperlinkLabelControl1.Location = new System.Drawing.Point(220, 150);
+            this.hyperlinkLabelControl1.Name = "hyperlinkLabelControl1";
+            this.hyperlinkLabelControl1.Size = new System.Drawing.Size(44, 16);
+            this.hyperlinkLabelControl1.TabIndex = 7;
+            this.hyperlinkLabelControl1.Text = "Đăng kí";
+            this.hyperlinkLabelControl1.Click += new System.EventHandler(this.hyperlinkLabelControl1_Click);
+            // 
+            // hyperlinkLabelControl2
+            // 
+            this.hyperlinkLabelControl2.Location = new System.Drawing.Point(316, 150);
+            this.hyperlinkLabelControl2.Name = "hyperlinkLabelControl2";
+            this.hyperlinkLabelControl2.Size = new System.Drawing.Size(95, 16);
+            this.hyperlinkLabelControl2.TabIndex = 8;
+            this.hyperlinkLabelControl2.Text = "Quên mật khẩu";
+            this.hyperlinkLabelControl2.Click += new System.EventHandler(this.hyperlinkLabelControl2_Click);
+            // 
             // frmDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(502, 306);
+            this.ClientSize = new System.Drawing.Size(479, 291);
+            this.Controls.Add(this.hyperlinkLabelControl2);
+            this.Controls.Add(this.hyperlinkLabelControl1);
+            this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.btnHuyBo);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.txtMatKhau);
             this.Controls.Add(this.txtTenDangNhap);
             this.Controls.Add(this.lblMatKhau);
             this.Controls.Add(this.lblTenDangNhap);
+            this.IconOptions.SvgImage = global::QLNHANSU.Properties.Resources.bo_user;
             this.Name = "frmDangNhap";
             this.Text = "Đăng nhập";
             this.ResumeLayout(false);
@@ -114,5 +147,9 @@ namespace QLNHANSU
 
         }
         #endregion
+
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.HyperlinkLabelControl hyperlinkLabelControl1;
+        private DevExpress.XtraEditors.HyperlinkLabelControl hyperlinkLabelControl2;
     }
 }
