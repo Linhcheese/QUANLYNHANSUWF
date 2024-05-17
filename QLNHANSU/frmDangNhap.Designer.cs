@@ -141,6 +141,7 @@ namespace QLNHANSU
             this.Controls.Add(this.lblTenDangNhap);
             this.IconOptions.SvgImage = global::QLNHANSU.Properties.Resources.bo_user;
             this.Name = "frmDangNhap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -37,6 +37,7 @@ namespace QLNHANSU
             this.NGAYKETTHUC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.THOIHAN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HESOLUONG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LUONGCOBAN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAYKY = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LANKY = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MANV = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -57,6 +58,8 @@ namespace QLNHANSU
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.spLuongCoBan = new DevExpress.XtraEditors.SpinEdit();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.cboThoiHan = new System.Windows.Forms.ComboBox();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.txtNoiDung = new DevExpress.XtraRichEdit.RichEditControl();
@@ -78,6 +81,7 @@ namespace QLNHANSU
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.dtNgayBatDau = new System.Windows.Forms.DateTimePicker();
+            this.DELETED_BY = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSachHD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSachHD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -85,6 +89,7 @@ namespace QLNHANSU
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spLuongCoBan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slkNhanVien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spHeSoLuong.Properties)).BeginInit();
@@ -95,17 +100,20 @@ namespace QLNHANSU
             // gvDanhSachHD
             // 
             this.gvDanhSachHD.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.DELETED_BY,
             this.SOHD,
             this.NGAYBATDAU,
             this.NGAYKETTHUC,
             this.THOIHAN,
             this.HESOLUONG,
+            this.LUONGCOBAN,
             this.NGAYKY,
             this.LANKY,
             this.MANV,
             this.HOTEN});
             this.gvDanhSachHD.GridControl = this.gcDanhSachHD;
             this.gvDanhSachHD.Name = "gvDanhSachHD";
+            this.gvDanhSachHD.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gvDanhSachHD_CustomDrawCell);
             this.gvDanhSachHD.Click += new System.EventHandler(this.gvDanhSachHD_Click);
             // 
             // SOHD
@@ -118,7 +126,7 @@ namespace QLNHANSU
             this.SOHD.MinWidth = 30;
             this.SOHD.Name = "SOHD";
             this.SOHD.Visible = true;
-            this.SOHD.VisibleIndex = 0;
+            this.SOHD.VisibleIndex = 1;
             this.SOHD.Width = 161;
             // 
             // NGAYBATDAU
@@ -131,7 +139,7 @@ namespace QLNHANSU
             this.NGAYBATDAU.MinWidth = 150;
             this.NGAYBATDAU.Name = "NGAYBATDAU";
             this.NGAYBATDAU.Visible = true;
-            this.NGAYBATDAU.VisibleIndex = 1;
+            this.NGAYBATDAU.VisibleIndex = 2;
             this.NGAYBATDAU.Width = 200;
             // 
             // NGAYKETTHUC
@@ -144,7 +152,7 @@ namespace QLNHANSU
             this.NGAYKETTHUC.MinWidth = 120;
             this.NGAYKETTHUC.Name = "NGAYKETTHUC";
             this.NGAYKETTHUC.Visible = true;
-            this.NGAYKETTHUC.VisibleIndex = 2;
+            this.NGAYKETTHUC.VisibleIndex = 3;
             this.NGAYKETTHUC.Width = 200;
             // 
             // THOIHAN
@@ -157,7 +165,7 @@ namespace QLNHANSU
             this.THOIHAN.MinWidth = 80;
             this.THOIHAN.Name = "THOIHAN";
             this.THOIHAN.Visible = true;
-            this.THOIHAN.VisibleIndex = 3;
+            this.THOIHAN.VisibleIndex = 4;
             this.THOIHAN.Width = 200;
             // 
             // HESOLUONG
@@ -170,8 +178,20 @@ namespace QLNHANSU
             this.HESOLUONG.MinWidth = 120;
             this.HESOLUONG.Name = "HESOLUONG";
             this.HESOLUONG.Visible = true;
-            this.HESOLUONG.VisibleIndex = 4;
+            this.HESOLUONG.VisibleIndex = 5;
             this.HESOLUONG.Width = 120;
+            // 
+            // LUONGCOBAN
+            // 
+            this.LUONGCOBAN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.LUONGCOBAN.AppearanceHeader.Options.UseFont = true;
+            this.LUONGCOBAN.Caption = "LƯƠNG CƠ BẢN";
+            this.LUONGCOBAN.FieldName = "LUONGCOBAN";
+            this.LUONGCOBAN.MinWidth = 100;
+            this.LUONGCOBAN.Name = "LUONGCOBAN";
+            this.LUONGCOBAN.Visible = true;
+            this.LUONGCOBAN.VisibleIndex = 6;
+            this.LUONGCOBAN.Width = 100;
             // 
             // NGAYKY
             // 
@@ -183,7 +203,7 @@ namespace QLNHANSU
             this.NGAYKY.MinWidth = 200;
             this.NGAYKY.Name = "NGAYKY";
             this.NGAYKY.Visible = true;
-            this.NGAYKY.VisibleIndex = 5;
+            this.NGAYKY.VisibleIndex = 7;
             this.NGAYKY.Width = 200;
             // 
             // LANKY
@@ -196,7 +216,7 @@ namespace QLNHANSU
             this.LANKY.MinWidth = 120;
             this.LANKY.Name = "LANKY";
             this.LANKY.Visible = true;
-            this.LANKY.VisibleIndex = 6;
+            this.LANKY.VisibleIndex = 8;
             this.LANKY.Width = 120;
             // 
             // MANV
@@ -220,7 +240,7 @@ namespace QLNHANSU
             this.HOTEN.MinWidth = 150;
             this.HOTEN.Name = "HOTEN";
             this.HOTEN.Visible = true;
-            this.HOTEN.VisibleIndex = 7;
+            this.HOTEN.VisibleIndex = 9;
             this.HOTEN.Width = 150;
             // 
             // gcDanhSachHD
@@ -391,6 +411,8 @@ namespace QLNHANSU
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.spLuongCoBan);
+            this.splitContainer1.Panel1.Controls.Add(this.labelControl10);
             this.splitContainer1.Panel1.Controls.Add(this.cboThoiHan);
             this.splitContainer1.Panel1.Controls.Add(this.labelControl9);
             this.splitContainer1.Panel1.Controls.Add(this.txtNoiDung);
@@ -416,6 +438,31 @@ namespace QLNHANSU
             this.splitContainer1.Size = new System.Drawing.Size(1181, 732);
             this.splitContainer1.SplitterDistance = 437;
             this.splitContainer1.TabIndex = 7;
+            // 
+            // spLuongCoBan
+            // 
+            this.spLuongCoBan.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spLuongCoBan.Location = new System.Drawing.Point(792, 41);
+            this.spLuongCoBan.MenuManager = this.barManager1;
+            this.spLuongCoBan.Name = "spLuongCoBan";
+            this.spLuongCoBan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spLuongCoBan.Size = new System.Drawing.Size(108, 24);
+            this.spLuongCoBan.TabIndex = 23;
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl10.Appearance.Options.UseFont = true;
+            this.labelControl10.Location = new System.Drawing.Point(705, 44);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(89, 18);
+            this.labelControl10.TabIndex = 22;
+            this.labelControl10.Text = "Lương cơ bản";
             // 
             // cboThoiHan
             // 
@@ -636,6 +683,17 @@ namespace QLNHANSU
             this.dtNgayBatDau.Size = new System.Drawing.Size(204, 23);
             this.dtNgayBatDau.TabIndex = 3;
             // 
+            // DELETED_BY
+            // 
+            this.DELETED_BY.Caption = "gridColumn1";
+            this.DELETED_BY.FieldName = "DELETED_BY";
+            this.DELETED_BY.MaxWidth = 30;
+            this.DELETED_BY.MinWidth = 25;
+            this.DELETED_BY.Name = "DELETED_BY";
+            this.DELETED_BY.Visible = true;
+            this.DELETED_BY.VisibleIndex = 0;
+            this.DELETED_BY.Width = 30;
+            // 
             // frmHopDongLaoDong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -657,6 +715,7 @@ namespace QLNHANSU
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.spLuongCoBan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slkNhanVien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spHeSoLuong.Properties)).EndInit();
@@ -716,5 +775,9 @@ namespace QLNHANSU
         private System.Windows.Forms.ComboBox cboThoiHan;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraGrid.Columns.GridColumn NGAYKY;
+        private DevExpress.XtraEditors.SpinEdit spLuongCoBan;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraGrid.Columns.GridColumn LUONGCOBAN;
+        private DevExpress.XtraGrid.Columns.GridColumn DELETED_BY;
     }
 }

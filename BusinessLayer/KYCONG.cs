@@ -72,15 +72,20 @@ namespace BusinessLayer
                 throw new Exception("Lỗi: " + ex.Message);
             }
         }
-/*        public string MaxKyCong()
+        public bool KiemTraPhatSinhKyCong(int makycong)
         {
-            var _hd = db.TB_KYCONG.OrderByDescending(x => x.CREATED_DATE).FirstOrDefault();
-            if (_hd != null)
+            var kc = db.TB_KYCONG.FirstOrDefault(x => x.MAKYCONG == makycong);
+            if(kc == null)
             {
-                return _hd.MAKYCONG;
+                return false;
             }
             else
-                return "00000";
-        }*/
+            {
+                if (kc.TRANGTHAI == true)
+                    return true;
+                else
+                    return false;
+            }
+        }
     }
 }

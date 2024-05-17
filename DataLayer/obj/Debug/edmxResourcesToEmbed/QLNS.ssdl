@@ -1,15 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="QLNHANSUModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
   <EntityType Name="TB_BANGCONG">
     <Key>
       <PropertyRef Name="MABC" />
@@ -29,24 +19,51 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="MAKYCONG" Type="int" />
-    <Property Name="MACTY" Type="nvarchar" MaxLength="50" />
-    <Property Name="MANV" Type="nvarchar" MaxLength="50" />
+    <Property Name="IDCT" Type="int" />
+    <Property Name="MANV" Type="int" />
     <Property Name="HOTEN" Type="nvarchar" MaxLength="50" />
     <Property Name="NGAY" Type="datetime" />
     <Property Name="THU" Type="nvarchar" MaxLength="50" />
     <Property Name="GIOVAO" Type="nvarchar" MaxLength="50" />
     <Property Name="GIORA" Type="nvarchar" MaxLength="50" />
     <Property Name="NGAYPHEP" Type="float" />
+    <Property Name="KHONGPHEP" Type="float" />
     <Property Name="CONGNGAYLE" Type="float" />
     <Property Name="CONGCHUNHAT" Type="float" />
+    <Property Name="NGAYCONG" Type="float" />
     <Property Name="KYHIEU" Type="nvarchar" MaxLength="50" />
     <Property Name="GHICHU" Type="nvarchar" MaxLength="500" />
     <Property Name="CREATED_BY" Type="int" />
     <Property Name="CREATED_DATE" Type="datetime" />
     <Property Name="UPDATED_BY" Type="int" />
     <Property Name="UPDATED_DATE" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TB_BANGLUONG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MAKYCONG" Type="int" />
+    <Property Name="MANV" Type="int" />
+    <Property Name="HOTEN" Type="nvarchar" MaxLength="50" />
+    <Property Name="NGAYCONGTRONGTHANG" Type="int" />
+    <Property Name="NGAYPHEP" Type="float" />
+    <Property Name="KHONGPHEP" Type="float" />
+    <Property Name="NGAYLE" Type="float" />
+    <Property Name="NGAYCHUNHAT" Type="float" />
+    <Property Name="NGAYTHUONG" Type="float" />
+    <Property Name="TANGCA" Type="float" />
+    <Property Name="PHUCAP" Type="float" />
+    <Property Name="UNGLUONG" Type="float" />
+    <Property Name="THUCLANH" Type="float" />
+    <Property Name="CREADTED_BY" Type="int" />
+    <Property Name="CRREATED_DATE" Type="datetime" />
+    <Property Name="UPDATED_BY" Type="int" />
+    <Property Name="UPDATED_DATE" Type="datetime" />
+    <Property Name="DELETED_BY" Type="int" />
+    <Property Name="DELETED_DATE" Type="datetime" />
   </EntityType>
   <EntityType Name="TB_BAOHIEM">
     <Key>
@@ -109,6 +126,7 @@
     <Property Name="LANKY" Type="int" />
     <Property Name="THOIHAN" Type="nvarchar" MaxLength="50" />
     <Property Name="HESOLUONG" Type="float" />
+    <Property Name="LUONGCOBAN" Type="int" />
     <Property Name="MANV" Type="int" />
     <Property Name="SOHD" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="MACT" Type="int" />
@@ -657,9 +675,9 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="QLNHANSUModelStoreContainer">
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_BANGCONG" EntityType="Self.TB_BANGCONG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_BANGCONG_NHANVIEN_CHITIET" EntityType="Self.TB_BANGCONG_NHANVIEN_CHITIET" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_BANGLUONG" EntityType="Self.TB_BANGLUONG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_BAOHIEM" EntityType="Self.TB_BAOHIEM" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_BOPHAN" EntityType="Self.TB_BOPHAN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_Config" EntityType="Self.TB_Config" Schema="dbo" store:Type="Tables" />

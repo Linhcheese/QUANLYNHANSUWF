@@ -68,8 +68,10 @@ namespace QLNHANSU
 
         private void hyperlinkLabelControl1_Click(object sender, EventArgs e)
         {
+            this.Hide(); // Ẩn form hiện tại trước khi mở form mới
             frmDangKy frmDangKy = new frmDangKy();
             frmDangKy.ShowDialog();
+            this.Close();
         }
 
         private void hyperlinkLabelControl2_Click(object sender, EventArgs e)

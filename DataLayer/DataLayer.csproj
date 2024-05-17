@@ -67,13 +67,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLNS.edmx</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
-    </Compile>
     <Compile Include="TB_BANGCONG.cs">
       <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>
     <Compile Include="TB_BANGCONG_NHANVIEN_CHITIET.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_BANGLUONG.cs">
       <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>
     <Compile Include="TB_BAOHIEM.cs">

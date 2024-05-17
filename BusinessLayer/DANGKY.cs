@@ -28,7 +28,9 @@ namespace BusinessLayer
                 var newAccount = new TB_TAIKHOAN()
                 {
                     USERNAME = username,
-                    PASSWORD = password
+                    PASSWORD = password,
+                    LEVELS = 1
+
                 };
                 db.TB_TAIKHOAN.Add(newAccount);
                 db.SaveChanges();
@@ -41,7 +43,7 @@ namespace BusinessLayer
                 throw new Exception("Lỗi: " + ex.Message);
             }
         }
-
+     
         public void Exit()
         {
             throw new NotImplementedException();

@@ -113,7 +113,7 @@ namespace QLNHANSU
             this.DELETE.Name = "DELETE";
             this.DELETE.Visible = true;
             this.DELETE.VisibleIndex = 0;
-            this.DELETE.Width = 94;
+            this.DELETE.Width = 30;
             // 
             // ID
             // 
@@ -163,7 +163,7 @@ namespace QLNHANSU
             this.SOGIO.Name = "SOGIO";
             this.SOGIO.Visible = true;
             this.SOGIO.VisibleIndex = 3;
-            this.SOGIO.Width = 86;
+            this.SOGIO.Width = 100;
             // 
             // HESO
             // 
@@ -189,7 +189,7 @@ namespace QLNHANSU
             this.SOOTIEN.Name = "SOOTIEN";
             this.SOOTIEN.Visible = true;
             this.SOOTIEN.VisibleIndex = 5;
-            this.SOOTIEN.Width = 100;
+            this.SOOTIEN.Width = 120;
             // 
             // GHICHU
             // 
@@ -202,7 +202,7 @@ namespace QLNHANSU
             this.GHICHU.Name = "GHICHU";
             this.GHICHU.Visible = true;
             this.GHICHU.VisibleIndex = 6;
-            this.GHICHU.Width = 200;
+            this.GHICHU.Width = 250;
             // 
             // IDNV
             // 

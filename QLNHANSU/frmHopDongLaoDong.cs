@@ -150,19 +150,20 @@ namespace QLNHANSU
             spHeSoLuong.Text = "1";
           
         }
-        void SaveData()
+        private void SaveData()
         {
             if (_them)
             {
                 var maxSoHD = _hdld.MaxSoHopDong();
                 int so = int.Parse(maxSoHD.Substring(0, 5)) + 1;
                 TB_HOPDONG hd = new TB_HOPDONG();
-                hd.SOHD = so.ToString("00000") + @"/2024/HĐLĐ";
+                hd.SOHD = so.ToString("00000") + @"/"+DateTime.Now.Year.ToString()+@"/HĐLĐ";
                 hd.NGAYBATDAU = dtNgayBatDau.Value;
                 hd.NGAYKETTHUC = dtNgayKetThuc.Value;
                 hd.NGAYKY = dtNgayKY.Value;
                 hd.THOIHAN = cboThoiHan.Text;
                 hd.HESOLUONG = double.Parse(spHeSoLuong.EditValue.ToString());
+                hd.LUONGCOBAN = int.Parse(spLuongCoBan.EditValue.ToString());
                 hd.LANKY = int.Parse(spLanKy.EditValue.ToString());
                 hd.MANV = int.Parse(slkNhanVien.EditValue.ToString());
                 hd.NOIDUNG = txtNoiDung.RtfText;
@@ -180,6 +181,7 @@ namespace QLNHANSU
                 hd.NGAYKY = dtNgayKY.Value;
                 hd.THOIHAN = cboThoiHan.Text;
                 hd.HESOLUONG = double.Parse(spHeSoLuong.EditValue.ToString());
+                hd.LUONGCOBAN = int.Parse(spLuongCoBan.EditValue.ToString());
                 hd.LANKY = int.Parse(spLanKy.EditValue.ToString());
                 hd.MANV = int.Parse(slkNhanVien.EditValue.ToString());
                 hd.NOIDUNG = txtNoiDung.RtfText;
@@ -203,12 +205,26 @@ namespace QLNHANSU
                 dtNgayKetThuc.Value=hd.NGAYBATDAU.Value;
                dtNgayKY.Value=hd.NGAYKY.Value;
                 cboThoiHan.Text=hd.THOIHAN;
-               spHeSoLuong.Text=hd.HESOLUONG.ToString();
+               spHeSoLuong.EditValue=hd.HESOLUONG;
+                spLuongCoBan.EditValue = hd.LUONGCOBAN;
                spLanKy.Text=hd.LANKY.ToString();
               slkNhanVien.EditValue=hd.MANV;
                 txtNoiDung.RtfText=hd.NOIDUNG;
                 _lst_hd_dto = _hdld.getItemFull(_sohd);
 
+            }
+        }
+
+        private void gvDanhSachHD_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column.Name == "DELETED_BY" && e.CellValue != null)
+            {
+                Image img = Properties.Resources.b2_2;
+                // Tạo một bản sao của hình ảnh với kích thước mới
+                Image resizedImg = new Bitmap(img, new Size(30, 30));
+                // Vẽ hình ảnh đã thay đổi kích thước lên ô
+                e.Graphics.DrawImage(resizedImg, e.Bounds.X, e.Bounds.Y);
+                e.Handled = true;
             }
         }
         //load Combo

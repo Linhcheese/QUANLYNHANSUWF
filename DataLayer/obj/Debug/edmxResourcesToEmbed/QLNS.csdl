@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="QLNHANSUModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="QLNHANSUEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="sysdiagrams" EntityType="QLNHANSUModel.sysdiagram" />
     <EntitySet Name="TB_BANGCONG" EntityType="QLNHANSUModel.TB_BANGCONG" />
     <EntitySet Name="TB_BANGCONG_NHANVIEN_CHITIET" EntityType="QLNHANSUModel.TB_BANGCONG_NHANVIEN_CHITIET" />
+    <EntitySet Name="TB_BANGLUONG" EntityType="QLNHANSUModel.TB_BANGLUONG" />
     <EntitySet Name="TB_BAOHIEM" EntityType="QLNHANSUModel.TB_BAOHIEM" />
     <EntitySet Name="TB_BOPHAN" EntityType="QLNHANSUModel.TB_BOPHAN" />
     <EntitySet Name="TB_Config" EntityType="QLNHANSUModel.TB_Config" />
@@ -11,6 +11,8 @@
     <EntitySet Name="TB_CHUCVU" EntityType="QLNHANSUModel.TB_CHUCVU" />
     <EntitySet Name="TB_DANTOC" EntityType="QLNHANSUModel.TB_DANTOC" />
     <EntitySet Name="TB_HOPDONG" EntityType="QLNHANSUModel.TB_HOPDONG" />
+    <EntitySet Name="TB_KYCONG" EntityType="QLNHANSUModel.TB_KYCONG" />
+    <EntitySet Name="TB_KYCONGCHITIET" EntityType="QLNHANSUModel.TB_KYCONGCHITIET" />
     <EntitySet Name="TB_KHENTHUONG_KYLUAT" EntityType="QLNHANSUModel.TB_KHENTHUONG_KYLUAT" />
     <EntitySet Name="TB_LOAICA" EntityType="QLNHANSUModel.TB_LOAICA" />
     <EntitySet Name="TB_LOAICONG" EntityType="QLNHANSUModel.TB_LOAICONG" />
@@ -110,19 +112,7 @@
       <End Role="TB_PHUCAP" EntitySet="TB_PHUCAP" />
       <End Role="TB_NHANVIEN_PHUCAP" EntitySet="TB_NHANVIEN_PHUCAP" />
     </AssociationSet>
-    <EntitySet Name="TB_KYCONGCHITIET" EntityType="QLNHANSUModel.TB_KYCONGCHITIET" />
-    <EntitySet Name="TB_KYCONG" EntityType="QLNHANSUModel.TB_KYCONG" />
   </EntityContainer>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
   <EntityType Name="TB_BANGCONG">
     <Key>
       <PropertyRef Name="MABC" />
@@ -144,24 +134,51 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="MAKYCONG" Type="Int32" />
-    <Property Name="MACTY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="MANV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IDCT" Type="Int32" />
+    <Property Name="MANV" Type="Int32" />
     <Property Name="HOTEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="NGAY" Type="DateTime" Precision="3" />
     <Property Name="THU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="GIOVAO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="GIORA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="NGAYPHEP" Type="Double" />
+    <Property Name="KHONGPHEP" Type="Double" />
     <Property Name="CONGNGAYLE" Type="Double" />
     <Property Name="CONGCHUNHAT" Type="Double" />
+    <Property Name="NGAYCONG" Type="Double" />
     <Property Name="KYHIEU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="GHICHU" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="CREATED_BY" Type="Int32" />
     <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
     <Property Name="UPDATED_BY" Type="Int32" />
     <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TB_BANGLUONG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MAKYCONG" Type="Int32" />
+    <Property Name="MANV" Type="Int32" />
+    <Property Name="HOTEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NGAYCONGTRONGTHANG" Type="Int32" />
+    <Property Name="NGAYPHEP" Type="Double" />
+    <Property Name="KHONGPHEP" Type="Double" />
+    <Property Name="NGAYLE" Type="Double" />
+    <Property Name="NGAYCHUNHAT" Type="Double" />
+    <Property Name="NGAYTHUONG" Type="Double" />
+    <Property Name="TANGCA" Type="Double" />
+    <Property Name="PHUCAP" Type="Double" />
+    <Property Name="UNGLUONG" Type="Double" />
+    <Property Name="THUCLANH" Type="Double" />
+    <Property Name="CREADTED_BY" Type="Int32" />
+    <Property Name="CRREATED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="UPDATED_BY" Type="Int32" />
+    <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="DELETED_BY" Type="Int32" />
+    <Property Name="DELETED_DATE" Type="DateTime" Precision="3" />
   </EntityType>
   <EntityType Name="TB_BAOHIEM">
     <Key>
@@ -230,6 +247,7 @@
     <Property Name="LANKY" Type="Int32" />
     <Property Name="THOIHAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="HESOLUONG" Type="Double" />
+    <Property Name="LUONGCOBAN" Type="Int32" />
     <Property Name="MANV" Type="Int32" />
     <Property Name="SOHD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="MACT" Type="Int32" />
@@ -241,6 +259,76 @@
     <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
     <NavigationProperty Name="TB_CONGTY" Relationship="QLNHANSUModel.FK_TB_HOPDONG_TB_CONGTY" FromRole="TB_HOPDONG" ToRole="TB_CONGTY" />
     <NavigationProperty Name="TB_NHANVIEN" Relationship="QLNHANSUModel.FK_TB_HOPDONG_TB_NHANVIEN" FromRole="TB_HOPDONG" ToRole="TB_NHANVIEN" />
+  </EntityType>
+  <EntityType Name="TB_KYCONG">
+    <Key>
+      <PropertyRef Name="MAKYCONG" />
+    </Key>
+    <Property Name="MAKYCONG" Type="Int32" Nullable="false" />
+    <Property Name="THANG" Type="Int32" />
+    <Property Name="NAM" Type="Int32" />
+    <Property Name="KHOA" Type="Boolean" />
+    <Property Name="NGAYTINHCONG" Type="DateTime" Precision="3" />
+    <Property Name="NGAYCONGTRONGTHANG" Type="Double" />
+    <Property Name="IDCT" Type="Int32" />
+    <Property Name="TRANGTHAI" Type="Boolean" />
+    <Property Name="CREATED_BY" Type="Int32" />
+    <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="UPDATED_BY" Type="Int32" />
+    <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="DELETED_BY" Type="Int32" />
+    <Property Name="DELETED_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TB_KYCONGCHITIET">
+    <Key>
+      <PropertyRef Name="MAKYCONG" />
+      <PropertyRef Name="MANV" />
+    </Key>
+    <Property Name="MAKYCONG" Type="Int32" Nullable="false" />
+    <Property Name="MANV" Type="Int32" Nullable="false" />
+    <Property Name="HOTEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IDCT" Type="Int32" />
+    <Property Name="D1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="D2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="D3" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="D4" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="D5" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="D6" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="D7" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="D8" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="D9" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="D10" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="D11" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="D12" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="D13" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="D14" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="D15" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="D16" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="D17" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="D18" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="D19" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="D20" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="D21" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="D22" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="D23" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="D24" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="D25" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="D26" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="D27" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="D28" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="D29" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="D30" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="D31" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NGAYCONG" Type="Double" />
+    <Property Name="NGAYPHEP" Type="Double" />
+    <Property Name="NGHIKHONGPHEP" Type="Double" />
+    <Property Name="CONGNGAYLE" Type="Double" />
+    <Property Name="CONGCHUNHAT" Type="Double" />
+    <Property Name="TONGNGAYCONG" Type="Double" />
+    <Property Name="CREATED_BY" Type="Int32" />
+    <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="UPDATED_BY" Type="Int32" />
+    <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
   </EntityType>
   <EntityType Name="TB_KHENTHUONG_KYLUAT">
     <Key>
@@ -741,74 +829,4 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityType Name="TB_KYCONGCHITIET">
-    <Key>
-      <PropertyRef Name="MAKYCONG" />
-      <PropertyRef Name="MANV" />
-    </Key>
-    <Property Name="MAKYCONG" Type="Int32" Nullable="false" />
-    <Property Name="MANV" Type="Int32" Nullable="false" />
-    <Property Name="HOTEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="IDCT" Type="Int32" />
-    <Property Name="D1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="D2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="D3" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="D4" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="D5" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="D6" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="D7" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="D8" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="D9" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="D10" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="D11" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="D12" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="D13" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="D14" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="D15" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="D16" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="D17" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="D18" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="D19" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="D20" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="D21" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="D22" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="D23" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="D24" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="D25" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="D26" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="D27" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="D28" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="D29" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="D30" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="D31" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="NGAYCONG" Type="Double" />
-    <Property Name="NGAYPHEP" Type="Double" />
-    <Property Name="NGHIKHONGPHEP" Type="Double" />
-    <Property Name="CONGNGAYLE" Type="Double" />
-    <Property Name="CONGCHUNHAT" Type="Double" />
-    <Property Name="TONGNGAYCONG" Type="Double" />
-    <Property Name="CREATED_BY" Type="Int32" />
-    <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
-    <Property Name="UPDATED_BY" Type="Int32" />
-    <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
-  </EntityType>
-  <EntityType Name="TB_KYCONG">
-    <Key>
-      <PropertyRef Name="MAKYCONG" />
-    </Key>
-    <Property Name="MAKYCONG" Type="Int32" Nullable="false" />
-    <Property Name="THANG" Type="Int32" />
-    <Property Name="NAM" Type="Int32" />
-    <Property Name="KHOA" Type="Boolean" />
-    <Property Name="NGAYTINHCONG" Type="DateTime" Precision="3" />
-    <Property Name="NGAYCONGTRONGTHANG" Type="Double" />
-    <Property Name="IDCT" Type="Int32" />
-    <Property Name="TRANGTHAI" Type="Boolean" />
-    <Property Name="CREATED_BY" Type="Int32" />
-    <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
-    <Property Name="UPDATED_BY" Type="Int32" />
-    <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
-    <Property Name="DELETED_BY" Type="Int32" />
-    <Property Name="DELETED_DATE" Type="DateTime" Precision="3" />
-  </EntityType>
 </Schema>

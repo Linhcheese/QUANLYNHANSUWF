@@ -31,6 +31,7 @@ namespace BusinessLayer
                     + item.NGAYKY.Value.ToString("dd/MM/yyyy").Substring(3,2) + " năm 2024";
                 hd.LANKY = item.LANKY;
                 hd.HESOLUONG = item.HESOLUONG;
+                hd.LUONGCOBAN = item.LUONGCOBAN;
                 hd.NOIDUNG = item.NOIDUNG;
                 hd.MANV = item.MANV;
                 hd.THOIHAN = item.THOIHAN;
@@ -71,6 +72,7 @@ namespace BusinessLayer
                 hd.NGAYKY = item.NGAYKY.Value.ToString("dd/MM/yyyy");
                 hd.LANKY = item.LANKY;
                 hd.HESOLUONG = item.HESOLUONG;
+                hd.LUONGCOBAN = item.LUONGCOBAN;
                 hd.NOIDUNG = item.NOIDUNG;
                 hd.MANV = item.MANV;
                 hd.THOIHAN = item.THOIHAN;

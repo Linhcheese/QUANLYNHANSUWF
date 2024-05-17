@@ -68,7 +68,6 @@ namespace QLNHANSU
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.bar1 = new DevExpress.XtraBars.Bar();
-            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -79,7 +78,6 @@ namespace QLNHANSU
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSach)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSach)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // bar5
@@ -113,8 +111,8 @@ namespace QLNHANSU
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.gcDanhSach);
-            this.splitContainer1.Size = new System.Drawing.Size(1013, 544);
-            this.splitContainer1.SplitterDistance = 126;
+            this.splitContainer1.Size = new System.Drawing.Size(795, 370);
+            this.splitContainer1.SplitterDistance = 85;
             this.splitContainer1.TabIndex = 10;
             // 
             // txtNoiDung
@@ -258,15 +256,15 @@ namespace QLNHANSU
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1013, 30);
+            this.barDockControlTop.Size = new System.Drawing.Size(795, 30);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 574);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 400);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1013, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(795, 20);
             // 
             // barDockControlLeft
             // 
@@ -274,15 +272,15 @@ namespace QLNHANSU
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 544);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 370);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1013, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(795, 30);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 544);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 370);
             // 
             // sotien
             // 
@@ -372,7 +370,7 @@ namespace QLNHANSU
             this.gcDanhSach.MainView = this.gvDanhSach;
             this.gcDanhSach.MenuManager = this.barManager1;
             this.gcDanhSach.Name = "gcDanhSach";
-            this.gcDanhSach.Size = new System.Drawing.Size(1013, 414);
+            this.gcDanhSach.Size = new System.Drawing.Size(795, 281);
             this.gcDanhSach.TabIndex = 0;
             this.gcDanhSach.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvDanhSach});
@@ -404,7 +402,7 @@ namespace QLNHANSU
             this.DELETE.Name = "DELETE";
             this.DELETE.Visible = true;
             this.DELETE.VisibleIndex = 0;
-            this.DELETE.Width = 94;
+            this.DELETE.Width = 30;
             // 
             // ID
             // 
@@ -423,11 +421,10 @@ namespace QLNHANSU
             this.NGAY.AppearanceHeader.Options.UseFont = true;
             this.NGAY.Caption = "NGÀY";
             this.NGAY.FieldName = "CREATED_DATE";
-            this.NGAY.MinWidth = 25;
             this.NGAY.Name = "NGAY";
             this.NGAY.Visible = true;
             this.NGAY.VisibleIndex = 2;
-            this.NGAY.Width = 94;
+            this.NGAY.Width = 299;
             // 
             // HOTENNV
             // 
@@ -453,7 +450,7 @@ namespace QLNHANSU
             this.SOOTIEN.Name = "SOOTIEN";
             this.SOOTIEN.Visible = true;
             this.SOOTIEN.VisibleIndex = 3;
-            this.SOOTIEN.Width = 100;
+            this.SOOTIEN.Width = 120;
             // 
             // GHICHU
             // 
@@ -466,7 +463,7 @@ namespace QLNHANSU
             this.GHICHU.Name = "GHICHU";
             this.GHICHU.Visible = true;
             this.GHICHU.VisibleIndex = 4;
-            this.GHICHU.Width = 200;
+            this.GHICHU.Width = 250;
             // 
             // IDNV
             // 
@@ -510,7 +507,7 @@ namespace QLNHANSU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1013, 594);
+            this.ClientSize = new System.Drawing.Size(795, 420);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -530,7 +527,6 @@ namespace QLNHANSU
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSach)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSach)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -575,6 +571,5 @@ namespace QLNHANSU
         private DevExpress.XtraBars.Bar bar3;
         private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraGrid.Columns.GridColumn NGAY;
-        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
     }
 }

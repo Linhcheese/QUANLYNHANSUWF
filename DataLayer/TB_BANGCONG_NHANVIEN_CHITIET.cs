@@ -16,16 +16,18 @@ namespace DataLayer
     {
         public int ID { get; set; }
         public Nullable<int> MAKYCONG { get; set; }
-        public string MACTY { get; set; }
-        public string MANV { get; set; }
+        public Nullable<int> IDCT { get; set; }
+        public Nullable<int> MANV { get; set; }
         public string HOTEN { get; set; }
         public Nullable<System.DateTime> NGAY { get; set; }
         public string THU { get; set; }
         public string GIOVAO { get; set; }
         public string GIORA { get; set; }
         public Nullable<double> NGAYPHEP { get; set; }
+        public Nullable<double> KHONGPHEP { get; set; }
         public Nullable<double> CONGNGAYLE { get; set; }
         public Nullable<double> CONGCHUNHAT { get; set; }
+        public Nullable<double> NGAYCONG { get; set; }
         public string KYHIEU { get; set; }
         public string GHICHU { get; set; }
         public Nullable<int> CREATED_BY { get; set; }

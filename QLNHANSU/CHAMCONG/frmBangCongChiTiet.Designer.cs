@@ -34,7 +34,7 @@ namespace QLNHANSU.CHAMCONG
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.chkKhoa = new System.Windows.Forms.CheckBox();
-            this.cboThang = new System.Windows.Forms.ComboBox();
+            this.cbo = new System.Windows.Forms.ComboBox();
             this.gcDanhSachCV = new DevExpress.XtraGrid.GridControl();
             this.gvDanhSachCV = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.DELETED_BY = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -60,7 +60,6 @@ namespace QLNHANSU.CHAMCONG
             this.btnRefresh = new DevExpress.XtraBars.BarButtonItem();
             this.btnPrint = new DevExpress.XtraBars.BarButtonItem();
             this.btnDong = new DevExpress.XtraBars.BarButtonItem();
-            this.bar6 = new DevExpress.XtraBars.Bar();
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
@@ -73,51 +72,60 @@ namespace QLNHANSU.CHAMCONG
             this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
             this.cboNam = new System.Windows.Forms.ComboBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnCapNhatNgayCong = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cboThang = new System.Windows.Forms.ComboBox();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.nam = new DevExpress.XtraEditors.LabelControl();
             this.gcBangCongChiTiet = new DevExpress.XtraGrid.GridControl();
-            this.gvBangCongChiTiet = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMaNV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colHoTen = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD10 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD11 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD12 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD13 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD14 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD15 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD16 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD17 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD18 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD19 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD20 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD21 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD22 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD23 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD24 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD25 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD26 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD27 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD28 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD29 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD30 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD31 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NGAYCONG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NGHIKHONGPHEP = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NGAYPHEP = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CONGNGAYLE = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.CONGCHUNHAT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TONGNGAYCONG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gvBangCongChiTiet = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
+            this.THONGTINNHANVIEN = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.colMaNV = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colHoTen = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.CHITIETNGAYCONG = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.colD1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colD2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colD3 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colD4 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colD5 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colD6 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colD7 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colD8 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colD9 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colD10 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colD11 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colD12 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colD13 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colD14 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colD15 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colD16 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colD17 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colD18 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colD19 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colD20 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colD21 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colD22 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colD23 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colD24 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colD25 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colD26 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colD27 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colD28 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colD29 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colD30 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colD31 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.NGAYCONG = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.NGHIKHONGPHEP = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.NGAYPHEP = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.CONGNGAYLE = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.CONGCHUNHAT = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.TONGNGAYCONG = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.barDockControl9 = new DevExpress.XtraBars.BarDockControl();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gcDanhSachCV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDanhSachCV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
@@ -125,6 +133,8 @@ namespace QLNHANSU.CHAMCONG
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcBangCongChiTiet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvBangCongChiTiet)).BeginInit();
             this.SuspendLayout();
@@ -159,10 +169,11 @@ namespace QLNHANSU.CHAMCONG
             this.chkKhoa.Text = "Khóa";
             this.chkKhoa.UseVisualStyleBackColor = true;
             // 
-            // cboThang
+            // cbo
             // 
-            this.cboThang.FormattingEnabled = true;
-            this.cboThang.Items.AddRange(new object[] {
+            this.cbo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo.FormattingEnabled = true;
+            this.cbo.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -175,10 +186,10 @@ namespace QLNHANSU.CHAMCONG
             "10",
             "11",
             "12"});
-            this.cboThang.Location = new System.Drawing.Point(244, 82);
-            this.cboThang.Name = "cboThang";
-            this.cboThang.Size = new System.Drawing.Size(121, 25);
-            this.cboThang.TabIndex = 6;
+            this.cbo.Location = new System.Drawing.Point(244, 82);
+            this.cbo.Name = "cbo";
+            this.cbo.Size = new System.Drawing.Size(121, 25);
+            this.cbo.TabIndex = 6;
             // 
             // gcDanhSachCV
             // 
@@ -362,9 +373,9 @@ namespace QLNHANSU.CHAMCONG
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1121, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(1393, 30);
             this.barDockControlRight.Manager = null;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 586);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 631);
             // 
             // checkBox1
             // 
@@ -379,8 +390,7 @@ namespace QLNHANSU.CHAMCONG
             // barManager2
             // 
             this.barManager2.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar5,
-            this.bar6});
+            this.bar5});
             this.barManager2.DockControls.Add(this.barDockControl2);
             this.barManager2.DockControls.Add(this.barDockControl3);
             this.barManager2.DockControls.Add(this.barDockControl4);
@@ -396,7 +406,6 @@ namespace QLNHANSU.CHAMCONG
             this.btnPrint});
             this.barManager2.MainMenu = this.bar5;
             this.barManager2.MaxItemId = 7;
-            this.barManager2.StatusBar = this.bar6;
             // 
             // bar5
             // 
@@ -456,33 +465,21 @@ namespace QLNHANSU.CHAMCONG
             this.btnDong.Name = "btnDong";
             this.btnDong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDong_ItemClick);
             // 
-            // bar6
-            // 
-            this.bar6.BarName = "Status bar";
-            this.bar6.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
-            this.bar6.DockCol = 0;
-            this.bar6.DockRow = 0;
-            this.bar6.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
-            this.bar6.OptionsBar.AllowQuickCustomization = false;
-            this.bar6.OptionsBar.DrawDragBorder = false;
-            this.bar6.OptionsBar.UseWholeRow = true;
-            this.bar6.Text = "Status bar";
-            // 
             // barDockControl2
             // 
             this.barDockControl2.CausesValidation = false;
             this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl2.Location = new System.Drawing.Point(0, 0);
             this.barDockControl2.Manager = this.barManager2;
-            this.barDockControl2.Size = new System.Drawing.Size(1121, 30);
+            this.barDockControl2.Size = new System.Drawing.Size(1393, 30);
             // 
             // barDockControl3
             // 
             this.barDockControl3.CausesValidation = false;
             this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl3.Location = new System.Drawing.Point(0, 616);
+            this.barDockControl3.Location = new System.Drawing.Point(0, 661);
             this.barDockControl3.Manager = this.barManager2;
-            this.barDockControl3.Size = new System.Drawing.Size(1121, 20);
+            this.barDockControl3.Size = new System.Drawing.Size(1393, 0);
             // 
             // barDockControl4
             // 
@@ -490,15 +487,15 @@ namespace QLNHANSU.CHAMCONG
             this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControl4.Location = new System.Drawing.Point(0, 30);
             this.barDockControl4.Manager = this.barManager2;
-            this.barDockControl4.Size = new System.Drawing.Size(0, 586);
+            this.barDockControl4.Size = new System.Drawing.Size(0, 631);
             // 
             // barDockControl5
             // 
             this.barDockControl5.CausesValidation = false;
             this.barDockControl5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl5.Location = new System.Drawing.Point(1121, 30);
+            this.barDockControl5.Location = new System.Drawing.Point(1393, 30);
             this.barDockControl5.Manager = this.barManager2;
-            this.barDockControl5.Size = new System.Drawing.Size(0, 586);
+            this.barDockControl5.Size = new System.Drawing.Size(0, 631);
             // 
             // barButtonItem4
             // 
@@ -522,15 +519,15 @@ namespace QLNHANSU.CHAMCONG
             this.barDockControl6.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControl6.Location = new System.Drawing.Point(0, 30);
             this.barDockControl6.Manager = this.barManager2;
-            this.barDockControl6.Size = new System.Drawing.Size(0, 586);
+            this.barDockControl6.Size = new System.Drawing.Size(0, 631);
             // 
             // barDockControl7
             // 
             this.barDockControl7.CausesValidation = false;
             this.barDockControl7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl7.Location = new System.Drawing.Point(1121, 30);
+            this.barDockControl7.Location = new System.Drawing.Point(1393, 30);
             this.barDockControl7.Manager = this.barManager2;
-            this.barDockControl7.Size = new System.Drawing.Size(0, 586);
+            this.barDockControl7.Size = new System.Drawing.Size(0, 631);
             // 
             // chkTrangThai
             // 
@@ -548,7 +545,7 @@ namespace QLNHANSU.CHAMCONG
             this.barDockControl8.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl8.Location = new System.Drawing.Point(0, 30);
             this.barDockControl8.Manager = this.barManager2;
-            this.barDockControl8.Size = new System.Drawing.Size(1121, 0);
+            this.barDockControl8.Size = new System.Drawing.Size(1393, 0);
             // 
             // cboNam
             // 
@@ -580,7 +577,9 @@ namespace QLNHANSU.CHAMCONG
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
+            this.splitContainer1.Panel1.ContextMenuStrip = this.contextMenuStrip1;
+            this.splitContainer1.Panel1.Controls.Add(this.groupBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.cboThang);
             this.splitContainer1.Panel1.Controls.Add(this.checkBox1);
             this.splitContainer1.Panel1.Controls.Add(this.chkTrangThai);
             this.splitContainer1.Panel1.Controls.Add(this.cboNam);
@@ -590,9 +589,100 @@ namespace QLNHANSU.CHAMCONG
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.gcBangCongChiTiet);
-            this.splitContainer1.Size = new System.Drawing.Size(1121, 586);
-            this.splitContainer1.SplitterDistance = 130;
+            this.splitContainer1.Size = new System.Drawing.Size(1393, 631);
+            this.splitContainer1.SplitterDistance = 123;
             this.splitContainer1.TabIndex = 21;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnCapNhatNgayCong});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.ShowCheckMargin = true;
+            this.contextMenuStrip1.Size = new System.Drawing.Size(233, 28);
+            // 
+            // mnCapNhatNgayCong
+            // 
+            this.mnCapNhatNgayCong.Name = "mnCapNhatNgayCong";
+            this.mnCapNhatNgayCong.Size = new System.Drawing.Size(232, 24);
+            this.mnCapNhatNgayCong.Text = "Cập nhật ngày công";
+            this.mnCapNhatNgayCong.Click += new System.EventHandler(this.mnCapNhatNgayCong_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.groupBox1.Location = new System.Drawing.Point(717, 40);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(584, 65);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Chú Thích";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 7.8F);
+            this.label4.Location = new System.Drawing.Point(413, 23);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(90, 17);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "CT: Công tác";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 7.8F);
+            this.label3.Location = new System.Drawing.Point(265, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(117, 17);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Vcn: Việc cá nhân";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 7.8F);
+            this.label2.Location = new System.Drawing.Point(117, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(130, 17);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "V: Nghỉ không phép";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 7.8F);
+            this.label1.Location = new System.Drawing.Point(7, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "P: Nghỉ phép";
+            // 
+            // cboThang
+            // 
+            this.cboThang.FormattingEnabled = true;
+            this.cboThang.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.cboThang.Location = new System.Drawing.Point(244, 79);
+            this.cboThang.Name = "cboThang";
+            this.cboThang.Size = new System.Drawing.Size(121, 24);
+            this.cboThang.TabIndex = 10;
             // 
             // labelControl2
             // 
@@ -616,11 +706,12 @@ namespace QLNHANSU.CHAMCONG
             // 
             // gcBangCongChiTiet
             // 
+            this.gcBangCongChiTiet.ContextMenuStrip = this.contextMenuStrip1;
             this.gcBangCongChiTiet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcBangCongChiTiet.Location = new System.Drawing.Point(0, 0);
             this.gcBangCongChiTiet.MainView = this.gvBangCongChiTiet;
             this.gcBangCongChiTiet.Name = "gcBangCongChiTiet";
-            this.gcBangCongChiTiet.Size = new System.Drawing.Size(1121, 452);
+            this.gcBangCongChiTiet.Size = new System.Drawing.Size(1393, 504);
             this.gcBangCongChiTiet.TabIndex = 1;
             this.gcBangCongChiTiet.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvBangCongChiTiet});
@@ -643,8 +734,11 @@ namespace QLNHANSU.CHAMCONG
             this.gvBangCongChiTiet.Appearance.HeaderPanel.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.gvBangCongChiTiet.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 9F);
             this.gvBangCongChiTiet.Appearance.Row.Options.UseFont = true;
+            this.gvBangCongChiTiet.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
+            this.THONGTINNHANVIEN,
+            this.CHITIETNGAYCONG});
             this.gvBangCongChiTiet.ColumnPanelRowHeight = 60;
-            this.gvBangCongChiTiet.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gvBangCongChiTiet.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
             this.colMaNV,
             this.colHoTen,
             this.colD1,
@@ -703,29 +797,98 @@ namespace QLNHANSU.CHAMCONG
             this.gvBangCongChiTiet.OptionsView.ShowIndicator = false;
             this.gvBangCongChiTiet.RowHeight = 28;
             this.gvBangCongChiTiet.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+            this.gvBangCongChiTiet.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gvBangCongChiTiet_CustomDrawCell);
+            // 
+            // THONGTINNHANVIEN
+            // 
+            this.THONGTINNHANVIEN.AppearanceHeader.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.THONGTINNHANVIEN.AppearanceHeader.BackColor2 = System.Drawing.Color.AntiqueWhite;
+            this.THONGTINNHANVIEN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.THONGTINNHANVIEN.AppearanceHeader.Options.UseBackColor = true;
+            this.THONGTINNHANVIEN.AppearanceHeader.Options.UseFont = true;
+            this.THONGTINNHANVIEN.Caption = "THÔNG TIN NHÂN VIÊN";
+            this.THONGTINNHANVIEN.Columns.Add(this.colMaNV);
+            this.THONGTINNHANVIEN.Columns.Add(this.colHoTen);
+            this.THONGTINNHANVIEN.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
+            this.THONGTINNHANVIEN.MinWidth = 65;
+            this.THONGTINNHANVIEN.Name = "THONGTINNHANVIEN";
+            this.THONGTINNHANVIEN.RowCount = 2;
+            this.THONGTINNHANVIEN.VisibleIndex = 0;
+            this.THONGTINNHANVIEN.Width = 260;
             // 
             // colMaNV
             // 
             this.colMaNV.Caption = "MANV";
             this.colMaNV.FieldName = "MANV";
+            this.colMaNV.MinWidth = 14;
             this.colMaNV.Name = "colMaNV";
             this.colMaNV.OptionsColumn.AllowEdit = false;
             this.colMaNV.OptionsColumn.AllowFocus = false;
             this.colMaNV.Visible = true;
-            this.colMaNV.VisibleIndex = 0;
-            this.colMaNV.Width = 74;
+            this.colMaNV.Width = 70;
             // 
             // colHoTen
             // 
             this.colHoTen.Caption = "HỌ VÀ TÊN";
             this.colHoTen.FieldName = "HOTEN";
+            this.colHoTen.MinWidth = 58;
             this.colHoTen.Name = "colHoTen";
             this.colHoTen.OptionsColumn.AllowEdit = false;
             this.colHoTen.OptionsColumn.AllowFocus = false;
             this.colHoTen.OptionsColumn.FixedWidth = true;
             this.colHoTen.Visible = true;
-            this.colHoTen.VisibleIndex = 1;
-            this.colHoTen.Width = 200;
+            this.colHoTen.Width = 190;
+            // 
+            // CHITIETNGAYCONG
+            // 
+            this.CHITIETNGAYCONG.AppearanceHeader.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.CHITIETNGAYCONG.AppearanceHeader.BackColor2 = System.Drawing.Color.OldLace;
+            this.CHITIETNGAYCONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.CHITIETNGAYCONG.AppearanceHeader.Options.UseBackColor = true;
+            this.CHITIETNGAYCONG.AppearanceHeader.Options.UseFont = true;
+            this.CHITIETNGAYCONG.Caption = "CHI TIẾT NGÀY CÔNG";
+            this.CHITIETNGAYCONG.Columns.Add(this.colD1);
+            this.CHITIETNGAYCONG.Columns.Add(this.colD2);
+            this.CHITIETNGAYCONG.Columns.Add(this.colD3);
+            this.CHITIETNGAYCONG.Columns.Add(this.colD4);
+            this.CHITIETNGAYCONG.Columns.Add(this.colD5);
+            this.CHITIETNGAYCONG.Columns.Add(this.colD6);
+            this.CHITIETNGAYCONG.Columns.Add(this.colD7);
+            this.CHITIETNGAYCONG.Columns.Add(this.colD8);
+            this.CHITIETNGAYCONG.Columns.Add(this.colD9);
+            this.CHITIETNGAYCONG.Columns.Add(this.colD10);
+            this.CHITIETNGAYCONG.Columns.Add(this.colD11);
+            this.CHITIETNGAYCONG.Columns.Add(this.colD12);
+            this.CHITIETNGAYCONG.Columns.Add(this.colD13);
+            this.CHITIETNGAYCONG.Columns.Add(this.colD14);
+            this.CHITIETNGAYCONG.Columns.Add(this.colD15);
+            this.CHITIETNGAYCONG.Columns.Add(this.colD16);
+            this.CHITIETNGAYCONG.Columns.Add(this.colD17);
+            this.CHITIETNGAYCONG.Columns.Add(this.colD18);
+            this.CHITIETNGAYCONG.Columns.Add(this.colD19);
+            this.CHITIETNGAYCONG.Columns.Add(this.colD20);
+            this.CHITIETNGAYCONG.Columns.Add(this.colD21);
+            this.CHITIETNGAYCONG.Columns.Add(this.colD22);
+            this.CHITIETNGAYCONG.Columns.Add(this.colD23);
+            this.CHITIETNGAYCONG.Columns.Add(this.colD24);
+            this.CHITIETNGAYCONG.Columns.Add(this.colD25);
+            this.CHITIETNGAYCONG.Columns.Add(this.colD26);
+            this.CHITIETNGAYCONG.Columns.Add(this.colD27);
+            this.CHITIETNGAYCONG.Columns.Add(this.colD28);
+            this.CHITIETNGAYCONG.Columns.Add(this.colD29);
+            this.CHITIETNGAYCONG.Columns.Add(this.colD30);
+            this.CHITIETNGAYCONG.Columns.Add(this.colD31);
+            this.CHITIETNGAYCONG.Columns.Add(this.NGAYCONG);
+            this.CHITIETNGAYCONG.Columns.Add(this.NGHIKHONGPHEP);
+            this.CHITIETNGAYCONG.Columns.Add(this.NGAYPHEP);
+            this.CHITIETNGAYCONG.Columns.Add(this.CONGNGAYLE);
+            this.CHITIETNGAYCONG.Columns.Add(this.CONGCHUNHAT);
+            this.CHITIETNGAYCONG.Columns.Add(this.TONGNGAYCONG);
+            this.CHITIETNGAYCONG.MinWidth = 76;
+            this.CHITIETNGAYCONG.Name = "CHITIETNGAYCONG";
+            this.CHITIETNGAYCONG.RowCount = 2;
+            this.CHITIETNGAYCONG.VisibleIndex = 1;
+            this.CHITIETNGAYCONG.Width = 3190;
             // 
             // colD1
             // 
@@ -736,11 +899,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD1.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD1.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD1.FieldName = "D1";
+            this.colD1.MinWidth = 14;
             this.colD1.Name = "colD1";
             this.colD1.OptionsColumn.FixedWidth = true;
             this.colD1.Visible = true;
-            this.colD1.VisibleIndex = 2;
-            this.colD1.Width = 70;
+            this.colD1.Width = 82;
             // 
             // colD2
             // 
@@ -751,11 +914,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD2.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD2.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD2.FieldName = "D2";
+            this.colD2.MinWidth = 14;
             this.colD2.Name = "colD2";
             this.colD2.OptionsColumn.FixedWidth = true;
             this.colD2.Visible = true;
-            this.colD2.VisibleIndex = 3;
-            this.colD2.Width = 70;
+            this.colD2.Width = 82;
             // 
             // colD3
             // 
@@ -766,11 +929,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD3.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD3.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD3.FieldName = "D3";
+            this.colD3.MinWidth = 14;
             this.colD3.Name = "colD3";
             this.colD3.OptionsColumn.FixedWidth = true;
             this.colD3.Visible = true;
-            this.colD3.VisibleIndex = 4;
-            this.colD3.Width = 70;
+            this.colD3.Width = 82;
             // 
             // colD4
             // 
@@ -781,11 +944,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD4.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD4.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD4.FieldName = "D4";
+            this.colD4.MinWidth = 14;
             this.colD4.Name = "colD4";
             this.colD4.OptionsColumn.FixedWidth = true;
             this.colD4.Visible = true;
-            this.colD4.VisibleIndex = 5;
-            this.colD4.Width = 70;
+            this.colD4.Width = 82;
             // 
             // colD5
             // 
@@ -796,11 +959,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD5.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD5.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD5.FieldName = "D5";
+            this.colD5.MinWidth = 14;
             this.colD5.Name = "colD5";
             this.colD5.OptionsColumn.FixedWidth = true;
             this.colD5.Visible = true;
-            this.colD5.VisibleIndex = 6;
-            this.colD5.Width = 70;
+            this.colD5.Width = 82;
             // 
             // colD6
             // 
@@ -811,11 +974,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD6.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD6.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD6.FieldName = "D6";
+            this.colD6.MinWidth = 14;
             this.colD6.Name = "colD6";
             this.colD6.OptionsColumn.FixedWidth = true;
             this.colD6.Visible = true;
-            this.colD6.VisibleIndex = 7;
-            this.colD6.Width = 70;
+            this.colD6.Width = 82;
             // 
             // colD7
             // 
@@ -826,11 +989,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD7.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD7.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD7.FieldName = "D7";
+            this.colD7.MinWidth = 14;
             this.colD7.Name = "colD7";
             this.colD7.OptionsColumn.FixedWidth = true;
             this.colD7.Visible = true;
-            this.colD7.VisibleIndex = 8;
-            this.colD7.Width = 70;
+            this.colD7.Width = 82;
             // 
             // colD8
             // 
@@ -841,11 +1004,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD8.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD8.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD8.FieldName = "D8";
+            this.colD8.MinWidth = 14;
             this.colD8.Name = "colD8";
             this.colD8.OptionsColumn.FixedWidth = true;
             this.colD8.Visible = true;
-            this.colD8.VisibleIndex = 9;
-            this.colD8.Width = 70;
+            this.colD8.Width = 82;
             // 
             // colD9
             // 
@@ -856,11 +1019,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD9.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD9.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD9.FieldName = "D9";
+            this.colD9.MinWidth = 14;
             this.colD9.Name = "colD9";
             this.colD9.OptionsColumn.FixedWidth = true;
             this.colD9.Visible = true;
-            this.colD9.VisibleIndex = 10;
-            this.colD9.Width = 70;
+            this.colD9.Width = 82;
             // 
             // colD10
             // 
@@ -871,11 +1034,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD10.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD10.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD10.FieldName = "D10";
+            this.colD10.MinWidth = 14;
             this.colD10.Name = "colD10";
             this.colD10.OptionsColumn.FixedWidth = true;
             this.colD10.Visible = true;
-            this.colD10.VisibleIndex = 11;
-            this.colD10.Width = 70;
+            this.colD10.Width = 82;
             // 
             // colD11
             // 
@@ -886,11 +1049,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD11.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD11.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD11.FieldName = "D11";
+            this.colD11.MinWidth = 14;
             this.colD11.Name = "colD11";
             this.colD11.OptionsColumn.FixedWidth = true;
             this.colD11.Visible = true;
-            this.colD11.VisibleIndex = 12;
-            this.colD11.Width = 70;
+            this.colD11.Width = 82;
             // 
             // colD12
             // 
@@ -901,11 +1064,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD12.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD12.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD12.FieldName = "D12";
+            this.colD12.MinWidth = 14;
             this.colD12.Name = "colD12";
             this.colD12.OptionsColumn.FixedWidth = true;
             this.colD12.Visible = true;
-            this.colD12.VisibleIndex = 13;
-            this.colD12.Width = 70;
+            this.colD12.Width = 82;
             // 
             // colD13
             // 
@@ -916,11 +1079,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD13.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD13.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD13.FieldName = "D13";
+            this.colD13.MinWidth = 14;
             this.colD13.Name = "colD13";
             this.colD13.OptionsColumn.FixedWidth = true;
             this.colD13.Visible = true;
-            this.colD13.VisibleIndex = 14;
-            this.colD13.Width = 70;
+            this.colD13.Width = 82;
             // 
             // colD14
             // 
@@ -931,11 +1094,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD14.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD14.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD14.FieldName = "D14";
+            this.colD14.MinWidth = 14;
             this.colD14.Name = "colD14";
             this.colD14.OptionsColumn.FixedWidth = true;
             this.colD14.Visible = true;
-            this.colD14.VisibleIndex = 15;
-            this.colD14.Width = 70;
+            this.colD14.Width = 82;
             // 
             // colD15
             // 
@@ -946,11 +1109,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD15.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD15.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD15.FieldName = "D15";
+            this.colD15.MinWidth = 14;
             this.colD15.Name = "colD15";
             this.colD15.OptionsColumn.FixedWidth = true;
             this.colD15.Visible = true;
-            this.colD15.VisibleIndex = 16;
-            this.colD15.Width = 70;
+            this.colD15.Width = 82;
             // 
             // colD16
             // 
@@ -961,11 +1124,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD16.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD16.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD16.FieldName = "D16";
+            this.colD16.MinWidth = 14;
             this.colD16.Name = "colD16";
             this.colD16.OptionsColumn.FixedWidth = true;
             this.colD16.Visible = true;
-            this.colD16.VisibleIndex = 17;
-            this.colD16.Width = 70;
+            this.colD16.Width = 82;
             // 
             // colD17
             // 
@@ -976,11 +1139,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD17.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD17.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD17.FieldName = "D17";
+            this.colD17.MinWidth = 14;
             this.colD17.Name = "colD17";
             this.colD17.OptionsColumn.FixedWidth = true;
             this.colD17.Visible = true;
-            this.colD17.VisibleIndex = 18;
-            this.colD17.Width = 70;
+            this.colD17.Width = 82;
             // 
             // colD18
             // 
@@ -991,11 +1154,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD18.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD18.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD18.FieldName = "D18";
+            this.colD18.MinWidth = 14;
             this.colD18.Name = "colD18";
             this.colD18.OptionsColumn.FixedWidth = true;
             this.colD18.Visible = true;
-            this.colD18.VisibleIndex = 19;
-            this.colD18.Width = 70;
+            this.colD18.Width = 82;
             // 
             // colD19
             // 
@@ -1006,11 +1169,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD19.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD19.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD19.FieldName = "D19";
+            this.colD19.MinWidth = 14;
             this.colD19.Name = "colD19";
             this.colD19.OptionsColumn.FixedWidth = true;
             this.colD19.Visible = true;
-            this.colD19.VisibleIndex = 20;
-            this.colD19.Width = 70;
+            this.colD19.Width = 82;
             // 
             // colD20
             // 
@@ -1021,11 +1184,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD20.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD20.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD20.FieldName = "D20";
+            this.colD20.MinWidth = 14;
             this.colD20.Name = "colD20";
             this.colD20.OptionsColumn.FixedWidth = true;
             this.colD20.Visible = true;
-            this.colD20.VisibleIndex = 21;
-            this.colD20.Width = 70;
+            this.colD20.Width = 82;
             // 
             // colD21
             // 
@@ -1036,11 +1199,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD21.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD21.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD21.FieldName = "D21";
+            this.colD21.MinWidth = 14;
             this.colD21.Name = "colD21";
             this.colD21.OptionsColumn.FixedWidth = true;
             this.colD21.Visible = true;
-            this.colD21.VisibleIndex = 22;
-            this.colD21.Width = 70;
+            this.colD21.Width = 82;
             // 
             // colD22
             // 
@@ -1051,11 +1214,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD22.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD22.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD22.FieldName = "D22";
+            this.colD22.MinWidth = 14;
             this.colD22.Name = "colD22";
             this.colD22.OptionsColumn.FixedWidth = true;
             this.colD22.Visible = true;
-            this.colD22.VisibleIndex = 23;
-            this.colD22.Width = 70;
+            this.colD22.Width = 82;
             // 
             // colD23
             // 
@@ -1066,11 +1229,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD23.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD23.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD23.FieldName = "D23";
+            this.colD23.MinWidth = 14;
             this.colD23.Name = "colD23";
             this.colD23.OptionsColumn.FixedWidth = true;
             this.colD23.Visible = true;
-            this.colD23.VisibleIndex = 24;
-            this.colD23.Width = 70;
+            this.colD23.Width = 82;
             // 
             // colD24
             // 
@@ -1081,11 +1244,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD24.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD24.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD24.FieldName = "D24";
+            this.colD24.MinWidth = 14;
             this.colD24.Name = "colD24";
             this.colD24.OptionsColumn.FixedWidth = true;
             this.colD24.Visible = true;
-            this.colD24.VisibleIndex = 25;
-            this.colD24.Width = 70;
+            this.colD24.Width = 82;
             // 
             // colD25
             // 
@@ -1096,11 +1259,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD25.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD25.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD25.FieldName = "D25";
+            this.colD25.MinWidth = 14;
             this.colD25.Name = "colD25";
             this.colD25.OptionsColumn.FixedWidth = true;
             this.colD25.Visible = true;
-            this.colD25.VisibleIndex = 26;
-            this.colD25.Width = 70;
+            this.colD25.Width = 82;
             // 
             // colD26
             // 
@@ -1111,11 +1274,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD26.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD26.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD26.FieldName = "D26";
+            this.colD26.MinWidth = 14;
             this.colD26.Name = "colD26";
             this.colD26.OptionsColumn.FixedWidth = true;
             this.colD26.Visible = true;
-            this.colD26.VisibleIndex = 27;
-            this.colD26.Width = 70;
+            this.colD26.Width = 82;
             // 
             // colD27
             // 
@@ -1126,11 +1289,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD27.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD27.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD27.FieldName = "D27";
+            this.colD27.MinWidth = 14;
             this.colD27.Name = "colD27";
             this.colD27.OptionsColumn.FixedWidth = true;
             this.colD27.Visible = true;
-            this.colD27.VisibleIndex = 28;
-            this.colD27.Width = 70;
+            this.colD27.Width = 82;
             // 
             // colD28
             // 
@@ -1141,11 +1304,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD28.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD28.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD28.FieldName = "D28";
+            this.colD28.MinWidth = 14;
             this.colD28.Name = "colD28";
             this.colD28.OptionsColumn.FixedWidth = true;
             this.colD28.Visible = true;
-            this.colD28.VisibleIndex = 29;
-            this.colD28.Width = 70;
+            this.colD28.Width = 82;
             // 
             // colD29
             // 
@@ -1156,11 +1319,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD29.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD29.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD29.FieldName = "D29";
+            this.colD29.MinWidth = 14;
             this.colD29.Name = "colD29";
             this.colD29.OptionsColumn.FixedWidth = true;
             this.colD29.Visible = true;
-            this.colD29.VisibleIndex = 30;
-            this.colD29.Width = 70;
+            this.colD29.Width = 82;
             // 
             // colD30
             // 
@@ -1171,11 +1334,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD30.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD30.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD30.FieldName = "D30";
+            this.colD30.MinWidth = 14;
             this.colD30.Name = "colD30";
             this.colD30.OptionsColumn.FixedWidth = true;
             this.colD30.Visible = true;
-            this.colD30.VisibleIndex = 31;
-            this.colD30.Width = 70;
+            this.colD30.Width = 82;
             // 
             // colD31
             // 
@@ -1186,11 +1349,11 @@ namespace QLNHANSU.CHAMCONG
             this.colD31.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colD31.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.colD31.FieldName = "D31";
+            this.colD31.MinWidth = 14;
             this.colD31.Name = "colD31";
             this.colD31.OptionsColumn.FixedWidth = true;
             this.colD31.Visible = true;
-            this.colD31.VisibleIndex = 32;
-            this.colD31.Width = 70;
+            this.colD31.Width = 82;
             // 
             // NGAYCONG
             // 
@@ -1198,12 +1361,10 @@ namespace QLNHANSU.CHAMCONG
             this.NGAYCONG.AppearanceHeader.Options.UseFont = true;
             this.NGAYCONG.Caption = "NGÀY CÔNG";
             this.NGAYCONG.FieldName = "NGAYCONG";
-            this.NGAYCONG.MaxWidth = 100;
-            this.NGAYCONG.MinWidth = 100;
+            this.NGAYCONG.MinWidth = 14;
             this.NGAYCONG.Name = "NGAYCONG";
             this.NGAYCONG.Visible = true;
-            this.NGAYCONG.VisibleIndex = 33;
-            this.NGAYCONG.Width = 100;
+            this.NGAYCONG.Width = 108;
             // 
             // NGHIKHONGPHEP
             // 
@@ -1211,12 +1372,10 @@ namespace QLNHANSU.CHAMCONG
             this.NGHIKHONGPHEP.AppearanceHeader.Options.UseFont = true;
             this.NGHIKHONGPHEP.Caption = "KHÔNG PHÉP";
             this.NGHIKHONGPHEP.FieldName = "NGHIKHONGPHEP";
-            this.NGHIKHONGPHEP.MaxWidth = 100;
-            this.NGHIKHONGPHEP.MinWidth = 100;
+            this.NGHIKHONGPHEP.MinWidth = 14;
             this.NGHIKHONGPHEP.Name = "NGHIKHONGPHEP";
             this.NGHIKHONGPHEP.Visible = true;
-            this.NGHIKHONGPHEP.VisibleIndex = 34;
-            this.NGHIKHONGPHEP.Width = 100;
+            this.NGHIKHONGPHEP.Width = 108;
             // 
             // NGAYPHEP
             // 
@@ -1224,12 +1383,10 @@ namespace QLNHANSU.CHAMCONG
             this.NGAYPHEP.AppearanceHeader.Options.UseFont = true;
             this.NGAYPHEP.Caption = "NGÀY PHÉP";
             this.NGAYPHEP.FieldName = "NGAYPHEP";
-            this.NGAYPHEP.MaxWidth = 100;
-            this.NGAYPHEP.MinWidth = 100;
+            this.NGAYPHEP.MinWidth = 14;
             this.NGAYPHEP.Name = "NGAYPHEP";
             this.NGAYPHEP.Visible = true;
-            this.NGAYPHEP.VisibleIndex = 35;
-            this.NGAYPHEP.Width = 100;
+            this.NGAYPHEP.Width = 108;
             // 
             // CONGNGAYLE
             // 
@@ -1237,25 +1394,21 @@ namespace QLNHANSU.CHAMCONG
             this.CONGNGAYLE.AppearanceHeader.Options.UseFont = true;
             this.CONGNGAYLE.Caption = "CÔNG LỄ";
             this.CONGNGAYLE.FieldName = "CONGNGAYLE";
-            this.CONGNGAYLE.MaxWidth = 100;
-            this.CONGNGAYLE.MinWidth = 100;
+            this.CONGNGAYLE.MinWidth = 14;
             this.CONGNGAYLE.Name = "CONGNGAYLE";
             this.CONGNGAYLE.Visible = true;
-            this.CONGNGAYLE.VisibleIndex = 36;
-            this.CONGNGAYLE.Width = 100;
+            this.CONGNGAYLE.Width = 108;
             // 
             // CONGCHUNHAT
             // 
-            this.CONGCHUNHAT.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.CONGCHUNHAT.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.CONGCHUNHAT.AppearanceHeader.Options.UseFont = true;
             this.CONGCHUNHAT.Caption = "CÔNG CN";
             this.CONGCHUNHAT.FieldName = "CONGCHUNHAT";
-            this.CONGCHUNHAT.MaxWidth = 100;
-            this.CONGCHUNHAT.MinWidth = 100;
+            this.CONGCHUNHAT.MinWidth = 14;
             this.CONGCHUNHAT.Name = "CONGCHUNHAT";
             this.CONGCHUNHAT.Visible = true;
-            this.CONGCHUNHAT.VisibleIndex = 37;
-            this.CONGCHUNHAT.Width = 100;
+            this.CONGCHUNHAT.Width = 108;
             // 
             // TONGNGAYCONG
             // 
@@ -1263,47 +1416,24 @@ namespace QLNHANSU.CHAMCONG
             this.TONGNGAYCONG.AppearanceHeader.Options.UseFont = true;
             this.TONGNGAYCONG.Caption = "TỔNG NGÀY CÔNG";
             this.TONGNGAYCONG.FieldName = "TONGNGAYCONG";
-            this.TONGNGAYCONG.MaxWidth = 140;
-            this.TONGNGAYCONG.MinWidth = 140;
+            this.TONGNGAYCONG.MinWidth = 14;
             this.TONGNGAYCONG.Name = "TONGNGAYCONG";
             this.TONGNGAYCONG.Visible = true;
-            this.TONGNGAYCONG.VisibleIndex = 38;
-            this.TONGNGAYCONG.Width = 140;
+            this.TONGNGAYCONG.Width = 108;
             // 
             // barDockControl9
             // 
             this.barDockControl9.CausesValidation = false;
             this.barDockControl9.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl9.Location = new System.Drawing.Point(0, 616);
+            this.barDockControl9.Location = new System.Drawing.Point(0, 661);
             this.barDockControl9.Manager = this.barManager2;
-            this.barDockControl9.Size = new System.Drawing.Size(1121, 0);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12"});
-            this.comboBox1.Location = new System.Drawing.Point(244, 79);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 10;
+            this.barDockControl9.Size = new System.Drawing.Size(1393, 0);
             // 
             // frmBangCongChiTiet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1121, 636);
+            this.ClientSize = new System.Drawing.Size(1393, 661);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControl6);
@@ -1326,6 +1456,9 @@ namespace QLNHANSU.CHAMCONG
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcBangCongChiTiet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvBangCongChiTiet)).EndInit();
             this.ResumeLayout(false);
@@ -1338,7 +1471,7 @@ namespace QLNHANSU.CHAMCONG
         private DevExpress.XtraBars.Bar bar2;
         private DevExpress.XtraBars.Bar bar1;
         private System.Windows.Forms.CheckBox chkKhoa;
-        private System.Windows.Forms.ComboBox cboThang;
+        private System.Windows.Forms.ComboBox cbo;
         private DevExpress.XtraGrid.GridControl gcDanhSachCV;
         private DevExpress.XtraGrid.Views.Grid.GridView gvDanhSachCV;
         private DevExpress.XtraGrid.Columns.GridColumn DELETED_BY;
@@ -1360,6 +1493,7 @@ namespace QLNHANSU.CHAMCONG
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox chkTrangThai;
         private System.Windows.Forms.ComboBox cboNam;
+        private System.Windows.Forms.ComboBox cboThang;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl nam;
         private DevExpress.XtraBars.BarManager barManager2;
@@ -1369,7 +1503,6 @@ namespace QLNHANSU.CHAMCONG
         private DevExpress.XtraBars.BarButtonItem btnRefresh;
         private DevExpress.XtraBars.BarButtonItem btnPrint;
         private DevExpress.XtraBars.BarButtonItem btnDong;
-        private DevExpress.XtraBars.Bar bar6;
         private DevExpress.XtraBars.BarDockControl barDockControl2;
         private DevExpress.XtraBars.BarDockControl barDockControl3;
         private DevExpress.XtraBars.BarDockControl barDockControl4;
@@ -1381,46 +1514,54 @@ namespace QLNHANSU.CHAMCONG
         private DevExpress.XtraBars.BarDockControl barDockControl8;
         private DevExpress.XtraBars.BarDockControl barDockControl9;
         private DevExpress.XtraGrid.GridControl gcBangCongChiTiet;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvBangCongChiTiet;
-        private DevExpress.XtraGrid.Columns.GridColumn colMaNV;
-        private DevExpress.XtraGrid.Columns.GridColumn colHoTen;
-        private DevExpress.XtraGrid.Columns.GridColumn colD1;
-        private DevExpress.XtraGrid.Columns.GridColumn colD2;
-        private DevExpress.XtraGrid.Columns.GridColumn colD3;
-        private DevExpress.XtraGrid.Columns.GridColumn colD4;
-        private DevExpress.XtraGrid.Columns.GridColumn colD5;
-        private DevExpress.XtraGrid.Columns.GridColumn colD6;
-        private DevExpress.XtraGrid.Columns.GridColumn colD7;
-        private DevExpress.XtraGrid.Columns.GridColumn colD8;
-        private DevExpress.XtraGrid.Columns.GridColumn colD9;
-        private DevExpress.XtraGrid.Columns.GridColumn colD10;
-        private DevExpress.XtraGrid.Columns.GridColumn colD11;
-        private DevExpress.XtraGrid.Columns.GridColumn colD12;
-        private DevExpress.XtraGrid.Columns.GridColumn colD13;
-        private DevExpress.XtraGrid.Columns.GridColumn colD14;
-        private DevExpress.XtraGrid.Columns.GridColumn colD15;
-        private DevExpress.XtraGrid.Columns.GridColumn colD16;
-        private DevExpress.XtraGrid.Columns.GridColumn colD17;
-        private DevExpress.XtraGrid.Columns.GridColumn colD18;
-        private DevExpress.XtraGrid.Columns.GridColumn colD19;
-        private DevExpress.XtraGrid.Columns.GridColumn colD20;
-        private DevExpress.XtraGrid.Columns.GridColumn colD21;
-        private DevExpress.XtraGrid.Columns.GridColumn colD22;
-        private DevExpress.XtraGrid.Columns.GridColumn colD23;
-        private DevExpress.XtraGrid.Columns.GridColumn colD24;
-        private DevExpress.XtraGrid.Columns.GridColumn colD25;
-        private DevExpress.XtraGrid.Columns.GridColumn colD26;
-        private DevExpress.XtraGrid.Columns.GridColumn colD27;
-        private DevExpress.XtraGrid.Columns.GridColumn colD28;
-        private DevExpress.XtraGrid.Columns.GridColumn colD29;
-        private DevExpress.XtraGrid.Columns.GridColumn colD30;
-        private DevExpress.XtraGrid.Columns.GridColumn colD31;
-        private DevExpress.XtraGrid.Columns.GridColumn NGAYCONG;
-        private DevExpress.XtraGrid.Columns.GridColumn NGHIKHONGPHEP;
-        private DevExpress.XtraGrid.Columns.GridColumn NGAYPHEP;
-        private DevExpress.XtraGrid.Columns.GridColumn CONGNGAYLE;
-        private DevExpress.XtraGrid.Columns.GridColumn CONGCHUNHAT;
-        private DevExpress.XtraGrid.Columns.GridColumn TONGNGAYCONG;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView gvBangCongChiTiet;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colMaNV;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colHoTen;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD2;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD3;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD4;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD5;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD6;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD7;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD8;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD9;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD10;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD11;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD12;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD13;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD14;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD15;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD16;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD17;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD18;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD19;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD20;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD21;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD22;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD23;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD24;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD25;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD26;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD27;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD28;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD29;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD30;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colD31;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn NGAYCONG;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn NGHIKHONGPHEP;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn NGAYPHEP;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn CONGNGAYLE;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn CONGCHUNHAT;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn TONGNGAYCONG;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand THONGTINNHANVIEN;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand CHITIETNGAYCONG;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem mnCapNhatNgayCong;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
     }
 }

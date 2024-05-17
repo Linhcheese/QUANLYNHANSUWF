@@ -25,9 +25,9 @@ namespace DataLayer
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TB_BANGCONG> TB_BANGCONG { get; set; }
         public virtual DbSet<TB_BANGCONG_NHANVIEN_CHITIET> TB_BANGCONG_NHANVIEN_CHITIET { get; set; }
+        public virtual DbSet<TB_BANGLUONG> TB_BANGLUONG { get; set; }
         public virtual DbSet<TB_BAOHIEM> TB_BAOHIEM { get; set; }
         public virtual DbSet<TB_BOPHAN> TB_BOPHAN { get; set; }
         public virtual DbSet<TB_Config> TB_Config { get; set; }
@@ -35,6 +35,8 @@ namespace DataLayer
         public virtual DbSet<TB_CHUCVU> TB_CHUCVU { get; set; }
         public virtual DbSet<TB_DANTOC> TB_DANTOC { get; set; }
         public virtual DbSet<TB_HOPDONG> TB_HOPDONG { get; set; }
+        public virtual DbSet<TB_KYCONG> TB_KYCONG { get; set; }
+        public virtual DbSet<TB_KYCONGCHITIET> TB_KYCONGCHITIET { get; set; }
         public virtual DbSet<TB_KHENTHUONG_KYLUAT> TB_KHENTHUONG_KYLUAT { get; set; }
         public virtual DbSet<TB_LOAICA> TB_LOAICA { get; set; }
         public virtual DbSet<TB_LOAICONG> TB_LOAICONG { get; set; }
@@ -50,7 +52,5 @@ namespace DataLayer
         public virtual DbSet<TB_TONGIAO> TB_TONGIAO { get; set; }
         public virtual DbSet<TB_TRINHDO> TB_TRINHDO { get; set; }
         public virtual DbSet<TB_UNGLUONG> TB_UNGLUONG { get; set; }
-        public virtual DbSet<TB_KYCONGCHITIET> TB_KYCONGCHITIET { get; set; }
-        public virtual DbSet<TB_KYCONG> TB_KYCONG { get; set; }
     }
 }

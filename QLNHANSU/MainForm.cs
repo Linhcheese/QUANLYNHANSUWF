@@ -166,7 +166,7 @@ namespace QLNHANSU
 
         private void btnBangLuong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            openForm(typeof(frmBangLuong));
         }
 
         private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -182,5 +182,6 @@ namespace QLNHANSU
                 e.TemplatedItem.AppearanceItem.Normal.ForeColor = Color.Red;
             }
         }
+
     }
 }
